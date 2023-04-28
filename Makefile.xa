@@ -1,0 +1,37 @@
+all: \
+  iso/music/menu.xa \
+  iso/music/gameovr.xa \
+  iso/music/20.xa \
+  iso/music/21.xa \
+  iso/music/22.xa \
+  iso/music/23.xa \
+  iso/music/24.xa \
+  iso/music/25.xa \
+  iso/music/26.xa \
+  iso/music/27.xa \
+  iso/music/28.xa \
+  iso/music/29.xa \
+  iso/music/30.xa \
+  iso/music/31.xa 
+
+# XA converts
+iso/music/%.xa: iso/music/%.ogg
+	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@
+iso/music/%.xa:
+	tools/xainterleave/xainterleave $@
+
+# XA interleaves
+iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
+iso/music/gameovr.xa: iso/music/gameoverj.xa iso/music/gameoverp.xa iso/music/gameoverh.xa
+iso/music/20.xa: iso/music/titular/Inst.xa iso/music/titular/Vocals.xa iso/music/greatest-plan/Inst.xa iso/music/greatest-plan/Vocals.xa
+iso/music/21.xa: iso/music/reinforcements/Inst.xa iso/music/reinforcements/Vocals.xa iso/music/armed/Inst.xa iso/music/armed/Vocals.xa
+iso/music/22.xa: iso/music/alpha-moogus/Inst.xa iso/music/alpha-moogus/Vocals.xa iso/music/actin-sus/Inst.xa iso/music/actin-sus/Vocals.xa
+iso/music/23.xa: iso/music/ow/Inst.xa iso/music/ow/Vocals.xa iso/music/who/Inst.xa iso/music/who/Vocals.xa
+iso/music/24.xa: iso/music/insane-streamer/Inst.xa iso/music/insane-streamer/Vocals.xa iso/music/sussus-nuzzus/Inst.xa iso/music/sussus-nuzzus/Vocals.xa
+iso/music/25.xa: iso/music/idk/Inst.xa iso/music/idk/Vocals.xa iso/music/esculent/Inst.xa iso/music/esculent/Vocals.xa
+iso/music/26.xa: iso/music/drippypop/Inst.xa iso/music/drippypop/Vocals.xa iso/music/crewicide/Inst.xa iso/music/crewicide/Vocals.xa
+iso/music/27.xa: iso/music/monotone-attack/Inst.xa iso/music/monotone-attack/Vocals.xa iso/music/top-10/Inst.xa
+iso/music/28.xa: iso/music/chippin/Inst.xa iso/music/chippin/Vocals.xa iso/music/chipping/Inst.xa iso/music/chipping/Vocals.xa
+iso/music/29.xa: iso/music/torture/Inst.xa iso/music/torture/Vocals.xa
+iso/music/30.xa: iso/music/lemon-lime/Inst.xa iso/music/lemon-lime/Vocals.xa iso/music/chlorophyll/Inst.xa iso/music/chlorophyll/Vocals.xa
+iso/music/31.xa: iso/music/inflorescence/Inst.xa iso/music/inflorescence/Vocals.xa iso/music/stargazer/Inst.xa iso/music/stargazer/Vocals.xa

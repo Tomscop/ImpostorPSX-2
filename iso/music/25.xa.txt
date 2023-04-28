@@ -1,0 +1,4 @@
+1 xa idk/Vocals.xa 1 0
+1 xa idk/Inst.xa 1 1
+1 xa esculent/Vocals.xa 1 2
+1 xa esculent/Inst.xa 1 3

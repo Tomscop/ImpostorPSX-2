@@ -1,0 +1,4 @@
+1 xa alpha-moogus/Vocals.xa 1 0
+1 xa alpha-moogus/Inst.xa 1 1
+1 xa actin-sus/Vocals.xa 1 2
+1 xa actin-sus/Inst.xa 1 3

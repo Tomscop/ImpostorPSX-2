@@ -1,0 +1,48 @@
+{
+	"animations": [
+		{
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		}
+	],
+	"input":  "iso/chars/redmungp/redMungParasite",
+	"outdir": "iso/chars/redmungp/",
+	"charname" : "RedmungusParasite",
+	"optimize" : false,
+	"optimizename" : "redmungusparasite",
+	"arcname" : "ArcMain",
+	"vrampos" : [
+		768,
+		0,
+		0,
+		481
+	],
+
+	"bpp" : 8,
+	"resize" : 0.15,
+	"xmlscale" : 1.0,
+	"padding" : 1,
+	"max_width" : 256,
+	"max_height" : 256
+}

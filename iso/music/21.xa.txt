@@ -1,0 +1,4 @@
+1 xa reinforcements/Vocals.xa 1 0
+1 xa reinforcements/Inst.xa 1 1
+1 xa armed/Vocals.xa 1 2
+1 xa armed/Inst.xa 1 3

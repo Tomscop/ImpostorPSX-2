@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				160,
+				0
+			],
+			"anim": "idle",
+			"fps": 12,
+			"name": "Dave Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				159,
+				3
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "Dave Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				156,
+				1
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "Dave Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				160,
+				5
+			],
+			"anim": "singUP",
+			"fps": 12,
+			"name": "Dave Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				163,
+				1
+			],
+			"anim": "singDOWN",
+			"fps": 12,
+			"name": "Dave Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				159,
+				-3
+			],
+			"anim": "die",
+			"fps": 12,
+			"name": "Dave Death",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Dave",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "dave",
+	"flip_x": false,
+	"healthbar_colors": [
+		55,
+		62,
+		146
+	],
+	"camera_position": [
+		-300,
+		160
+	],
+	"sing_duration": 6.1,
+	"scale": 0.9
+}

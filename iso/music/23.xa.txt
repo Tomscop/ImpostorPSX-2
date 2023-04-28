@@ -1,0 +1,4 @@
+1 xa ow/Vocals.xa 1 0
+1 xa ow/Inst.xa 1 1
+1 xa who/Vocals.xa 1 2
+1 xa who/Inst.xa 1 3

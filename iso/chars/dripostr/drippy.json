@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-90
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "DripIdle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				146,
+				-84
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "DripLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				-111
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "DripDown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				27,
+				13
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "DripUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				-84
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "DripRight",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/drippy",
+	"position": [
+		0,
+		90
+	],
+	"healthicon": "drippy",
+	"flip_x": false,
+	"healthbar_colors": [
+		188,
+		106,
+		223
+	],
+	"camera_position": [
+		-60,
+		100
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

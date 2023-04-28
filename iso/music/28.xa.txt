@@ -1,0 +1,4 @@
+1 xa chippin/Vocals.xa 1 0
+1 xa chippin/Inst.xa 1 1
+1 xa chipping/Vocals.xa 1 2
+1 xa chipping/Inst.xa 1 3

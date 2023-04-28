@@ -1,0 +1,219 @@
+all: \
+	iso/intro/intro.tim \
+	iso/menu/menu.arc \
+	iso/menu/loading.tim \
+	iso/icon16.tim \
+	iso/font/font.tim \
+	iso/stage/hud0.tim \
+	iso/stage/hud0pix.tim \
+	iso/stage/hud0old.tim \
+	iso/stage/hud1-1-2.tim \
+	iso/stage/hud1-3.tim \
+	iso/stage/hud1-ic.tim \
+	iso/stage/hud1-tt.tim \
+	iso/stage/hud1-jj.tim \
+	iso/stage/hud1-tom.tim \
+	iso/stage/hud1-log.tim \
+	iso/stage/hud1-hen.tim \
+	iso/stage/hud1-fp0.tim \
+	iso/stage/hud1-fp1.tim \
+	iso/stage/hud1-fp2.tim \
+	iso/stage/hud1-ph.tim \
+	iso/stage/count.tim \
+	iso/stage/countpix.tim \
+	iso/chars/bf/main.arc \
+	iso/chars/bfv1/main.arc \
+	iso/chars/blueow/main.arc \
+	iso/chars/going2ki/main.arc \
+	iso/chars/kid/main.arc \
+	iso/chars/bfdrip/main.arc \
+	iso/chars/picodrip/main.arc \
+	iso/chars/henry/main.arc \
+	iso/chars/charles/main.arc \
+	iso/chars/redv1/main.arc \
+	iso/chars/redow/main.arc \
+	iso/chars/yfronts/main.arc \
+	iso/chars/jerma/main.arc \
+	iso/chars/nuzzus/main.arc \
+	iso/chars/tobyfox/main.arc \
+	iso/chars/brown/main.arc \
+	iso/chars/dripostr/main.arc \
+	iso/chars/dave/main.arc \
+	iso/chars/amogus/main.arc \
+	iso/chars/jads/main.arc \
+	iso/chars/dad/main.arc \
+	iso/chars/gf/main.arc \
+	iso/chars/gf/tut.arc \
+	iso/chars/gf/speaker.tim \
+	iso/chars/gfv1/main.arc \
+	iso/chars/dead.tim \
+	iso/chars/blueow/dead.tim \
+	iso/chars/going2ki/dead.tim \
+	iso/chars/kid/dead.tim \
+	iso/stages/polus/back.arc \
+	iso/stages/polus/snow.arc \
+	iso/stages/polus/people.arc \
+	iso/stages/henry/back.arc \
+	iso/stages/v1/back.arc \
+	iso/stages/shields/back.arc \
+	iso/stages/jerma/back.arc \
+	iso/stages/jerma/aaaaaa.arc \
+	iso/stages/earthbnd/back.arc \
+	iso/stages/idk/back.arc \
+	iso/stages/electric/back.arc \
+	iso/stages/drip/back.arc \
+	iso/stages/office/back.arc \
+	iso/stages/o2/back.arc \
+	iso/stages/week1/back.arc \
+
+iso/%.tim: iso/%.png
+	tools/funkintimconv/funkintimconv $@ $<
+
+iso/%.arc:
+	tools/funkinarcpak/funkinarcpak $@ $^
+
+# Menu
+iso/menu/menu.arc: iso/menu/starbg.tim iso/menu/starfg.tim iso/menu/border.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/title.tim iso/menu/stuff.tim iso/menu/buttons.tim iso/menu/disk.tim
+
+
+# BF
+iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf2.tim iso/chars/bf/bf3.tim iso/chars/bf/bf4.tim iso/chars/bf/bf5.tim iso/chars/bf/bf6.tim
+
+# Henry Phone
+
+# BF V1
+iso/chars/bfv1/main.arc: iso/chars/bfv1/idle0.tim iso/chars/bfv1/left0.tim iso/chars/bfv1/down0.tim iso/chars/bfv1/up0.tim iso/chars/bfv1/right0.tim iso/chars/bfv1/leftm0.tim iso/chars/bfv1/downm0.tim iso/chars/bfv1/upm0.tim iso/chars/bfv1/rightm0.tim 
+
+# Blue Ow
+iso/chars/blueow/main.arc: iso/chars/blueow/idle0.tim iso/chars/blueow/left0.tim iso/chars/blueow/down0.tim iso/chars/blueow/up0.tim iso/chars/blueow/right0.tim iso/chars/blueow/lefth0.tim iso/chars/blueow/downh0.tim iso/chars/blueow/uph0.tim iso/chars/blueow/righth0.tim 
+
+# Going2KillEvery1
+iso/chars/going2ki/main.arc: iso/chars/going2ki/idle0.tim iso/chars/going2ki/idle1.tim iso/chars/going2ki/left0.tim iso/chars/going2ki/left1.tim iso/chars/going2ki/down0.tim iso/chars/going2ki/up0.tim iso/chars/going2ki/up1.tim iso/chars/going2ki/up2.tim iso/chars/going2ki/right0.tim iso/chars/going2ki/leftm0.tim iso/chars/going2ki/leftm1.tim iso/chars/going2ki/downm0.tim iso/chars/going2ki/upm0.tim iso/chars/going2ki/upm1.tim iso/chars/going2ki/rightm0.tim iso/chars/going2ki/idlemad0.tim iso/chars/going2ki/idlemad1.tim iso/chars/going2ki/leftmad0.tim iso/chars/going2ki/leftmad1.tim iso/chars/going2ki/downmad0.tim iso/chars/going2ki/downmad1.tim iso/chars/going2ki/downmad2.tim iso/chars/going2ki/upmad0.tim iso/chars/going2ki/rightma0.tim iso/chars/going2ki/rightma1.tim iso/chars/going2ki/leftmam0.tim iso/chars/going2ki/downmam0.tim iso/chars/going2ki/downmam1.tim iso/chars/going2ki/upmadm0.tim iso/chars/going2ki/rightmm0.tim 
+
+# Kid
+iso/chars/kid/main.arc: iso/chars/kid/idle0.tim iso/chars/kid/idle1.tim iso/chars/kid/idle2.tim iso/chars/kid/left0.tim iso/chars/kid/left1.tim iso/chars/kid/down0.tim iso/chars/kid/down1.tim iso/chars/kid/up0.tim iso/chars/kid/up1.tim iso/chars/kid/right0.tim iso/chars/kid/right1.tim 
+
+# BF Drip
+iso/chars/bfdrip/main.arc: iso/chars/bfdrip/idle0.tim iso/chars/bfdrip/idle1.tim iso/chars/bfdrip/left0.tim iso/chars/bfdrip/left1.tim iso/chars/bfdrip/down0.tim iso/chars/bfdrip/down1.tim iso/chars/bfdrip/up0.tim iso/chars/bfdrip/up1.tim iso/chars/bfdrip/right0.tim iso/chars/bfdrip/right1.tim iso/chars/bfdrip/leftm0.tim iso/chars/bfdrip/leftm1.tim iso/chars/bfdrip/downm0.tim iso/chars/bfdrip/downm1.tim iso/chars/bfdrip/upm0.tim iso/chars/bfdrip/upm1.tim iso/chars/bfdrip/rightm0.tim iso/chars/bfdrip/rightm1.tim 
+
+# Pico Drip
+iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idle1.tim iso/chars/picodrip/left0.tim iso/chars/picodrip/left1.tim iso/chars/picodrip/down0.tim iso/chars/picodrip/down1.tim iso/chars/picodrip/down2.tim iso/chars/picodrip/up0.tim iso/chars/picodrip/up1.tim iso/chars/picodrip/right0.tim iso/chars/picodrip/right1.tim iso/chars/picodrip/kill0.tim iso/chars/picodrip/kill1.tim iso/chars/picodrip/kill2.tim iso/chars/picodrip/kill3.tim iso/chars/picodrip/mongo0.tim 
+
+# Clowfoe
+
+# Biddle
+
+# Pip
+
+# Ziffy
+
+
+# Henry
+iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim iso/chars/henry/idle2.tim iso/chars/henry/left0.tim iso/chars/henry/left1.tim iso/chars/henry/left2.tim iso/chars/henry/down0.tim iso/chars/henry/down1.tim iso/chars/henry/up0.tim iso/chars/henry/right0.tim 
+
+# Charles
+iso/chars/charles/main.arc: iso/chars/charles/idle0.tim iso/chars/charles/idle1.tim iso/chars/charles/idle2.tim iso/chars/charles/idle3.tim iso/chars/charles/idle4.tim iso/chars/charles/left0.tim iso/chars/charles/left1.tim iso/chars/charles/down0.tim iso/chars/charles/down1.tim iso/chars/charles/up0.tim iso/chars/charles/up1.tim iso/chars/charles/right0.tim iso/chars/charles/right1.tim iso/chars/charles/henry0.tim iso/chars/charles/henry1.tim iso/chars/charles/henry2.tim iso/chars/charles/henry3.tim iso/chars/charles/henry4.tim iso/chars/charles/henry5.tim iso/chars/charles/henry6.tim iso/chars/charles/henry7.tim iso/chars/charles/plan0.tim iso/chars/charles/plan1.tim iso/chars/charles/plan2.tim iso/chars/charles/plan3.tim iso/chars/charles/plan4.tim iso/chars/charles/plan5.tim iso/chars/charles/plan6.tim iso/chars/charles/plan7.tim iso/chars/charles/plan8.tim iso/chars/charles/plan9.tim iso/chars/charles/plan10.tim iso/chars/charles/plan11.tim iso/chars/charles/plan12.tim 
+
+# Ellie
+
+# RHM
+
+# Reginald
+
+# Red V1
+iso/chars/redv1/main.arc: iso/chars/redv1/idle0.tim iso/chars/redv1/idle1.tim iso/chars/redv1/idle2.tim iso/chars/redv1/idle3.tim iso/chars/redv1/left0.tim iso/chars/redv1/down0.tim iso/chars/redv1/up0.tim iso/chars/redv1/right0.tim 
+
+# Red Ow
+iso/chars/redow/main.arc: iso/chars/redow/idle0.tim iso/chars/redow/left0.tim iso/chars/redow/down0.tim iso/chars/redow/up0.tim iso/chars/redow/right0.tim iso/chars/redow/right1.tim 
+
+# Y Fronts
+iso/chars/yfronts/main.arc: iso/chars/yfronts/idle0.tim iso/chars/yfronts/idle1.tim iso/chars/yfronts/left0.tim iso/chars/yfronts/down0.tim iso/chars/yfronts/up0.tim iso/chars/yfronts/right0.tim iso/chars/yfronts/right1.tim iso/chars/yfronts/idlem0.tim iso/chars/yfronts/idlem1.tim iso/chars/yfronts/leftm0.tim iso/chars/yfronts/leftm1.tim iso/chars/yfronts/downm0.tim iso/chars/yfronts/upm0.tim iso/chars/yfronts/upm1.tim iso/chars/yfronts/rightm0.tim iso/chars/yfronts/rightm1.tim 
+
+# Jerma
+iso/chars/jerma/main.arc: iso/chars/jerma/idle0.tim iso/chars/jerma/idle1.tim iso/chars/jerma/idle2.tim iso/chars/jerma/left0.tim iso/chars/jerma/left1.tim iso/chars/jerma/down0.tim iso/chars/jerma/down1.tim iso/chars/jerma/up0.tim iso/chars/jerma/up1.tim iso/chars/jerma/right0.tim iso/chars/jerma/right1.tim 
+
+# Nuzzus
+iso/chars/nuzzus/main.arc: iso/chars/nuzzus/idle0.tim iso/chars/nuzzus/idle1.tim iso/chars/nuzzus/left0.tim iso/chars/nuzzus/down0.tim iso/chars/nuzzus/up0.tim iso/chars/nuzzus/right0.tim 
+
+# Toby Fox
+iso/chars/tobyfox/main.arc: iso/chars/tobyfox/idle0.tim iso/chars/tobyfox/idle1.tim iso/chars/tobyfox/left0.tim iso/chars/tobyfox/down0.tim iso/chars/tobyfox/up0.tim iso/chars/tobyfox/up1.tim iso/chars/tobyfox/right0.tim iso/chars/tobyfox/right1.tim 
+
+# Brown
+iso/chars/brown/main.arc: iso/chars/brown/idle0.tim iso/chars/brown/idle1.tim iso/chars/brown/idle2.tim iso/chars/brown/idle3.tim iso/chars/brown/idle4.tim iso/chars/brown/idle5.tim iso/chars/brown/left0.tim iso/chars/brown/left1.tim iso/chars/brown/down0.tim iso/chars/brown/down1.tim iso/chars/brown/up0.tim iso/chars/brown/up1.tim iso/chars/brown/up2.tim iso/chars/brown/right0.tim 
+
+# Drippostor
+iso/chars/dripostr/main.arc: iso/chars/dripostr/idle0.tim iso/chars/dripostr/idle1.tim iso/chars/dripostr/idle2.tim iso/chars/dripostr/idle3.tim iso/chars/dripostr/idle4.tim iso/chars/dripostr/left0.tim iso/chars/dripostr/left1.tim iso/chars/dripostr/left2.tim iso/chars/dripostr/left3.tim iso/chars/dripostr/down0.tim iso/chars/dripostr/down1.tim iso/chars/dripostr/up0.tim iso/chars/dripostr/up1.tim iso/chars/dripostr/right0.tim iso/chars/dripostr/right1.tim iso/chars/dripostr/right2.tim iso/chars/dripostr/right3.tim iso/chars/dripostr/right4.tim 
+
+# Dave
+iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/chars/dave/idle2.tim iso/chars/dave/idle3.tim iso/chars/dave/left0.tim iso/chars/dave/left1.tim iso/chars/dave/down0.tim iso/chars/dave/down1.tim iso/chars/dave/up0.tim iso/chars/dave/up1.tim iso/chars/dave/right0.tim iso/chars/dave/jump0.tim iso/chars/dave/jump1.tim iso/chars/dave/jump2.tim iso/chars/dave/jump3.tim iso/chars/dave/jump4.tim iso/chars/dave/jump5.tim iso/chars/dave/jump6.tim iso/chars/dave/jump7.tim iso/chars/dave/jump8.tim iso/chars/dave/jump9.tim iso/chars/dave/jump10.tim 
+
+# Monotone Doc
+
+# Fabs
+
+# Amogus
+iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim iso/chars/amogus/down0.tim iso/chars/amogus/up0.tim iso/chars/amogus/right0.tim 
+
+# Cval
+
+# Pip
+
+# Pip Torture
+
+# Cval Torture
+
+# Jads
+iso/chars/jads/main.arc: iso/chars/jads/idle0.tim iso/chars/jads/idle1.tim iso/chars/jads/idle2.tim iso/chars/jads/left0.tim iso/chars/jads/left1.tim iso/chars/jads/down0.tim iso/chars/jads/down1.tim iso/chars/jads/up0.tim iso/chars/jads/right0.tim iso/chars/jads/right1.tim 
+
+# Dad
+iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/chars/dad/left.tim iso/chars/dad/down.tim iso/chars/dad/up.tim iso/chars/dad/right.tim
+
+
+# GF
+iso/chars/gf/main.arc: iso/chars/gf/gf0.tim iso/chars/gf/gf1.tim iso/chars/gf/gf2.tim
+iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
+
+# GF V1
+iso/chars/gfv1/main.arc: iso/chars/gfv1/gf0.tim iso/chars/gfv1/gf1.tim iso/chars/gfv1/gf2.tim iso/chars/gfv1/gf3.tim iso/chars/gfv1/gf4.tim iso/chars/gfv1/gf5.tim 
+
+# Loggo MA
+
+
+# Polus
+iso/stages/polus/back.arc: iso/stages/polus/back0.tim iso/stages/polus/back1.tim iso/stages/polus/back2.tim iso/stages/polus/body.tim
+iso/stages/polus/snow.arc: iso/stages/polus/snow0.tim iso/stages/polus/snow1.tim iso/stages/polus/snow2.tim iso/stages/polus/snow3.tim iso/stages/polus/snow4.tim iso/stages/polus/snow5.tim iso/stages/polus/snow6.tim iso/stages/polus/snow7.tim iso/stages/polus/snow8.tim iso/stages/polus/snow9.tim iso/stages/polus/snow10.tim iso/stages/polus/snow11.tim 
+iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/people1.tim iso/stages/polus/people2.tim iso/stages/polus/people3.tim
+
+# Henry Stage
+iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
+
+# V1
+iso/stages/v1/back.arc: iso/stages/v1/back0.tim iso/stages/v1/back1.tim
+
+# Shields
+iso/stages/shields/back.arc: iso/stages/shields/back0.tim iso/stages/shields/back1.tim iso/stages/shields/ending.tim iso/stages/shields/alert.tim
+
+# Jerma Room
+iso/stages/jerma/back.arc: iso/stages/jerma/back0.tim iso/stages/jerma/back1.tim
+iso/stages/jerma/aaaaaa.arc: iso/stages/jerma/aaaaaa0.tim iso/stages/jerma/aaaaaa1.tim iso/stages/jerma/aaaaaa2.tim iso/stages/jerma/aaaaaa3.tim iso/stages/jerma/aaaaaa4.tim iso/stages/jerma/aaaaaa5.tim iso/stages/jerma/aaaaaa6.tim iso/stages/jerma/aaaaaa7.tim 
+
+# Earthbound
+iso/stages/earthbnd/back.arc: iso/stages/earthbnd/battle0.tim iso/stages/earthbnd/battle1.tim iso/stages/earthbnd/battle2.tim iso/stages/earthbnd/battle3.tim iso/stages/earthbnd/battle4.tim iso/stages/earthbnd/battle5.tim iso/stages/earthbnd/battle6.tim iso/stages/earthbnd/battle7.tim iso/stages/earthbnd/battle8.tim iso/stages/earthbnd/battle9.tim iso/stages/earthbnd/battle10.tim iso/stages/earthbnd/battle11.tim iso/stages/earthbnd/battle12.tim iso/stages/earthbnd/battle13.tim iso/stages/earthbnd/battle14.tim iso/stages/earthbnd/battle15.tim iso/stages/earthbnd/battle16.tim iso/stages/earthbnd/battle17.tim iso/stages/earthbnd/battle18.tim iso/stages/earthbnd/battle19.tim 
+
+# Idk
+iso/stages/idk/back.arc: iso/stages/idk/back0.tim iso/stages/idk/back1.tim
+
+# Electrical
+iso/stages/electric/back.arc: iso/stages/electric/back0.tim iso/stages/electric/back1.tim
+
+# Drip
+iso/stages/drip/back.arc: iso/stages/drip/back0.tim iso/stages/drip/back1.tim
+
+# Dave Office
+iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
+
+# O2
+iso/stages/o2/back.arc: iso/stages/o2/back0.tim iso/stages/o2/back1.tim
+
+# Week 1
+iso/stages/week1/back.arc: iso/stages/week1/back0.tim iso/stages/week1/back1.tim
