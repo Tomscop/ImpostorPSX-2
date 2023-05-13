@@ -56,6 +56,7 @@ all: \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/gfv1/main.arc \
 	iso/chars/dead.tim \
+	iso/chars/bfpixel/dead.tim \
 	iso/chars/blueow/dead.tim \
 	iso/chars/going2ki/dead.tim \
 	iso/chars/kid/dead.tim \
