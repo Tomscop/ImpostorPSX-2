@@ -63,6 +63,7 @@ static u32 Sounds[10];
 #include "character/picorc.h"
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
+#include "character/loggop.h"
 #include "character/bfv1.h"
 #include "character/blueow.h"
 #include "character/going2killevery1.h"
@@ -98,6 +99,8 @@ static u32 Sounds[10];
 #include "character/tomongus.h"
 #include "character/loggo.h"
 #include "character/spooker.h"
+#include "character/grinch.h"
+#include "character/clowfoeg.h"
 #include "character/henry.h"
 #include "character/charles.h"
 #include "character/redv1.h"
@@ -144,7 +147,8 @@ static u32 Sounds[10];
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/christmas.h"
-#include "stage/henrybg.h"
+#include "stage/gronch.h"
+#include "stage/henrybg.h" 
 #include "stage/v1.h"
 #include "stage/shields.h"
 #include "stage/jermaroom.h"
@@ -2358,6 +2362,8 @@ void Stage_Tick(void)
 				stage.black = true;
 			else if ((prtndr == true) && (stage.song_step <= -31))
 				stage.black = true;
+			else if (((stage.stage_id == StageId_Grinch) && (stage.song_step >= 255) && (stage.song_step <= 316)) || ((stage.stage_id == StageId_Grinch) && (stage.song_step >= 447) && (stage.song_step <= 466)))
+				stage.black = true;
 			else
 				stage.black = false;
 			
@@ -2862,7 +2868,7 @@ void Stage_Tick(void)
 			{
 				if (stage.mode < StageMode_2P)
 				{
-					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_SussusNuzzus))
+					if ((stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Grinch) && (stage.stage_id != StageId_SussusNuzzus))
 					{
 						//Perform health checks
 						if (stage.player_state[0].health <= 0 && stage.prefs.practice == 0)

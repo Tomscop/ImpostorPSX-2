@@ -77,6 +77,7 @@
 				<file name = "4.9evnt.cht" type = "data" source = "iso/music/reinforcements/events.json.cht"/>
 				<file name = "4.10n.cht" type = "data" source = "iso/music/armed/armed-hard.json.cht"/>
 				<file name = "4.10evnt.cht" type = "data" source = "iso/music/armed/events.json.cht"/>
+				<file name = "4.11n.cht" type = "data" source = "iso/music/grinch/grinch-hard.json.cht"/>
 			</dir>
 			
 			<!-- Week 5 assets -->
@@ -124,6 +125,7 @@
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
 				<!-- Boyfriend Tuesday assets -->
 				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
+				<file name = "loggop.arc" type = "data" source = "iso/chars/loggop/main.arc"/>
 				<!-- Henry Phone assets -->
 				<file name = "bfv1.arc" type = "data" source = "iso/chars/bfv1/main.arc"/>
 				<file name = "blueow.arc" type = "data" source = "iso/chars/blueow/main.arc"/>
@@ -143,6 +145,8 @@
 				<!-- Tomongus HD assets -->
 				<file name = "loggo.arc" type = "data" source = "iso/chars/loggo/main.arc"/>
 				<file name = "spooker.arc" type = "data" source = "iso/chars/spooker/main.arc"/>
+				<file name = "grinch.arc" type = "data" source = "iso/chars/grinch/main.arc"/>
+				<file name = "clowfoeg.arc" type = "data" source = "iso/chars/clowfoeg/main.arc"/>
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
 				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
 				<!-- Ellie assets -->
@@ -218,6 +222,8 @@
 				<file name = "people2.arc" type = "data" source = "iso/stages/christms/people.arc"/>
 				<file name = "person.arc" type = "data" source = "iso/stages/christms/person.arc"/>
 				<file name = "fire.arc" type = "data" source = "iso/stages/christms/fire.arc"/>
+				
+				<file name = "gronch.arc" type = "data" source = "iso/stages/gronch/back.arc"/>
 				
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
 				

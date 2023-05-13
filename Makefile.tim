@@ -24,6 +24,7 @@ all: \
 	iso/chars/bf/main.arc \
 	iso/chars/bfpixel/main.arc \
 	iso/chars/bfchrist/main.arc \
+	iso/chars/loggop/main.arc \
 	iso/chars/bfv1/main.arc \
 	iso/chars/blueow/main.arc \
 	iso/chars/going2ki/main.arc \
@@ -33,6 +34,8 @@ all: \
 	iso/chars/tomong/main.arc \
 	iso/chars/loggo/main.arc \
 	iso/chars/spooker/main.arc \
+	iso/chars/grinch/main.arc \
+	iso/chars/clowfoeg/main.arc \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
 	iso/chars/redv1/main.arc \
@@ -64,6 +67,7 @@ all: \
 	iso/stages/christms/people.arc \
 	iso/stages/christms/person.arc \
 	iso/stages/christms/fire.arc \
+	iso/stages/gronch/back.arc \
 	iso/stages/henry/back.arc \
 	iso/stages/v1/back.arc \
 	iso/stages/shields/back.arc \
@@ -97,6 +101,9 @@ iso/chars/bfpixel/main.arc: iso/chars/bfpixel/idle0.tim iso/chars/bfpixel/left0.
 
 # BF Christmas
 iso/chars/bfchrist/main.arc: iso/chars/bfchrist/idle0.tim iso/chars/bfchrist/idle1.tim iso/chars/bfchrist/idle2.tim iso/chars/bfchrist/idle3.tim iso/chars/bfchrist/left0.tim iso/chars/bfchrist/left1.tim iso/chars/bfchrist/down.tim iso/chars/bfchrist/up.tim iso/chars/bfchrist/right0.tim iso/chars/bfchrist/right1.tim iso/chars/bfchrist/leftm0.tim iso/chars/bfchrist/leftm1.tim iso/chars/bfchrist/downm.tim iso/chars/bfchrist/upm.tim iso/chars/bfchrist/rightm0.tim iso/chars/bfchrist/rightm1.tim
+
+# Loggo Playable
+iso/chars/loggop/main.arc: iso/chars/loggop/loggo0.tim iso/chars/loggop/loggo1.tim iso/chars/loggop/loggo2.tim
 
 # Henry Phone
 
@@ -137,6 +144,12 @@ iso/chars/loggo/main.arc: iso/chars/loggo/idle0.tim iso/chars/loggo/idle1.tim is
 
 # Spooker
 iso/chars/spooker/main.arc: iso/chars/spooker/idle0.tim iso/chars/spooker/idle1.tim iso/chars/spooker/idle2.tim iso/chars/spooker/idle3.tim iso/chars/spooker/idle4.tim iso/chars/spooker/left0.tim iso/chars/spooker/left1.tim iso/chars/spooker/down.tim iso/chars/spooker/up0.tim iso/chars/spooker/up1.tim iso/chars/spooker/right0.tim iso/chars/spooker/right1.tim
+
+# Grinch
+iso/grinch/main.arc: iso/grinch/idle0.tim iso/grinch/idle1.tim iso/grinch/idle2.tim iso/grinch/left.tim iso/grinch/down.tim iso/grinch/up.tim iso/grinch/right.tim
+
+# ClowfoeG
+iso/chars/clowfoeg/main.arc: iso/chars/clowfoeg/clow0.tim iso/chars/clowfoeg/clow1.tim iso/chars/clowfoeg/clow2.tim iso/chars/clowfoeg/clow3.tim
 
 # Henry
 iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim iso/chars/henry/idle2.tim iso/chars/henry/left0.tim iso/chars/henry/left1.tim iso/chars/henry/left2.tim iso/chars/henry/down0.tim iso/chars/henry/down1.tim iso/chars/henry/up0.tim iso/chars/henry/right0.tim 
@@ -227,6 +240,9 @@ iso/stages/christms/back.arc: iso/stages/christms/back0.tim iso/stages/christms/
 iso/stages/christms/people.arc: iso/stages/christms/people0.tim iso/stages/christms/people1.tim
 iso/stages/christms/person.arc: iso/stages/christms/person.tim
 iso/stages/christms/fire.arc: iso/stages/christms/fire.tim
+
+# Gronch
+iso/stages/gronch/back.arc: iso/stages/gronch/back0.tim iso/stages/gronch/back1.tim iso/stages/gronch/back2.tim iso/stages/gronch/back3.tim
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim

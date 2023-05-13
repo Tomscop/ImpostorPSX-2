@@ -25,6 +25,7 @@
 #define EVENTS_FLAG_PINK      (1 << 11) //pink toggle
 #define EVENTS_FLAG_WHOCAM    (1 << 12) //Cam lock in Who
 #define EVENTS_FLAG_VTCAM     (1 << 13) //Cam lock in Voting Time
+#define EVENTS_FLAG_BARK      (1 << 14) //Bark
 
 #define EVENTS_FLAG_PLAYED    (1 << 15) //Event has been already played
 

@@ -140,6 +140,11 @@ static void Events_GetEventsValue(Event* event)
 			}
 			break;
 		}
+		case EVENTS_FLAG_BARK: //Bark!!
+		{
+			stage.opponent2->set_anim(stage.opponent2, CharAnim_Up);
+			break;
+		}
 		case EVENTS_FLAG_BOP: //Alter Camera Bop!!
 		{
 			//Value 1

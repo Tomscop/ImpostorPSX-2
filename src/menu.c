@@ -1401,6 +1401,7 @@ void Menu_Tick(void)
 			} menu_options4[] = {
 				{StageId_Christmas, 0xFF9271FD, "Christmas"},
 				{StageId_Spookpostor, 0xFF9271FD, "Spookpostor"},
+				{StageId_Grinch, 0xFF9271FD, "Grinch"},
 			};
 			
 			static const struct

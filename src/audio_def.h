@@ -52,6 +52,7 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_28, XA_LENGTH(7909)}, //XA_Chipping
 	//29.XA
 	{XA_29, XA_LENGTH(12254)}, //XA_Torture
+	{XA_29, XA_LENGTH(10017)}, //XA_Grinch
 	//30.XA
 	{XA_30, XA_LENGTH(9965)}, //XA_LemonLime
 	{XA_30, XA_LENGTH(13714)}, //XA_Chlorophyll
@@ -133,6 +134,7 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"chipping", true}, //XA_Chipping
 	//29.XA
 	{"torture", true}, //XA_Torture
+	{"grinch", true}, //XA_Grinch
 	//30.XA
 	{"lemonlime", true}, //XA_LemonLime
 	{"chlorophyll", true}, //XA_Chlorophyll

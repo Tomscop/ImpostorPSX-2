@@ -55,6 +55,7 @@ struct Note
 #define EVENTS_FLAG_PINK      (1 << 11) //pink toggle
 #define EVENTS_FLAG_WHOCAM    (1 << 12) //Cam lock in Who
 #define EVENTS_FLAG_VTCAM     (1 << 13) //Cam lock in Voting Time
+#define EVENTS_FLAG_BARK      (1 << 14) //Bark
 
 #define EVENTS_FLAG_PLAYED     (1 << 15) //Event has been already played
 
@@ -141,6 +142,9 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 	
 	if (i[0 + position] == "Cam lock in Voting Time")
 		event_src.event |= EVENTS_FLAG_VTCAM;
+	
+	if (i[0 + position] == "Bark")
+		event_src.event |= EVENTS_FLAG_BARK;
 	
 	if (event_src.event & EVENTS_FLAG_VARIANT)
 	{
@@ -257,6 +261,15 @@ void Events_Read(json& i, Event& event_src, std::vector<Event>& event_target, ui
 				i[2 + position] = "0";
 			if (i[2 + position] == "dad")
 				i[2 + position] = "1";
+		}
+		if (event_src.event & EVENTS_FLAG_BARK)
+		{
+			//Default values
+			if (i[1 + position] == "singUP")
+				i[1 + position] = "0";
+			
+			if (i[2 + position] == "GF")
+				i[2 + position] = "0";
 		}
 
 		//Get values information

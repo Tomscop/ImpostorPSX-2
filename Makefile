@@ -26,6 +26,7 @@ SRCS = src/main.c \
 	src/character/bf.c \
 	src/character/bfpixel.c \
 	src/character/bfchristmas.c \
+	src/character/loggop.c \
 	src/character/bfv1.c \
 	src/character/blueow.c \
 	src/character/going2killevery1.c \
@@ -35,6 +36,8 @@ SRCS = src/main.c \
 	src/character/tomongus.c \
 	src/character/loggo.c \
 	src/character/spooker.c \
+	src/character/grinch.c \
+	src/character/clowfoeg.c \
 	src/character/henry.c \
 	src/character/charles.c \
 	src/character/redv1.c \
@@ -56,6 +59,7 @@ SRCS = src/main.c \
 	src/stage/polus.c \
 	src/stage/cafeteria.c \
 	src/stage/christmas.c \
+	src/stage/gronch.c \
 	src/stage/henrybg.c \
 	src/stage/v1.c \
 	src/stage/shields.c \

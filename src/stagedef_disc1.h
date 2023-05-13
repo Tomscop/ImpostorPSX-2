@@ -650,6 +650,24 @@
 		
 		StageId_Spookpostor, 0
 	},
+	{ //StageId_Grinch (Grinch)
+		//Characters
+		{Char_LoggoP_New,    FIXED_DEC(315,1),  FIXED_DEC(158,1)},
+        {NULL},
+		{Char_Grinch_New, FIXED_DEC(88,1),  FIXED_DEC(76,1)},
+		{Char_ClowfoeG_New, FIXED_DEC(183,1),  FIXED_DEC(154,1)},
+		{NULL},
+		
+		//Stage background
+		Back_Gronch_New,
+		
+		//Song info
+		4, 11,
+		XA_Grinch, 2,
+		"Grinch", "Composer: EthanTheDoodler", "",
+		
+		StageId_Grinch, 0
+	},
 	
 	{ //StageId_Titular (Titular)
 		//Characters

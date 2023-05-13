@@ -80,6 +80,7 @@ typedef enum
 	XA_Chipping, //Chipping
 	//29.XA
 	XA_Torture, //Torture
+	XA_Grinch, //Grinch
 	//30.XA
 	XA_LemonLime, //Lemon Lime
 	XA_Chlorophyll, //Chlorophyll

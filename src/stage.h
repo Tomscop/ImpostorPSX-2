@@ -84,6 +84,7 @@ typedef enum
 	
 	StageId_Christmas, //Christmas
 	StageId_Spookpostor, //Spookpostor
+	StageId_Grinch, //Grinch
 	
 	StageId_Titular, //Titular
 	StageId_GreatestPlan, //Greatest Plan
