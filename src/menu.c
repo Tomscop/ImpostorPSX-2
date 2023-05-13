@@ -1236,7 +1236,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))
 				{
-					if ((menu.select == 11) || (menu.select == 0))
+					if ((menu.select == 0) || (menu.select == 9) || (menu.select == 10) || (menu.select == 11))
 					{
 					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
 					{
@@ -1613,7 +1613,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					if ((menu.freeplaypage == 5) || (menu.freeplaypage == 6) || (menu.freeplaypage == 7) || (menu.freeplaypage == 8) || (menu.freeplaypage == 9))
+					if ((menu.freeplaypage == 3) || (menu.freeplaypage == 4) || (menu.freeplaypage == 5) || (menu.freeplaypage == 6) || (menu.freeplaypage == 7) || (menu.freeplaypage == 8) || (menu.freeplaypage == 9))
 					{
 					if ((menu.select != 12) || ((menu.select == 12) && (stage.prefs.defeat != 1)))
 					{
@@ -1708,6 +1708,18 @@ void Menu_Tick(void)
 				21
 			};
 			Gfx_DrawTex(&menu.tex_story, &upperbar_src, &upperbar_dst);
+			
+			menu.font_arial.draw(&menu.font_arial,
+				"2",
+				285,
+				204,
+				FontAlign_Left
+			);
+			
+			//Draw disk thing
+			RECT diskn_src = {  0, 73, 36, 36};
+			RECT diskn_dst = {284,204, 72, 72};
+			Gfx_DrawTex(&menu.tex_disk, &diskn_src, &diskn_dst);
 			
 			//Draw options
 			s32 next_scroll = menu.select * FIXED_DEC(32,1);

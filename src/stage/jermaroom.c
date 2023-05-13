@@ -181,13 +181,13 @@ StageBack *Back_JermaRoom_New(void)
 	this->back.free = Back_JermaRoom_Free;
 	
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG2\\JERMA.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG\\JERMA.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load aaaaaa textures
-	this->arc_aaaaaa = IO_Read("\\BG2\\AAAAAA.ARC;1");
+	this->arc_aaaaaa = IO_Read("\\BG\\AAAAAA.ARC;1");
 	this->arc_aaaaaa_ptr[0] = Archive_Find(this->arc_aaaaaa, "aaaaaa0.tim");
 	this->arc_aaaaaa_ptr[1] = Archive_Find(this->arc_aaaaaa, "aaaaaa1.tim");
 	this->arc_aaaaaa_ptr[2] = Archive_Find(this->arc_aaaaaa, "aaaaaa2.tim");

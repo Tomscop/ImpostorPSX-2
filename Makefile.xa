@@ -1,6 +1,9 @@
 all: \
   iso/music/menu.xa \
   iso/music/gameovr.xa \
+  iso/music/17.xa \
+  iso/music/18.xa \
+  iso/music/19.xa \
   iso/music/20.xa \
   iso/music/21.xa \
   iso/music/22.xa \
@@ -23,6 +26,9 @@ iso/music/%.xa:
 # XA interleaves
 iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa
 iso/music/gameovr.xa: iso/music/gameoverj.xa iso/music/gameoverp.xa iso/music/gameoverh.xa
+iso/music/17.xa: iso/music/sussy-bussy/Inst.xa iso/music/sussy-bussy/Vocals.xa iso/music/rivals/Inst.xa iso/music/rivals/Vocals.xa
+iso/music/18.xa: iso/music/chewmate/Inst.xa iso/music/chewmate/Vocals.xa iso/music/tomongus-tuesday/Inst.xa iso/music/tomongus-tuesday/Vocals.xa
+iso/music/19.xa: iso/music/christmas/Inst.xa iso/music/christmas/Vocals.xa iso/music/spookpostor/Inst.xa iso/music/spookpostor/Vocals.xa
 iso/music/20.xa: iso/music/titular/Inst.xa iso/music/titular/Vocals.xa iso/music/greatest-plan/Inst.xa iso/music/greatest-plan/Vocals.xa
 iso/music/21.xa: iso/music/reinforcements/Inst.xa iso/music/reinforcements/Vocals.xa iso/music/armed/Inst.xa iso/music/armed/Vocals.xa
 iso/music/22.xa: iso/music/alpha-moogus/Inst.xa iso/music/alpha-moogus/Vocals.xa iso/music/actin-sus/Inst.xa iso/music/actin-sus/Vocals.xa

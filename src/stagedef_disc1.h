@@ -543,54 +543,54 @@
 	
 	{ //StageId_SussyBussy (Sussy Bussy)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-        {NULL},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Cafeteria_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 1,
+		XA_SussyBussy, 0,
 		"Sussy Bussy", "Composer: Saruky", "",
 		
 		StageId_Rivals, 0
 	},
 	{ //StageId_Rivals (Rivals)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-        {NULL},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Cafeteria_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 2,
+		XA_Rivals, 2,
 		"Rivals", "Composer: Keoni", "",
 		
 		StageId_Chewmate, 0
 	},
 	{ //StageId_Chewmate (Chewmate)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFPixel_New,    FIXED_DEC(684,1),  FIXED_DEC(452,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Tomongus_New, FIXED_DEC(396,1),  FIXED_DEC(458,1)},
         {NULL},
-        {NULL},
+		{Char_GFPixel_New,     FIXED_DEC(516,1),  FIXED_DEC(348,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Cafeteria_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 3,
+		XA_Chewmate, 0,
 		"Chewmate", "Composer: Moonmistt", "",
 		
 		StageId_Chewmate, 0
@@ -601,14 +601,14 @@
         {NULL},
 		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
-        {NULL},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
 		Back_Week1_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 4,
+		XA_TomongusTuesday, 2,
 		"Tomongus Tuesday", "Composer: Emihead", "",
 		
 		StageId_TomongusTuesday, 0
@@ -616,36 +616,36 @@
 	
 	{ //StageId_Christmas (Christmas)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFChristmas_New,    FIXED_DEC(408,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Loggo_New, FIXED_DEC(192,1),  FIXED_DEC(182,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Christmas_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 5,
+		XA_Christmas, 0,
 		"Christmas", "Composer: emihead", "",
 		
 		StageId_Spookpostor, 0
 	},
 	{ //StageId_Spookpostor (Spookpostor)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFChristmas_New,    FIXED_DEC(408,1),  FIXED_DEC(168,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Spooker_New, FIXED_DEC(167,1),  FIXED_DEC(134,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Christmas_New,
 		
 		//Song info
-		4, 7,
-		XA_Titular, 0,
+		4, 6,
+		XA_Spookpostor, 2,
 		"Spookpostor", "Composer: Rareblin", "",
 		
 		StageId_Spookpostor, 0

@@ -4,7 +4,7 @@
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-#include "henrybg.h"
+#include "henryBG.h"
 
 #include "../archive.h"
 #include "../mem.h"
@@ -77,7 +77,7 @@ StageBack *Back_Henry_New(void)
 	this->back.free = Back_Henry_Free;
 
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG2\\HENRY.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG\\HENRY.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);

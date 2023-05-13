@@ -92,7 +92,7 @@ StageBack *Back_DaveOffice_New(void)
 	this->back.free = Back_DaveOffice_Free;
 	
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG2\\OFFICE.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG\\OFFICE.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);

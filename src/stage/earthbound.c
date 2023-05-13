@@ -182,7 +182,7 @@ StageBack *Back_Earthbound_New(void)
 	this->back.free = Back_Earthbound_Free;
 	
 	//Load battle textures
-	this->arc_battle = IO_Read("\\BG2\\EARTHBND.ARC;1");
+	this->arc_battle = IO_Read("\\BG\\EARTHBND.ARC;1");
 	this->arc_battle_ptr[0] = Archive_Find(this->arc_battle, "battle0.tim");
 	this->arc_battle_ptr[1] = Archive_Find(this->arc_battle, "battle1.tim");
 	this->arc_battle_ptr[2] = Archive_Find(this->arc_battle, "battle2.tim");

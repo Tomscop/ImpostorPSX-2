@@ -14,6 +14,9 @@ typedef enum
 {
 	XA_Menu,   //MENU.XA
 	XA_GameOvr,   //GAMEOVR.XA
+	XA_17, //17
+	XA_18, //18
+	XA_19, //19
 	XA_20, //20
 	XA_21, //21
 	XA_22, //22
@@ -39,6 +42,15 @@ typedef enum
 	XA_GameOverJ, //Game Over Jorsawsee
 	XA_GameOverP, //Game Over Pico
 	XA_GameOverH, //Game Over Henry
+	//17.XA
+	XA_SussyBussy, //Sussy Bussy
+	XA_Rivals, //Rivals
+	//18.XA
+	XA_Chewmate, //Chewmate
+	XA_TomongusTuesday, //Tomongus Tuesday
+	//19.XA
+	XA_Christmas, //Christmas
+	XA_Spookpostor, //Spookpostor
 	//20.XA
 	XA_Titular, //Titular
 	XA_GreatestPlan, //Greatest Plan

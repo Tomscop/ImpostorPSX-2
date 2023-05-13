@@ -80,7 +80,7 @@ StageBack *Back_O2_New(void)
 	this->back.free = Back_O2_Free;
 	
 	//Load background textures
-	IO_Data arc_back = IO_Read("\\BG2\\O2.ARC;1");
+	IO_Data arc_back = IO_Read("\\BG\\O2.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
 	Mem_Free(arc_back);

@@ -364,7 +364,7 @@ Character *Char_Jads_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\OPPONET2\\JADS.ARC;1");
+	this->arc_main = IO_Read("\\OPPONENT\\JADS.ARC;1");
 	
 	const char **pathp = (const char *[]){
   "idle0.tim",

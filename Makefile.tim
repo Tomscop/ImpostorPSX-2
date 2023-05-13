@@ -22,12 +22,17 @@ all: \
 	iso/stage/count.tim \
 	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
+	iso/chars/bfpixel/main.arc \
+	iso/chars/bfchrist/main.arc \
 	iso/chars/bfv1/main.arc \
 	iso/chars/blueow/main.arc \
 	iso/chars/going2ki/main.arc \
 	iso/chars/kid/main.arc \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
+	iso/chars/tomong/main.arc \
+	iso/chars/loggo/main.arc \
+	iso/chars/spooker/main.arc \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
 	iso/chars/redv1/main.arc \
@@ -45,6 +50,7 @@ all: \
 	iso/chars/gf/main.arc \
 	iso/chars/gf/tut.arc \
 	iso/chars/gf/speaker.tim \
+	iso/chars/gfpixel/main.arc \
 	iso/chars/gfv1/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/blueow/dead.tim \
@@ -53,6 +59,11 @@ all: \
 	iso/stages/polus/back.arc \
 	iso/stages/polus/snow.arc \
 	iso/stages/polus/people.arc \
+	iso/stages/cafe/back.arc \
+	iso/stages/christms/back.arc \
+	iso/stages/christms/people.arc \
+	iso/stages/christms/person.arc \
+	iso/stages/christms/fire.arc \
 	iso/stages/henry/back.arc \
 	iso/stages/v1/back.arc \
 	iso/stages/shields/back.arc \
@@ -78,6 +89,14 @@ iso/menu/menu.arc: iso/menu/starbg.tim iso/menu/starfg.tim iso/menu/border.tim i
 
 # BF
 iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf2.tim iso/chars/bf/bf3.tim iso/chars/bf/bf4.tim iso/chars/bf/bf5.tim iso/chars/bf/bf6.tim
+
+# BF Pixel
+iso/chars/bfpixel/main.arc: iso/chars/bfpixel/idle0.tim iso/chars/bfpixel/left0.tim iso/chars/bfpixel/down0.tim iso/chars/bfpixel/up0.tim iso/chars/bfpixel/right0.tim iso/chars/bfpixel/leftm0.tim iso/chars/bfpixel/downm0.tim iso/chars/bfpixel/upm0.tim iso/chars/bfpixel/rightm0.tim iso/chars/bfpixel/idles0.tim iso/chars/bfpixel/lefts0.tim iso/chars/bfpixel/downs0.tim iso/chars/bfpixel/ups0.tim iso/chars/bfpixel/rights0.tim iso/chars/bfpixel/leftsm0.tim iso/chars/bfpixel/downsm0.tim iso/chars/bfpixel/upsm0.tim iso/chars/bfpixel/righsm0.tim iso/chars/bfpixel/shoot0.tim 
+
+# BF Tuesday
+
+# BF Christmas
+iso/chars/bfchrist/main.arc: iso/chars/bfchrist/idle0.tim iso/chars/bfchrist/idle1.tim iso/chars/bfchrist/idle2.tim iso/chars/bfchrist/idle3.tim iso/chars/bfchrist/left0.tim iso/chars/bfchrist/left1.tim iso/chars/bfchrist/down.tim iso/chars/bfchrist/up.tim iso/chars/bfchrist/right0.tim iso/chars/bfchrist/right1.tim iso/chars/bfchrist/leftm0.tim iso/chars/bfchrist/leftm1.tim iso/chars/bfchrist/downm.tim iso/chars/bfchrist/upm.tim iso/chars/bfchrist/rightm0.tim iso/chars/bfchrist/rightm1.tim
 
 # Henry Phone
 
@@ -107,6 +126,17 @@ iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idl
 
 # Ziffy
 
+
+# Tomongus
+iso/chars/tomong/main.arc: iso/chars/tomong/idle0.tim iso/chars/tomong/left0.tim iso/chars/tomong/down0.tim iso/chars/tomong/up0.tim iso/chars/tomong/right0.tim iso/chars/tomong/idleh0.tim iso/chars/tomong/lefth0.tim iso/chars/tomong/downh0.tim iso/chars/tomong/uph0.tim iso/chars/tomong/righth0.tim 
+
+# Tomongus HD
+
+# Loggo
+iso/chars/loggo/main.arc: iso/chars/loggo/idle0.tim iso/chars/loggo/idle1.tim iso/chars/loggo/left.tim iso/chars/loggo/down.tim iso/chars/loggo/up0.tim iso/chars/loggo/up1.tim iso/chars/loggo/right.tim
+
+# Spooker
+iso/chars/spooker/main.arc: iso/chars/spooker/idle0.tim iso/chars/spooker/idle1.tim iso/chars/spooker/idle2.tim iso/chars/spooker/idle3.tim iso/chars/spooker/idle4.tim iso/chars/spooker/left0.tim iso/chars/spooker/left1.tim iso/chars/spooker/down.tim iso/chars/spooker/up0.tim iso/chars/spooker/up1.tim iso/chars/spooker/right0.tim iso/chars/spooker/right1.tim
 
 # Henry
 iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim iso/chars/henry/idle2.tim iso/chars/henry/left0.tim iso/chars/henry/left1.tim iso/chars/henry/left2.tim iso/chars/henry/down0.tim iso/chars/henry/down1.tim iso/chars/henry/up0.tim iso/chars/henry/right0.tim 
@@ -173,6 +203,11 @@ iso/chars/dad/main.arc: iso/chars/dad/idle0.tim iso/chars/dad/idle1.tim iso/char
 iso/chars/gf/main.arc: iso/chars/gf/gf0.tim iso/chars/gf/gf1.tim iso/chars/gf/gf2.tim
 iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 
+# GF Pixel
+iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 
+
+# GF Tuesday
+
 # GF V1
 iso/chars/gfv1/main.arc: iso/chars/gfv1/gf0.tim iso/chars/gfv1/gf1.tim iso/chars/gfv1/gf2.tim iso/chars/gfv1/gf3.tim iso/chars/gfv1/gf4.tim iso/chars/gfv1/gf5.tim 
 
@@ -183,6 +218,15 @@ iso/chars/gfv1/main.arc: iso/chars/gfv1/gf0.tim iso/chars/gfv1/gf1.tim iso/chars
 iso/stages/polus/back.arc: iso/stages/polus/back0.tim iso/stages/polus/back1.tim iso/stages/polus/back2.tim iso/stages/polus/body.tim
 iso/stages/polus/snow.arc: iso/stages/polus/snow0.tim iso/stages/polus/snow1.tim iso/stages/polus/snow2.tim iso/stages/polus/snow3.tim iso/stages/polus/snow4.tim iso/stages/polus/snow5.tim iso/stages/polus/snow6.tim iso/stages/polus/snow7.tim iso/stages/polus/snow8.tim iso/stages/polus/snow9.tim iso/stages/polus/snow10.tim iso/stages/polus/snow11.tim 
 iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/people1.tim iso/stages/polus/people2.tim iso/stages/polus/people3.tim
+
+# Cafeteria
+iso/stages/cafe/back.arc: iso/stages/cafe/back0.tim iso/stages/cafe/back1.tim
+
+# Christmas
+iso/stages/christms/back.arc: iso/stages/christms/back0.tim iso/stages/christms/back1.tim
+iso/stages/christms/people.arc: iso/stages/christms/people0.tim iso/stages/christms/people1.tim
+iso/stages/christms/person.arc: iso/stages/christms/person.tim
+iso/stages/christms/fire.arc: iso/stages/christms/fire.tim
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
