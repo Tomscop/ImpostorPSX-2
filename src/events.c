@@ -12,7 +12,7 @@
 
 Events event_speed;
 
-static void Events_Check(Event* event)
+static void Events_GetEventsValue(Event* event)
 {
 	//Events
 	switch(event->event & EVENTS_FLAG_VARIANT)
@@ -120,16 +120,23 @@ static void Events_Check(Event* event)
 		}
 		case EVENTS_FLAG_VTCAM: //Cam lock in Who!!
 		{
-			if ((event->value1 >> FIXED_SHIFT) == 0)
+			if ((event->value1 >> FIXED_SHIFT) == 0) //zoom out
 			{
-				stage.camswitch = 0;
+				stage.camswitch = 5;
 			}
-			if ((event->value1 >> FIXED_SHIFT) == 1)
+			else if ((event->value1 >> FIXED_SHIFT) == 1)
 			{
 				if ((event->value2 >> FIXED_SHIFT) == 0)
 					stage.camswitch = 1;
 				if ((event->value2 >> FIXED_SHIFT) == 1)
 					stage.camswitch = 2;
+			}
+			else if ((event->value1 >> FIXED_SHIFT) == 2)
+			{
+				if ((event->value2 >> FIXED_SHIFT) == 0)
+					stage.camswitch = 3;
+				if ((event->value2 >> FIXED_SHIFT) == 1)
+					stage.camswitch = 4;
 			}
 			break;
 		}
@@ -258,6 +265,25 @@ static void Events_Check(Event* event)
 	}
 }
 
+static void Events_CheckEvents(Chart* chart)
+{
+	for (Event *event = chart->cur_event; event->pos != 0xFFFF; event++)
+	{
+		//Update event pointer
+		if (event->pos > (chart->note_scroll >> FIXED_SHIFT))
+			break;
+
+		else
+			chart->cur_event++;
+
+		if (event->event & EVENTS_FLAG_PLAYED)
+			continue;
+
+		Events_GetEventsValue(event);
+		event->event |= EVENTS_FLAG_PLAYED;
+	}
+}
+
 void Events_Tick(void)
 {
 	//Scroll Speed!
@@ -266,42 +292,8 @@ void Events_Tick(void)
 
 void Events_StartEvents(void)
 {
-	for (Event *event = stage.cur_event; event->pos != 0xFFFF; event++)
-	{
-		//Update event pointer
-		if (event->pos > (stage.note_scroll >> FIXED_SHIFT))
-			break;
-
-		else
-			stage.cur_event++;
-
-		if (event->event & EVENTS_FLAG_PLAYED)
-			continue;
-
-		Events_Check(event);
-		event->event |= EVENTS_FLAG_PLAYED;
-	}
-
-	//Same thing but for event.json
-	if (stage.event_chart_data != NULL)
-	{
-		for (Event *event = stage.event_cur_event; event->pos != 0xFFFF; event++)
-		{
-			//Update event pointer
-			if (event->pos > (stage.event_note_scroll >> FIXED_SHIFT))
-				break;
-
-			else
-				stage.event_cur_event++;
-
-			if (event->event & EVENTS_FLAG_PLAYED)
-				continue;
-
-			Events_Check(event);
-			event->event |= EVENTS_FLAG_PLAYED;
-		}
-	}
-
+	Events_CheckEvents(&stage.chart);
+	Events_CheckEvents(&stage.event_chart);
 	Events_Tick();
 }
 

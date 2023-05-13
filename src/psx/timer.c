@@ -198,6 +198,11 @@ void StageInfo_Draw()
 	if((stage.stage_id == StageId_Magmatic) || (stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Torture))
 		block_dst.w += FIXED_DEC(9,1);
 	
+	if (stage.song_step == -29)
+	{
+		blockx = -318;
+		blockx2 = -320;
+	}
 	if((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
 	{
 		blockx += 5;

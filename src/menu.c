@@ -959,6 +959,18 @@ void Menu_Tick(void)
 				}
 			}
 			
+			menu.font_arial.draw(&menu.font_arial,
+				"2",
+				285,
+				204,
+				FontAlign_Left
+			);
+			
+			//Draw disk thing
+			RECT diskn_src = {  0, 73, 36, 36};
+			RECT diskn_dst = {284,204, 72, 72};
+			Gfx_DrawTex(&menu.tex_disk, &diskn_src, &diskn_dst);
+			
 			//Draw logo
 			RECT logo_src = {  0,  0,191,164};
 			RECT logo_dst = {
@@ -1224,7 +1236,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))
 				{
-					if (menu.select == 11)
+					if ((menu.select == 11) || (menu.select == 0))
 					{
 					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
 					{
