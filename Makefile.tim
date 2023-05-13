@@ -146,7 +146,7 @@ iso/chars/loggo/main.arc: iso/chars/loggo/idle0.tim iso/chars/loggo/idle1.tim is
 iso/chars/spooker/main.arc: iso/chars/spooker/idle0.tim iso/chars/spooker/idle1.tim iso/chars/spooker/idle2.tim iso/chars/spooker/idle3.tim iso/chars/spooker/idle4.tim iso/chars/spooker/left0.tim iso/chars/spooker/left1.tim iso/chars/spooker/down.tim iso/chars/spooker/up0.tim iso/chars/spooker/up1.tim iso/chars/spooker/right0.tim iso/chars/spooker/right1.tim
 
 # Grinch
-iso/grinch/main.arc: iso/grinch/idle0.tim iso/grinch/idle1.tim iso/grinch/idle2.tim iso/grinch/left.tim iso/grinch/down.tim iso/grinch/up.tim iso/grinch/right.tim
+iso/chars/grinch/main.arc: iso/chars/grinch/idle0.tim iso/chars/grinch/idle1.tim iso/chars/grinch/idle2.tim iso/chars/grinch/left.tim iso/chars/grinch/down.tim iso/chars/grinch/up.tim iso/chars/grinch/right.tim
 
 # ClowfoeG
 iso/chars/clowfoeg/main.arc: iso/chars/clowfoeg/clow0.tim iso/chars/clowfoeg/clow1.tim iso/chars/clowfoeg/clow2.tim iso/chars/clowfoeg/clow3.tim

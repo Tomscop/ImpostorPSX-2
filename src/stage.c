@@ -3090,6 +3090,15 @@ void Stage_Tick(void)
 				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
 				stage.player_state[1].charactersecond = NULL;
 			}
+			else if (stage.stage_id == StageId_O2)
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = NULL;
+				stage.player_state[1].charactersecond = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+			}
 			else if (stage.stage_id == StageId_Victory)
 			{
 				if ((stage.camswitch == 0) || (stage.camswitch == 1) || (stage.camswitch == 4))
@@ -3105,14 +3114,22 @@ void Stage_Tick(void)
 					stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = NULL;
 			}
-			else if (stage.stage_id == StageId_O2)
+			else if (stage.stage_id == StageId_Grinch)
 			{
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = NULL;
-				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
-				stage.player_state[1].character2 = NULL;
-				stage.player_state[1].charactersecond = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				if (stage.song_step <= 722)
+				{
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+					stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				}
+				else
+				{
+					stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+					stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				}
+				stage.player_state[1].charactersecond = NULL;
 			}
 			else
 			{
