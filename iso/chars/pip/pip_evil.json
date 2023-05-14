@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Pip Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-25,
+				-9
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Pip Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-26,
+				22
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Pip Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-49,
+				9
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Pip Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				11,
+				3
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Pip Right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/pip_evil",
+	"position": [
+		-100,
+		110
+	],
+	"healthicon": "pip",
+	"flip_x": false,
+	"healthbar_colors": [
+		254,
+		170,
+		71
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

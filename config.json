@@ -24,24 +24,19 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "pip",
-			"imgname" : "hi",
-			"hname"   : "Hi"
 		}
 	],
-	"input":  "iso/chars/cval/cval",
-	"outdir": "iso/chars/cval/",
-	"charname" : "Cval",
+	"input":  "iso/chars/pip/pip",
+	"outdir": "iso/chars/pip/",
+	"charname" : "Pip",
 	"optimize" : false,
-	"optimizename" : "cval",
+	"optimizename" : "pip",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		704,
+		640,
 		0,
 		0,
-		481
+		480
 	],
 
 	"bpp" : 4,

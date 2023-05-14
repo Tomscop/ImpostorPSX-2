@@ -135,7 +135,7 @@
 				<file name = "picodrip.arc" type = "data" source = "iso/chars/picodrip/main.arc"/>
 				<!-- Clowfoe assets -->
 				<!-- Biddle assets -->
-				<!-- Pip assets -->
+				<file name = "pip.arc" type = "data" source = "iso/chars/pip/main.arc"/>
 				<!-- Ziffy assets -->
 			</dir>
 			

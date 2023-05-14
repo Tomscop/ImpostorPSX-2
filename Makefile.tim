@@ -31,6 +31,7 @@ all: \
 	iso/chars/kid/main.arc \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
+	iso/chars/pip/main.arc \
 	iso/chars/tomong/main.arc \
 	iso/chars/loggo/main.arc \
 	iso/chars/spooker/main.arc \
@@ -133,6 +134,7 @@ iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idl
 # Biddle
 
 # Pip
+iso/chars/pip/main.arc: iso/chars/pip/idle0.tim iso/chars/pip/idle1.tim iso/chars/pip/idle2.tim iso/chars/pip/idle3.tim iso/chars/pip/idle4.tim iso/chars/pip/idle5.tim iso/chars/pip/left0.tim iso/chars/pip/left1.tim iso/chars/pip/left2.tim iso/chars/pip/down0.tim iso/chars/pip/down1.tim iso/chars/pip/down2.tim iso/chars/pip/up0.tim iso/chars/pip/up1.tim iso/chars/pip/up2.tim iso/chars/pip/right0.tim iso/chars/pip/right1.tim iso/chars/pip/right2.tim 
 
 # Ziffy
 
@@ -202,8 +204,6 @@ iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim
 
 # Cval
 iso/chars/cval/main.arc: iso/chars/cval/idle0.tim iso/chars/cval/idle1.tim iso/chars/cval/idle2.tim iso/chars/cval/idle3.tim iso/chars/cval/idle4.tim iso/chars/cval/idle5.tim iso/chars/cval/left0.tim iso/chars/cval/left1.tim iso/chars/cval/left2.tim iso/chars/cval/left3.tim iso/chars/cval/down0.tim iso/chars/cval/down1.tim iso/chars/cval/down2.tim iso/chars/cval/up0.tim iso/chars/cval/up1.tim iso/chars/cval/up2.tim iso/chars/cval/right0.tim iso/chars/cval/right1.tim iso/chars/cval/right2.tim iso/chars/cval/hi0.tim iso/chars/cval/hi1.tim iso/chars/cval/hi2.tim iso/chars/cval/hi3.tim iso/chars/cval/hi4.tim iso/chars/cval/hi5.tim 
-
-# Pip
 
 # Pip Torture
 

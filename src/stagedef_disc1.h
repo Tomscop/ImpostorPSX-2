@@ -962,7 +962,7 @@
 	
 	{ //StageId_Chippin (Chippin)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Pip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Cval_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
@@ -980,7 +980,7 @@
 	},
 	{ //StageId_Chipping (Chipping)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Pip_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_Cval_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
