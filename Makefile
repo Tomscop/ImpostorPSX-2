@@ -50,6 +50,7 @@ SRCS = src/main.c \
 	src/character/drippostor.c \
 	src/character/dave.c \
 	src/character/amogus.c \
+	src/character/cval.c \
 	src/character/jads.c \
 	src/character/dad.c \
 	src/character/gf.c \
@@ -69,6 +70,7 @@ SRCS = src/main.c \
 	src/stage/electrical.c \
 	src/stage/drip.c \
 	src/stage/daveoffice.c \
+	src/stage/towers.c \
 	src/stage/o2.c \
 	src/stage/week1.c \
 	src/stage/dummy.c \

@@ -964,12 +964,12 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Cval_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Towers_New,
 		
 		//Song info
 		6, 4,
@@ -982,12 +982,12 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_Cval_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Towers_New,
 		
 		//Song info
 		6, 5,

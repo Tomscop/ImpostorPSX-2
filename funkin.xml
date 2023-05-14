@@ -164,7 +164,7 @@
 				<!-- Monotone Doc assets -->
 				<!-- Fabs assets -->
 				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
-				<!-- Cval assets -->
+				<file name = "cval.arc" type = "data" source = "iso/chars/cval/main.arc"/>
 				<!-- Pip Torture assets -->
 				<!-- Cval Torture assets -->
 				<file name = "jads.arc" type = "data" source = "iso/chars/jads/main.arc"/>
@@ -249,7 +249,7 @@
 				<!-- NickT -->
 				<!-- RedMung -->
 				
-				<!-- Chippin BG -->
+				<file name = "towers.arc" type = "data" source = "iso/stages/towers/back.arc"/>
 				
 				<!-- Warehouse BG -->
 				<!-- Rozebud -->

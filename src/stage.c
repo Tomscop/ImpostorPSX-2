@@ -113,6 +113,7 @@ static u32 Sounds[10];
 #include "character/drippostor.h"
 #include "character/dave.h"
 #include "character/amogus.h"
+#include "character/cval.h"
 #include "character/jads.h"
 #include "character/dad.h"
 //GFs
@@ -157,6 +158,7 @@ static u32 Sounds[10];
 #include "stage/electrical.h"
 #include "stage/drip.h"
 #include "stage/daveoffice.h"
+#include "stage/towers.h"
 #include "stage/o2.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"

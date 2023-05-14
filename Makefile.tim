@@ -48,6 +48,7 @@ all: \
 	iso/chars/dripostr/main.arc \
 	iso/chars/dave/main.arc \
 	iso/chars/amogus/main.arc \
+	iso/chars/cval/main.arc \
 	iso/chars/jads/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
@@ -79,6 +80,7 @@ all: \
 	iso/stages/electric/back.arc \
 	iso/stages/drip/back.arc \
 	iso/stages/office/back.arc \
+	iso/stages/towers/back.arc \
 	iso/stages/o2/back.arc \
 	iso/stages/week1/back.arc \
 
@@ -199,6 +201,7 @@ iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/c
 iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim iso/chars/amogus/down0.tim iso/chars/amogus/up0.tim iso/chars/amogus/right0.tim 
 
 # Cval
+iso/chars/cval/main.arc: iso/chars/cval/idle0.tim iso/chars/cval/idle1.tim iso/chars/cval/idle2.tim iso/chars/cval/idle3.tim iso/chars/cval/idle4.tim iso/chars/cval/idle5.tim iso/chars/cval/left0.tim iso/chars/cval/left1.tim iso/chars/cval/left2.tim iso/chars/cval/left3.tim iso/chars/cval/down0.tim iso/chars/cval/down1.tim iso/chars/cval/down2.tim iso/chars/cval/up0.tim iso/chars/cval/up1.tim iso/chars/cval/up2.tim iso/chars/cval/right0.tim iso/chars/cval/right1.tim iso/chars/cval/right2.tim iso/chars/cval/hi0.tim iso/chars/cval/hi1.tim iso/chars/cval/hi2.tim iso/chars/cval/hi3.tim iso/chars/cval/hi4.tim iso/chars/cval/hi5.tim 
 
 # Pip
 
@@ -272,6 +275,9 @@ iso/stages/drip/back.arc: iso/stages/drip/back0.tim iso/stages/drip/back1.tim
 
 # Dave Office
 iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
+
+# Towers
+iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.tim iso/stages/towers/back2.tim iso/stages/towers/back3.tim iso/stages/towers/back4.tim iso/stages/towers/back5.tim iso/stages/towers/back6.tim iso/stages/towers/back7.tim
 
 # O2
 iso/stages/o2/back.arc: iso/stages/o2/back0.tim iso/stages/o2/back1.tim
