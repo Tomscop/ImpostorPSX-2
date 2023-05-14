@@ -2406,6 +2406,18 @@ void Stage_Tick(void)
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);
 			
+			if ((stage.stage_id == StageId_Spookpostor) && (stage.paused == false))
+			{
+				if (stage.opponent->animatable.anim == CharAnim_Left || stage.opponent->animatable.anim == CharAnim_LeftAlt)
+					stage.camera.x -= FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Down || stage.opponent->animatable.anim == CharAnim_DownAlt)
+					stage.camera.y += FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Up || stage.opponent->animatable.anim == CharAnim_UpAlt)
+					stage.camera.y -= FIXED_DEC(5,10);
+				if (stage.opponent->animatable.anim == CharAnim_Right || stage.opponent->animatable.anim == CharAnim_RightAlt)
+					stage.camera.x += FIXED_DEC(5,10);
+			}
+			
 			//Get song position
 			boolean playing;
 			fixed_t next_scroll;
