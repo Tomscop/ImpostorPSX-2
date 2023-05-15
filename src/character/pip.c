@@ -61,21 +61,21 @@ static const CharFrame char_pip_frame[] = {
   {Pip_ArcMain_Idle4, {  0,  0,181,163}, {157,160}}, //4 idle 5
   {Pip_ArcMain_Idle5, {  0,  0,181,163}, {157,159}}, //5 idle 6
 
-  {Pip_ArcMain_Left0, {  0,  0,171,161}, {158,160}}, //6 left 1
-  {Pip_ArcMain_Left1, {  0,  0,172,161}, {160,160}}, //7 left 2
-  {Pip_ArcMain_Left2, {  0,  0,172,161}, {160,160}}, //8 left 3
+  {Pip_ArcMain_Left0, {  0,  0,171,161}, {158-18,160+1}}, //6 left 1
+  {Pip_ArcMain_Left1, {  0,  0,172,161}, {160-18,160+1}}, //7 left 2
+  {Pip_ArcMain_Left2, {  0,  0,172,161}, {160-18,160+1}}, //8 left 3
 
-  {Pip_ArcMain_Down0, {  0,  0,173,167}, {151,154}}, //9 down 1
-  {Pip_ArcMain_Down1, {  0,  0,173,167}, {151,156}}, //10 down 2
-  {Pip_ArcMain_Down2, {  0,  0,173,168}, {151,157}}, //11 down 3
+  {Pip_ArcMain_Down0, {  0,  0,173,167}, {151-2,154}}, //9 down 1
+  {Pip_ArcMain_Down1, {  0,  0,173,167}, {151-2,156}}, //10 down 2
+  {Pip_ArcMain_Down2, {  0,  0,173,168}, {151-2,157}}, //11 down 3
 
-  {Pip_ArcMain_Up0, {  0,  0,194,159}, {153,165}}, //12 up 1
-  {Pip_ArcMain_Up1, {  0,  0,195,157}, {154,163}}, //13 up 2
-  {Pip_ArcMain_Up2, {  0,  0,196,157}, {154,163}}, //14 up 3
+  {Pip_ArcMain_Up0, {  0,  0,194,159}, {153+18,165}}, //12 up 1
+  {Pip_ArcMain_Up1, {  0,  0,195,157}, {154+18,163}}, //13 up 2
+  {Pip_ArcMain_Up2, {  0,  0,196,157}, {154+18,163}}, //14 up 3
 
-  {Pip_ArcMain_Right0, {  0,  0,182,164}, {148,162}}, //15 right 1
-  {Pip_ArcMain_Right1, {  0,  0,181,164}, {145,162}}, //16 right 2
-  {Pip_ArcMain_Right2, {  0,  0,181,164}, {145,162}}, //17 right 3
+  {Pip_ArcMain_Right0, {  0,  0,182,164}, {148+19,162}}, //15 right 1
+  {Pip_ArcMain_Right1, {  0,  0,181,164}, {145+19,162}}, //16 right 2
+  {Pip_ArcMain_Right2, {  0,  0,181,164}, {145+19,162}}, //17 right 3
 };
 
 static const Animation char_pip_anim[PlayerAnim_Max] = {
@@ -108,6 +108,17 @@ void Char_Pip_SetFrame(void *user, u8 frame)
 void Char_Pip_Tick(Character *character)
 {
 	Char_Pip *this = (Char_Pip*)character;
+	
+	//Camera stuff
+	if ((stage.stage_id == StageId_Chippin) || (stage.stage_id == StageId_Chipping))
+	{
+		if (stage.song_step == 448)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if ((stage.song_step > 448) && (this->character.focus_zoom != FIXED_DEC(543,1024)))
+			this->character.focus_zoom = stage.opponent->focus_zoom;
+	}
+	
+	//switch to impostor at 316
 	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -188,7 +199,7 @@ Character *Char_Pip_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(-167,1);
 	this->character.focus_y = FIXED_DEC(205,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(1018,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

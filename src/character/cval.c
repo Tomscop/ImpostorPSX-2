@@ -11,6 +11,7 @@
 #include "../stage.h"
 #include "../main.h"
 
+int zoomoutcvp = 0;
 //Cval character structure
 enum
 {
@@ -101,7 +102,7 @@ static const Animation char_cval_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 16, 17, 18, 18, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 	
-	{1, (const u8[]){ 19, 19, 20, 21, 22, 22, 23, 23, 24, 24, ASCR_BACK, 1}},         //CharAnim_Special1
+	{1, (const u8[]){ 19, 19, 20, 21, 22, 22, 23, 23, 24, 24, 24, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Special1
 };
 
 //Cval character functions
@@ -122,6 +123,24 @@ void Char_Cval_SetFrame(void *user, u8 frame)
 void Char_Cval_Tick(Character *character)
 {
 	Char_Cval *this = (Char_Cval*)character;
+	
+	//Camera stuff
+	if ((stage.stage_id == StageId_Chippin) || (stage.stage_id == StageId_Chipping))
+	{
+		if (stage.song_step == 0)
+			this->character.focus_zoom = FIXED_DEC(1018,1024);
+		if (stage.song_step == 448)
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		if ((stage.song_step > 449) && (this->character.focus_zoom != FIXED_DEC(543,1024)))
+		{
+			zoomoutcvp += 1;
+			if (zoomoutcvp == 2)
+			{
+				this->character.focus_zoom -= FIXED_DEC(1,1024);
+				zoomoutcvp = 0;
+			}
+		}
+	}
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -187,7 +206,7 @@ Character *Char_Cval_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(65,1);
 	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(787,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
