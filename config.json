@@ -2,31 +2,31 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
+			"imgname" : "idlei",
+			"hname"   : "IdleI"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
+			"imgname" : "lefti",
+			"hname"   : "LeftI"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
+			"imgname" : "downi",
+			"hname"   : "DownI"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
+			"imgname" : "upi",
+			"hname"   : "UpI"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
+			"imgname" : "righti",
+			"hname"   : "RightI"
 		}
 	],
-	"input":  "iso/chars/pip/pip",
+	"input":  "iso/chars/pip/pip_evil",
 	"outdir": "iso/chars/pip/",
 	"charname" : "Pip",
 	"optimize" : false,

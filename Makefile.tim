@@ -134,7 +134,7 @@ iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idl
 # Biddle
 
 # Pip
-iso/chars/pip/main.arc: iso/chars/pip/idle0.tim iso/chars/pip/idle1.tim iso/chars/pip/idle2.tim iso/chars/pip/idle3.tim iso/chars/pip/idle4.tim iso/chars/pip/idle5.tim iso/chars/pip/left0.tim iso/chars/pip/left1.tim iso/chars/pip/left2.tim iso/chars/pip/down0.tim iso/chars/pip/down1.tim iso/chars/pip/down2.tim iso/chars/pip/up0.tim iso/chars/pip/up1.tim iso/chars/pip/up2.tim iso/chars/pip/right0.tim iso/chars/pip/right1.tim iso/chars/pip/right2.tim 
+iso/chars/pip/main.arc: iso/chars/pip/idle0.tim iso/chars/pip/idle1.tim iso/chars/pip/idle2.tim iso/chars/pip/idle3.tim iso/chars/pip/idle4.tim iso/chars/pip/idle5.tim iso/chars/pip/left0.tim iso/chars/pip/left1.tim iso/chars/pip/left2.tim iso/chars/pip/down0.tim iso/chars/pip/down1.tim iso/chars/pip/down2.tim iso/chars/pip/up0.tim iso/chars/pip/up1.tim iso/chars/pip/up2.tim iso/chars/pip/right0.tim iso/chars/pip/right1.tim iso/chars/pip/right2.tim iso/chars/pip/idlei0.tim iso/chars/pip/idlei1.tim iso/chars/pip/idlei2.tim iso/chars/pip/idlei3.tim iso/chars/pip/idlei4.tim iso/chars/pip/idlei5.tim iso/chars/pip/lefti0.tim iso/chars/pip/lefti1.tim iso/chars/pip/lefti2.tim iso/chars/pip/downi0.tim iso/chars/pip/downi1.tim iso/chars/pip/downi2.tim iso/chars/pip/upi0.tim iso/chars/pip/upi1.tim iso/chars/pip/upi2.tim iso/chars/pip/righti0.tim iso/chars/pip/righti1.tim iso/chars/pip/righti2.tim 
 
 # Ziffy
 

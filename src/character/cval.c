@@ -128,9 +128,17 @@ void Char_Cval_Tick(Character *character)
 	if ((stage.stage_id == StageId_Chippin) || (stage.stage_id == StageId_Chipping))
 	{
 		if (stage.song_step == 0)
+		{
+			this->character.focus_x = FIXED_DEC(-10,1);
+			this->character.focus_y = FIXED_DEC(-107,1);
 			this->character.focus_zoom = FIXED_DEC(1018,1024);
+		}
 		if (stage.song_step == 448)
+		{
+			this->character.focus_x = FIXED_DEC(36,1);
+			this->character.focus_y = FIXED_DEC(-147,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
 		if ((stage.song_step > 449) && (this->character.focus_zoom != FIXED_DEC(543,1024)))
 		{
 			zoomoutcvp += 1;
@@ -204,8 +212,8 @@ Character *Char_Cval_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF0064CE;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_x = FIXED_DEC(-23,1);
+	this->character.focus_y = FIXED_DEC(-102,1);
 	this->character.focus_zoom = FIXED_DEC(787,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

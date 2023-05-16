@@ -44,16 +44,16 @@ void Back_Towers_DrawBG(StageBack *back)
 	
 	RECT back0_src = {  0,  0,255,165};
 	RECT_FIXED back0_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-381 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-288,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(324,1)
 	};
 	
 	RECT back1_src = {  0,  0,255,165};
 	RECT_FIXED back1_dst = {
-		FIXED_DEC(0+499 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-381+499 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-288,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(324,1)
 	};
@@ -63,32 +63,32 @@ void Back_Towers_DrawBG(StageBack *back)
 	
 	RECT back2_src = {  0,  0,255,160};
 	RECT_FIXED back2_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-252 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-279,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(314,1)
 	};
 	
 	RECT back3_src = {  0,  0,255,160};
 	RECT_FIXED back3_dst = {
-		FIXED_DEC(0+499 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-252+499 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-279,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(314,1)
 	};
 	
 	RECT back4_src = {  0,  0,255,188};
 	RECT_FIXED back4_dst = {
-		FIXED_DEC(0 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-252 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-278,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(369,1)
 	};
 	
 	RECT back5_src = {  0,  0,255,188};
 	RECT_FIXED back5_dst = {
-		FIXED_DEC(0+499 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(0,1) - fy,
+		FIXED_DEC(-252+499 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(-278,1) - fy,
 		FIXED_DEC(501 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(369,1)
 	};
