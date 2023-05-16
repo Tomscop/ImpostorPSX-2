@@ -732,7 +732,7 @@
 		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Henry_New,
 		
 		//Song info
 		4, 10,

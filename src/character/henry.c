@@ -94,6 +94,26 @@ void Char_Henry_Tick(Character *character)
 {
 	Char_Henry *this = (Char_Henry*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Titular)
+	{
+		if (stage.song_step == 0)
+		{
+			this->character.focus_x = FIXED_DEC(53,1);
+			this->character.focus_y = FIXED_DEC(-64,1);
+			this->character.focus_zoom = FIXED_DEC(1,1);
+		}
+	}
+	if (stage.stage_id == StageId_Reinforcements)
+	{
+		if (stage.song_step == 0)
+		{
+			this->character.focus_x = FIXED_DEC(53,1);
+			this->character.focus_y = FIXED_DEC(-64,1);
+			this->character.focus_zoom = FIXED_DEC(1,1);
+		}
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -145,9 +165,9 @@ Character *Char_Henry_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBDD7D8;
 	
-	this->character.focus_x = FIXED_DEC(5,1);
-	this->character.focus_y = FIXED_DEC(-42,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(43,1);
+	this->character.focus_y = FIXED_DEC(-75,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

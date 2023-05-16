@@ -708,6 +708,12 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-92,1);
 	this->character.focus_zoom = FIXED_DEC(1000,1024);
 	}
+	else if ((stage.stage_id == StageId_Titular) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed))
+	{
+	this->character.focus_x = FIXED_DEC(-92,1);
+	this->character.focus_y = FIXED_DEC(-87,1);
+	this->character.focus_zoom = FIXED_DEC(1,1);
+	}
 	else if (stage.stage_id == StageId_AlphaMoogus)
 	{
 	this->character.focus_x = FIXED_DEC(-57,1);

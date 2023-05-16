@@ -143,9 +143,45 @@ void Char_Charles_Tick(Character *character)
 {
 	Char_Charles *this = (Char_Charles*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_GreatestPlan)
+	{
+		if (stage.song_step == 32)
+		{
+			this->character.focus_x = FIXED_DEC(5,1);
+			this->character.focus_y = FIXED_DEC(-42,1);
+		}
+		if (stage.song_step == 52)
+			this->character.focus_zoom = FIXED_DEC(1731,1024);
+		if (stage.song_step == 40)
+		{
+			this->character.health_i = 6;
+			this->character.health_bar = 0xFF29B5D6;
+		}
+		if (stage.song_step == 41)
+		{
+			this->character.health_i = 2;
+			this->character.health_bar = 0xFFFA3131;
+		}
+		//42 charles move in
+	}
+	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_GreatestPlan:
+				if (stage.song_step == 52) //oh henry
+					character->set_anim(character, CharAnim_Special1);
+				if (stage.song_step == 818) //i got the perfect plan
+					character->set_anim(character, CharAnim_Special2);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Charles_SetFrame);
@@ -189,14 +225,14 @@ Character *Char_Charles_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 2;
+	this->character.health_i = 0;
 
 	//health bar color
 	this->character.health_bar = 0xFFBDD7D8;
 	
 	this->character.focus_x = FIXED_DEC(5,1);
 	this->character.focus_y = FIXED_DEC(-42,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);
