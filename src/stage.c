@@ -232,7 +232,7 @@ static void Stage_CutVocal(void)
 static void Stage_FocusCharacter(Character *ch, fixed_t div)
 {
 	//Use character focus settings to update target position and zoom
-	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-2369,10))))
+	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-237,1))))
 		stage.camera.tx = ch->x + ch->focus_x;
 	stage.camera.ty = ch->y + ch->focus_y;
 	stage.camera.tz = ch->focus_zoom;
