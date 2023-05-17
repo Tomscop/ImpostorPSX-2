@@ -146,23 +146,31 @@ void Char_Charles_Tick(Character *character)
 	//Camera stuff
 	if (stage.stage_id == StageId_GreatestPlan)
 	{
-		if (stage.song_step == 32)
-		{
-			this->character.focus_x = FIXED_DEC(5,1);
-			this->character.focus_y = FIXED_DEC(-42,1);
-			this->character.focus_zoom = FIXED_DEC(1731,1024);
-		}
+		if ((stage.song_step >= 51) && (stage.opponent->x != FIXED_DEC(-2369,10)))
+			stage.camera.tx = FIXED_DEC(-270,1); //-270
+		if ((stage.song_step <= 50) && (stage.opponent->x != FIXED_DEC(-446,1)))
+			stage.camera.x = FIXED_DEC(-208,1); //-208
 		if (stage.song_step == 40)
 		{
 			this->character.health_i = 6;
 			this->character.health_bar = 0xFF29B5D6;
+			this->character.focus_y = FIXED_DEC(-66,1);
+			stage.camera.y = stage.opponent->y + stage.opponent->focus_y;
 		}
 		if (stage.song_step == 41)
 		{
 			this->character.health_i = 2;
 			this->character.health_bar = 0xFFFA3131;
+			this->character.focus_y = FIXED_DEC(-76,1);
+			stage.camera.y = stage.opponent->y + stage.opponent->focus_y;
+			this->character.focus_zoom = FIXED_DEC(1731,1024);
 		}
-		//42 charles move in
+		if ((stage.song_step >= 42) && (stage.opponent->x != FIXED_DEC(-2369,10)))
+		{
+			stage.opponent->x += FIXED_DEC(17,10);
+		}
+		if (stage.opponent->x == FIXED_DEC(-2369,10))
+			this->character.focus_x = FIXED_DEC(-33,1);
 	}
 	
 	//Perform idle dance
@@ -229,8 +237,8 @@ Character *Char_Charles_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBDD7D8;
 	
-	this->character.focus_x = FIXED_DEC(5,1);
-	this->character.focus_y = FIXED_DEC(-42,1);
+	this->character.focus_x = FIXED_DEC(-208-(-446),1); //-208
+	this->character.focus_y = FIXED_DEC(-55,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

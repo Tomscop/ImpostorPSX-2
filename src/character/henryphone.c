@@ -194,8 +194,8 @@ void Char_HenryPhone_Tick(Character *character)
 		}
 		if (stage.song_step == 52)
 		{
-			this->character.focus_x = FIXED_DEC(-8,1);
-			this->character.focus_y = FIXED_DEC(4,1);	
+			this->character.focus_x = FIXED_DEC(-154,1);
+			this->character.focus_y = FIXED_DEC(-123,1);	
 			this->character.focus_zoom = FIXED_DEC(1731,1024);
 		}
 	}
@@ -313,8 +313,8 @@ Character *Char_HenryPhone_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(-1,1);
-	this->character.focus_y = FIXED_DEC(0,1);
+	this->character.focus_x = FIXED_DEC(-64,1);
+	this->character.focus_y = FIXED_DEC(-102,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.size = FIXED_DEC(1,1);

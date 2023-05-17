@@ -689,11 +689,11 @@
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_HenryPhone_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
-		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
-		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
+		{Char_HenryPhone_New, FIXED_DEC(-46,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(65,1),  FIXED_DEC(92,1)},
+		{Char_Charles_New, FIXED_DEC(-446,1),  FIXED_DEC(53,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
+		{Char_GF_New,     FIXED_DEC(-42,1),  FIXED_DEC(-8,1)},
 		
 		//Stage background
 		Back_Henry_New,
