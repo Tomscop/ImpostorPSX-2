@@ -25,6 +25,7 @@ all: \
 	iso/chars/bfpixel/main.arc \
 	iso/chars/bfchrist/main.arc \
 	iso/chars/loggop/main.arc \
+	iso/chars/henryphn/main.arc \
 	iso/chars/bfv1/main.arc \
 	iso/chars/blueow/main.arc \
 	iso/chars/going2ki/main.arc \
@@ -110,6 +111,7 @@ iso/chars/bfchrist/main.arc: iso/chars/bfchrist/idle0.tim iso/chars/bfchrist/idl
 iso/chars/loggop/main.arc: iso/chars/loggop/loggo0.tim iso/chars/loggop/loggo1.tim iso/chars/loggop/loggo2.tim
 
 # Henry Phone
+iso/chars/henryphn/main.arc: iso/chars/henryphn/idle0.tim iso/chars/henryphn/idle1.tim iso/chars/henryphn/idle2.tim iso/chars/henryphn/left0.tim iso/chars/henryphn/left1.tim iso/chars/henryphn/down0.tim iso/chars/henryphn/down1.tim iso/chars/henryphn/up0.tim iso/chars/henryphn/right0.tim iso/chars/henryphn/right1.tim iso/chars/henryphn/leftm0.tim iso/chars/henryphn/leftm1.tim iso/chars/henryphn/downm0.tim iso/chars/henryphn/downm1.tim iso/chars/henryphn/upm0.tim iso/chars/henryphn/upm1.tim iso/chars/henryphn/rightm0.tim iso/chars/henryphn/rightm1.tim iso/chars/henryphn/rightm2.tim iso/chars/henryphn/phone0.tim iso/chars/henryphn/phone1.tim iso/chars/henryphn/phone2.tim iso/chars/henryphn/phone3.tim iso/chars/henryphn/phone4.tim iso/chars/henryphn/phone5.tim iso/chars/henryphn/phone6.tim iso/chars/henryphn/phone7.tim iso/chars/henryphn/phone8.tim iso/chars/henryphn/phone9.tim iso/chars/henryphn/phone10.tim iso/chars/henryphn/phone11.tim iso/chars/henryphn/phone12.tim iso/chars/henryphn/phone13.tim iso/chars/henryphn/phone14.tim iso/chars/henryphn/phone15.tim iso/chars/henryphn/phone16.tim 
 
 # BF V1
 iso/chars/bfv1/main.arc: iso/chars/bfv1/idle0.tim iso/chars/bfv1/left0.tim iso/chars/bfv1/down0.tim iso/chars/bfv1/up0.tim iso/chars/bfv1/right0.tim iso/chars/bfv1/leftm0.tim iso/chars/bfv1/downm0.tim iso/chars/bfv1/upm0.tim iso/chars/bfv1/rightm0.tim 

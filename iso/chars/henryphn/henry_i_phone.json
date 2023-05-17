@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				172,
+				-58
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Henry Down"
+		},
+		{
+			"offsets": [
+				154,
+				-48
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "Henry Miss Down"
+		},
+		{
+			"offsets": [
+				54,
+				87
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Henry Up"
+		},
+		{
+			"offsets": [
+				179,
+				62
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Henry Left"
+		},
+		{
+			"offsets": [
+				83,
+				20
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Henry Right"
+		},
+		{
+			"offsets": [
+				10,
+				90
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Henry Idle"
+		},
+		{
+			"offsets": [
+				192,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "Henry Miss Left"
+		},
+		{
+			"offsets": [
+				68,
+				-32
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "Henry Miss Right"
+		},
+		{
+			"offsets": [
+				55,
+				83
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "Henry Miss Up"
+		},
+		{
+			"offsets": [
+				75,
+				49
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "henry dies"
+		},
+		{
+			"offsets": [
+				24,
+				44
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "Henry Death loop"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				86,
+				44
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "Henry death enter",
+			"indices": []
+		},
+		{
+			"offsets": [
+				5,
+				312
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "intro",
+			"loop": false,
+			"name": "Henry Greatest Plan Intro"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/henry_i_phone",
+	"position": [
+		0,
+		90
+	],
+	"healthicon": "henry",
+	"flip_x": true,
+	"healthbar_colors": [
+		189,
+		215,
+		216
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -2,40 +2,65 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idlei",
-			"hname"   : "IdleI"
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
 			"fnfanim" : "singLEFT",
-			"imgname" : "lefti",
-			"hname"   : "LeftI"
+			"imgname" : "left",
+			"hname"   : "Left"
 		},
 		{
 			"fnfanim" : "singDOWN",
-			"imgname" : "downi",
-			"hname"   : "DownI"
+			"imgname" : "down",
+			"hname"   : "Down"
 		},
 		{
 			"fnfanim" : "singUP",
-			"imgname" : "upi",
-			"hname"   : "UpI"
+			"imgname" : "up",
+			"hname"   : "Up"
 		},
 		{
 			"fnfanim" : "singRIGHT",
-			"imgname" : "righti",
-			"hname"   : "RightI"
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
+		},
+		{
+			"fnfanim" : "intro",
+			"imgname" : "phone",
+			"hname"   : "Phone"
 		}
 	],
-	"input":  "iso/chars/pip/pip_evil",
-	"outdir": "iso/chars/pip/",
-	"charname" : "Pip",
+	"input":  "iso/chars/henryphn/henry_i_phone",
+	"outdir": "iso/chars/henryphn/",
+	"charname" : "HenryPhone",
 	"optimize" : false,
-	"optimizename" : "pip",
+	"optimizename" : "henryphone",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		704,
 		0,
-		0,
+		80,
 		480
 	],
 

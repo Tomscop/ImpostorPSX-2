@@ -69,43 +69,43 @@ typedef struct
 static const CharFrame char_charles_frame[] = {
   {Charles_ArcMain_Idle0, {  0,  0,198,169}, {160,160}}, //0 idle 1
   {Charles_ArcMain_Idle1, {  0,  0,197,169}, {160,160}}, //1 idle 2
-  {Charles_ArcMain_Idle2, {  0,  0,197,169}, {159,160}}, //2 idle 3
+  {Charles_ArcMain_Idle2, {  0,  0,197,169}, {160,160}}, //2 idle 3
   {Charles_ArcMain_Idle3, {  0,  0,197,169}, {160,160}}, //3 idle 4
   {Charles_ArcMain_Idle4, {  0,  0,197,169}, {160,160}}, //4 idle 5
 
-  {Charles_ArcMain_Left0, {  0,  0,197,169}, {159,160}}, //5 left 1
-  {Charles_ArcMain_Left1, {  0,  0,197,169}, {160,159}}, //6 left 2
+  {Charles_ArcMain_Left0, {  0,  0,197,169}, {160,160}}, //5 left 1
+  {Charles_ArcMain_Left1, {  0,  0,197,169}, {160,160}}, //6 left 2
 
   {Charles_ArcMain_Down0, {  0,  0,197,169}, {160,160}}, //7 down 1
   {Charles_ArcMain_Down1, {  0,  0,197,169}, {160,160}}, //8 down 2
 
-  {Charles_ArcMain_Up0, {  0,  0,197,169}, {160,159}}, //9 up 1
-  {Charles_ArcMain_Up1, {  0,  0,197,169}, {160,159}}, //10 up 2
+  {Charles_ArcMain_Up0, {  0,  0,197,169}, {160,160}}, //9 up 1
+  {Charles_ArcMain_Up1, {  0,  0,197,169}, {160,160}}, //10 up 2
 
   {Charles_ArcMain_Right0, {  0,  0,197,169}, {160,160}}, //11 right 1
-  {Charles_ArcMain_Right1, {  0,  0,197,169}, {159,160}}, //12 right 2
+  {Charles_ArcMain_Right1, {  0,  0,197,169}, {160,160}}, //12 right 2
 
-  {Charles_ArcMain_Henry0, {  0,  0,197,169}, {160,159}}, //13 henry 1
-  {Charles_ArcMain_Henry1, {  0,  0,198,168}, {160,159}}, //14 henry 2
-  {Charles_ArcMain_Henry2, {  0,  0,197,169}, {160,159}}, //15 henry 3
-  {Charles_ArcMain_Henry3, {  0,  0,197,169}, {159,159}}, //16 henry 4
-  {Charles_ArcMain_Henry4, {  0,  0,197,168}, {160,159}}, //17 henry 5
-  {Charles_ArcMain_Henry5, {  0,  0,197,169}, {160,159}}, //18 henry 6
-  {Charles_ArcMain_Henry6, {  0,  0,197,169}, {159,159}}, //19 henry 7
+  {Charles_ArcMain_Henry0, {  0,  0,197,169}, {160,160}}, //13 henry 1
+  {Charles_ArcMain_Henry1, {  0,  0,198,168}, {160,160}}, //14 henry 2
+  {Charles_ArcMain_Henry2, {  0,  0,197,169}, {160,160}}, //15 henry 3
+  {Charles_ArcMain_Henry3, {  0,  0,197,169}, {160,160}}, //16 henry 4
+  {Charles_ArcMain_Henry4, {  0,  0,197,168}, {160,160}}, //17 henry 5
+  {Charles_ArcMain_Henry5, {  0,  0,197,169}, {160,160}}, //18 henry 6
+  {Charles_ArcMain_Henry6, {  0,  0,197,169}, {160,160}}, //19 henry 7
   {Charles_ArcMain_Henry7, {  0,  0,197,169}, {160,160}}, //20 henry 8
 
   {Charles_ArcMain_Plan0, {  0,  0,197,169}, {160,160}}, //21 plan 1
   {Charles_ArcMain_Plan1, {  0,  0,197,169}, {160,160}}, //22 plan 2
   {Charles_ArcMain_Plan2, {  0,  0,197,169}, {160,160}}, //23 plan 3
-  {Charles_ArcMain_Plan3, {  0,  0,197,169}, {159,160}}, //24 plan 4
+  {Charles_ArcMain_Plan3, {  0,  0,197,169}, {160,160}}, //24 plan 4
   {Charles_ArcMain_Plan4, {  0,  0,197,169}, {160,160}}, //25 plan 5
   {Charles_ArcMain_Plan5, {  0,  0,197,169}, {160,160}}, //26 plan 6
-  {Charles_ArcMain_Plan6, {  0,  0,197,169}, {159,160}}, //27 plan 7
+  {Charles_ArcMain_Plan6, {  0,  0,197,169}, {160,160}}, //27 plan 7
   {Charles_ArcMain_Plan7, {  0,  0,197,169}, {160,160}}, //28 plan 8
   {Charles_ArcMain_Plan8, {  0,  0,197,169}, {160,160}}, //29 plan 9
   {Charles_ArcMain_Plan9, {  0,  0,198,168}, {160,159}}, //30 plan 10
   {Charles_ArcMain_Plan10, {  0,  0,197,169}, {160,160}}, //31 plan 11
-  {Charles_ArcMain_Plan11, {  0,  0,197,169}, {159,160}}, //32 plan 12
+  {Charles_ArcMain_Plan11, {  0,  0,197,169}, {160,160}}, //32 plan 12
   {Charles_ArcMain_Plan12, {  0,  0,198,168}, {160,159}}, //33 plan 13
 };
 
@@ -150,9 +150,8 @@ void Char_Charles_Tick(Character *character)
 		{
 			this->character.focus_x = FIXED_DEC(5,1);
 			this->character.focus_y = FIXED_DEC(-42,1);
-		}
-		if (stage.song_step == 52)
 			this->character.focus_zoom = FIXED_DEC(1731,1024);
+		}
 		if (stage.song_step == 40)
 		{
 			this->character.health_i = 6;

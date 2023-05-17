@@ -689,7 +689,7 @@
 	},
 	{ //StageId_GreatestPlan (Greatest Plan)
 		//Characters
-		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
+		{Char_HenryPhone_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
 		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
 		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
         {NULL},

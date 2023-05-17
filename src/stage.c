@@ -64,6 +64,7 @@ static u32 Sounds[10];
 #include "character/bfpixel.h"
 #include "character/bfchristmas.h"
 #include "character/loggop.h"
+#include "character/henryphone.h"
 #include "character/bfv1.h"
 #include "character/blueow.h"
 #include "character/going2killevery1.h"
@@ -270,7 +271,8 @@ static void Stage_ScrollCamera(void)
 			{
 				stage.camera.x = lerp(stage.camera.x, stage.camera.tx, FIXED_DEC(5,100));
 				stage.camera.y = lerp(stage.camera.y, stage.camera.ty, FIXED_DEC(5,100));
-				stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
+				if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (firsthit == true)))
+					stage.camera.zoom = lerp(stage.camera.zoom, stage.camera.tz, FIXED_DEC(5,100));
 			}
 			else
 			{

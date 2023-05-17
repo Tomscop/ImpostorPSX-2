@@ -126,7 +126,7 @@
 				<!-- Boyfriend Tuesday assets -->
 				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
 				<file name = "loggop.arc" type = "data" source = "iso/chars/loggop/main.arc"/>
-				<!-- Henry Phone assets -->
+				<file name = "henryphn.arc" type = "data" source = "iso/chars/henryphn/main.arc"/>
 				<file name = "bfv1.arc" type = "data" source = "iso/chars/bfv1/main.arc"/>
 				<file name = "blueow.arc" type = "data" source = "iso/chars/blueow/main.arc"/>
 				<file name = "going2ki.arc" type = "data" source = "iso/chars/going2ki/main.arc"/>
