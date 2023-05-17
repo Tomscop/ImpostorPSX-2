@@ -146,7 +146,7 @@ void Char_Charles_Tick(Character *character)
 	//Camera stuff
 	if (stage.stage_id == StageId_GreatestPlan)
 	{
-		if ((stage.song_step >= 52) && (stage.opponent->x >= FIXED_DEC(-340,1)))
+		if ((stage.song_step >= 52) && (stage.opponent->x >= FIXED_DEC(-340,1)) && (stage.opponent->x <= FIXED_DEC(-240,1)))
 			stage.camera.tx = FIXED_DEC(-270,1); //-270
 		if ((stage.song_step <= 50) && (stage.opponent->x != FIXED_DEC(-446,1)))
 			stage.camera.x = FIXED_DEC(-208,1); //-208
@@ -154,8 +154,6 @@ void Char_Charles_Tick(Character *character)
 		{
 			this->character.health_i = 6;
 			this->character.health_bar = 0xFF29B5D6;
-			this->character.focus_y = FIXED_DEC(-66,1);
-			stage.camera.y = stage.opponent->y + stage.opponent->focus_y;
 		}
 		if (stage.song_step == 41)
 		{
@@ -169,7 +167,7 @@ void Char_Charles_Tick(Character *character)
 		{
 			stage.opponent->x += FIXED_DEC(17,10);
 		}
-		if (stage.opponent->x >= FIXED_DEC(-237,1))
+		if (stage.opponent->x >= FIXED_DEC(-240,1))
 			this->character.focus_x = FIXED_DEC(-33,1);
 	}
 	

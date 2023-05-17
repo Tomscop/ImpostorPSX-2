@@ -53,6 +53,8 @@ void Back_Henry_DrawBG(StageBack *back)
 	stage_dst.x += stage_dst.w; 
 	Stage_DrawTex(&this->tex_back2, &stage_src, &stage_dst, stage.camera.bzoom);
 	
+	RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		Gfx_DrawRect(&screen_src, 187, 202, 209);
 }
 
 void Back_Henry_Free(StageBack *back)

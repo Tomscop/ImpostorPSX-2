@@ -710,7 +710,7 @@
 		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
         {NULL},
 		{Char_Henry_New, FIXED_DEC(-139,1),  FIXED_DEC(81,1)},
-		{Char_Charles_New, FIXED_DEC(-170,1),  FIXED_DEC(54,1)},
+		{Char_Ellie_New, FIXED_DEC(-128,1),  FIXED_DEC(89,1)},
 		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background

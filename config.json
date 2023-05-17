@@ -26,36 +26,21 @@
 			"hname"   : "Right"
 		},
 		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
+			"fnfanim" : "enter",
+			"imgname" : "sup",
+			"hname"   : "Sup"
 		},
 		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
-		},
-		{
-			"fnfanim" : "intro",
-			"imgname" : "phone",
-			"hname"   : "Phone"
+			"fnfanim" : "armed",
+			"imgname" : "cutscene",
+			"hname"   : "Cutscene"
 		}
 	],
-	"input":  "iso/chars/henryphn/henry_i_phone",
-	"outdir": "iso/chars/henryphn/",
-	"charname" : "HenryPhone",
+	"input":  "iso/chars/ellie/Ellie_Assets",
+	"outdir": "iso/chars/ellie/",
+	"charname" : "Ellie",
 	"optimize" : false,
-	"optimizename" : "henryphone",
+	"optimizename" : "ellie",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		704,

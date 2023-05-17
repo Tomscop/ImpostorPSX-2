@@ -40,6 +40,7 @@ all: \
 	iso/chars/clowfoeg/main.arc \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
+	iso/chars/ellie/main.arc \
 	iso/chars/redv1/main.arc \
 	iso/chars/redow/main.arc \
 	iso/chars/yfronts/main.arc \
@@ -165,6 +166,7 @@ iso/chars/henry/main.arc: iso/chars/henry/idle0.tim iso/chars/henry/idle1.tim is
 iso/chars/charles/main.arc: iso/chars/charles/idle0.tim iso/chars/charles/idle1.tim iso/chars/charles/idle2.tim iso/chars/charles/idle3.tim iso/chars/charles/idle4.tim iso/chars/charles/left0.tim iso/chars/charles/left1.tim iso/chars/charles/down0.tim iso/chars/charles/down1.tim iso/chars/charles/up0.tim iso/chars/charles/up1.tim iso/chars/charles/right0.tim iso/chars/charles/right1.tim iso/chars/charles/henry0.tim iso/chars/charles/henry1.tim iso/chars/charles/henry2.tim iso/chars/charles/henry3.tim iso/chars/charles/henry4.tim iso/chars/charles/henry5.tim iso/chars/charles/henry6.tim iso/chars/charles/henry7.tim iso/chars/charles/plan0.tim iso/chars/charles/plan1.tim iso/chars/charles/plan2.tim iso/chars/charles/plan3.tim iso/chars/charles/plan4.tim iso/chars/charles/plan5.tim iso/chars/charles/plan6.tim iso/chars/charles/plan7.tim iso/chars/charles/plan8.tim iso/chars/charles/plan9.tim iso/chars/charles/plan10.tim iso/chars/charles/plan11.tim iso/chars/charles/plan12.tim 
 
 # Ellie
+iso/chars/ellie/main.arc: iso/chars/ellie/idle0.tim iso/chars/ellie/idle1.tim iso/chars/ellie/idle2.tim iso/chars/ellie/left0.tim iso/chars/ellie/left1.tim iso/chars/ellie/down0.tim iso/chars/ellie/up0.tim iso/chars/ellie/right0.tim iso/chars/ellie/sup0.tim iso/chars/ellie/sup1.tim iso/chars/ellie/sup2.tim iso/chars/ellie/sup3.tim iso/chars/ellie/sup4.tim iso/chars/ellie/sup5.tim iso/chars/ellie/sup6.tim iso/chars/ellie/sup7.tim iso/chars/ellie/sup8.tim iso/chars/ellie/sup9.tim iso/chars/ellie/sup10.tim iso/chars/ellie/sup11.tim iso/chars/ellie/sup12.tim iso/chars/ellie/sup13.tim iso/chars/ellie/sup14.tim iso/chars/ellie/sup15.tim iso/chars/ellie/sup16.tim iso/chars/ellie/cutscene0.tim iso/chars/ellie/cutscene1.tim iso/chars/ellie/cutscene2.tim iso/chars/ellie/cutscene3.tim iso/chars/ellie/cutscene4.tim iso/chars/ellie/cutscene5.tim 
 
 # RHM
 

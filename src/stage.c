@@ -105,6 +105,7 @@ static u32 Sounds[10];
 #include "character/clowfoeg.h"
 #include "character/henry.h"
 #include "character/charles.h"
+#include "character/ellie.h"
 #include "character/redv1.h"
 #include "character/redow.h"
 #include "character/yfronts.h"
@@ -232,7 +233,7 @@ static void Stage_CutVocal(void)
 static void Stage_FocusCharacter(Character *ch, fixed_t div)
 {
 	//Use character focus settings to update target position and zoom
-	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-237,1))))
+	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-240,1))))
 		stage.camera.tx = ch->x + ch->focus_x;
 	stage.camera.ty = ch->y + ch->focus_y;
 	stage.camera.tz = ch->focus_zoom;
@@ -3017,12 +3018,14 @@ void Stage_Tick(void)
 			if (stage.stage_id == StageId_Turbulence)
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+			if ((stage.opponent2 != NULL) && (stage.stage_id == StageId_Reinforcements))
+				stage.opponent2->tick(stage.opponent2);
 			stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill))
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle

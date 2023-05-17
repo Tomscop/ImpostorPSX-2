@@ -112,6 +112,10 @@ void Char_Henry_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-64,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
+		if (stage.song_step == 650)
+			this->character.focus_x = FIXED_DEC(2,1);
+		if (stage.song_step == 696)
+			this->character.health_i = 3;
 	}
 	
 	//Perform idle dance

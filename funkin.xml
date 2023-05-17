@@ -149,7 +149,7 @@
 				<file name = "clowfoeg.arc" type = "data" source = "iso/chars/clowfoeg/main.arc"/>
 				<file name = "henry.arc" type = "data" source = "iso/chars/henry/main.arc"/>
 				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
-				<!-- Ellie assets -->
+				<file name = "ellie.arc" type = "data" source = "iso/chars/ellie/main.arc"/>
 				<!-- RHM assets -->
 				<!-- Reginald assets -->
 				<file name = "redv1.arc" type = "data" source = "iso/chars/redv1/main.arc"/>
