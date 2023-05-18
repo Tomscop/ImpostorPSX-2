@@ -1,34 +1,9 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "enter",
-			"imgname" : "sup",
-			"hname"   : "Sup"
+			"fnfanim" : "shock",
+			"imgname" : "shock",
+			"hname"   : "Shock"
 		},
 		{
 			"fnfanim" : "armed",
@@ -36,17 +11,17 @@
 			"hname"   : "Cutscene"
 		}
 	],
-	"input":  "iso/chars/ellie/Ellie_Assets",
-	"outdir": "iso/chars/ellie/",
-	"charname" : "Ellie",
+	"input":  "iso/chars/henry/HENRY_ASSS",
+	"outdir": "iso/chars/henry/",
+	"charname" : "Henry",
 	"optimize" : false,
-	"optimizename" : "ellie",
+	"optimizename" : "henry",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		704,
+		768,
 		0,
-		80,
-		480
+		0,
+		481
 	],
 
 	"bpp" : 4,

@@ -24,6 +24,14 @@ enum
   Henry_ArcMain_Down1,
   Henry_ArcMain_Up0,
   Henry_ArcMain_Right0,
+  Henry_ArcMain_Shock0,
+  Henry_ArcMain_Shock1,
+  Henry_ArcMain_Shock2,
+  Henry_ArcMain_Cutscene0,
+  Henry_ArcMain_Cutscene1,
+  Henry_ArcMain_Cutscene2,
+  Henry_ArcMain_Cutscene3,
+  Henry_ArcMain_Cutscene4,
 	
 	Henry_Arc_Max,
 };
@@ -61,6 +69,24 @@ static const CharFrame char_henry_frame[] = {
 
   {Henry_ArcMain_Right0, {  0,  0,122,162}, {63,134}}, //12 right 1
   {Henry_ArcMain_Right0, {124,  0,118,162}, {61,134}}, //13 right 2
+  
+  {Henry_ArcMain_Shock0, {  0,  0,101,176}, {158-100,155-9}}, //14 shock 1
+  {Henry_ArcMain_Shock0, {101,  0,101,176}, {158-100,156-9}}, //15 shock 2
+  {Henry_ArcMain_Shock1, {  0,  0,101,176}, {158-100,156-9}}, //16 shock 3
+  {Henry_ArcMain_Shock1, {101,  0,101,176}, {159-100,156-9}}, //17 shock 4
+  {Henry_ArcMain_Shock2, {  0,  0, 86,182}, {151-100,162-9}}, //18 shock 5
+  {Henry_ArcMain_Shock2, { 86,  0, 86,182}, {152-100,162-9}}, //19 shock 6
+
+  {Henry_ArcMain_Cutscene0, {  0,  0, 86,182}, {152-100,162-9}}, //20 cutscene 1
+  {Henry_ArcMain_Cutscene0, { 86,  0, 92,187}, {156-100,167-9}}, //21 cutscene 2
+  {Henry_ArcMain_Cutscene1, {  0,  0, 92,186}, {156-100,166-9}}, //22 cutscene 3
+  {Henry_ArcMain_Cutscene1, { 92,  0, 93,186}, {157-100,166-9}}, //23 cutscene 4
+  {Henry_ArcMain_Cutscene2, {  0,  0, 92,184}, {157-100,164-9}}, //24 cutscene 5
+  {Henry_ArcMain_Cutscene2, { 92,  0, 91,180}, {156-100,159-9}}, //25 cutscene 6
+  {Henry_ArcMain_Cutscene3, {  0,  0, 88,178}, {153-100,158-9}}, //26 cutscene 7
+  {Henry_ArcMain_Cutscene3, { 88,  0, 87,179}, {153-100,159-9}}, //27 cutscene 8
+  {Henry_ArcMain_Cutscene4, {  0,  0, 88,180}, {153-100,159-9}}, //28 cutscene 9
+  {Henry_ArcMain_Cutscene4, { 88,  0, 87,180}, {153-100,160-9}}, //29 cutscene 10
 };
 
 static const Animation char_henry_anim[CharAnim_Max] = {
@@ -73,6 +99,10 @@ static const Animation char_henry_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){12, 13, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+	
+	{1, (const u8[]){ 14, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 19, 19, 19, 19, ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_Special1
+	{1, (const u8[]){ 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 27, 27, 28, 28, 29, ASCR_CHGANI, CharAnim_Special3}},   //CharAnim_Special2
+	{2, (const u8[]){ 29, ASCR_CHGANI, CharAnim_Special3}},   //CharAnim_Special3
 };
 
 //Henry character functions
@@ -122,6 +152,23 @@ void Char_Henry_Tick(Character *character)
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Reinforcements:
+				if (stage.song_step == 696) //woah
+					character->set_anim(character, CharAnim_Special1);
+//				if (stage.song_step == idk) //armed cutscene
+//					character->set_anim(character, CharAnim_Special2);
+				if (stage.song_step == 1216) //lmao this is just to get around a bug
+					character->set_anim(character, CharAnim_Left);
+				if (stage.song_step == 1222)
+					character->set_anim(character, CharAnim_Up);
+				break;
+			default:
+				break;
+		}
+		
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_Henry_SetFrame);
 	Character_Draw(character, &this->tex, &char_henry_frame[this->frame]);
@@ -189,6 +236,14 @@ Character *Char_Henry_New(fixed_t x, fixed_t y)
   "down1.tim",
   "up0.tim",
   "right0.tim",
+  "shock0.tim",
+  "shock1.tim",
+  "shock2.tim",
+  "cutscene0.tim",
+  "cutscene1.tim",
+  "cutscene2.tim",
+  "cutscene3.tim",
+  "cutscene4.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
