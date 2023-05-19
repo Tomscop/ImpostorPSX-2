@@ -43,6 +43,7 @@ SRCS = src/main.c \
 	src/character/henry.c \
 	src/character/charles.c \
 	src/character/ellie.c \
+	src/character/righthandman.c \
 	src/character/redv1.c \
 	src/character/redow.c \
 	src/character/yfronts.c \

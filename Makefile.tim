@@ -41,6 +41,7 @@ all: \
 	iso/chars/henry/main.arc \
 	iso/chars/charles/main.arc \
 	iso/chars/ellie/main.arc \
+	iso/chars/rhm/main.arc \
 	iso/chars/redv1/main.arc \
 	iso/chars/redow/main.arc \
 	iso/chars/yfronts/main.arc \
@@ -169,7 +170,7 @@ iso/chars/charles/main.arc: iso/chars/charles/idle0.tim iso/chars/charles/idle1.
 iso/chars/ellie/main.arc: iso/chars/ellie/idle0.tim iso/chars/ellie/idle1.tim iso/chars/ellie/idle2.tim iso/chars/ellie/left0.tim iso/chars/ellie/left1.tim iso/chars/ellie/down0.tim iso/chars/ellie/up0.tim iso/chars/ellie/right0.tim iso/chars/ellie/sup0.tim iso/chars/ellie/sup1.tim iso/chars/ellie/sup2.tim iso/chars/ellie/sup3.tim iso/chars/ellie/sup4.tim iso/chars/ellie/sup5.tim iso/chars/ellie/sup6.tim iso/chars/ellie/sup7.tim iso/chars/ellie/sup8.tim iso/chars/ellie/sup9.tim iso/chars/ellie/sup10.tim iso/chars/ellie/sup11.tim iso/chars/ellie/sup12.tim iso/chars/ellie/sup13.tim iso/chars/ellie/sup14.tim iso/chars/ellie/sup15.tim iso/chars/ellie/sup16.tim iso/chars/ellie/cutscene0.tim iso/chars/ellie/cutscene1.tim iso/chars/ellie/cutscene2.tim iso/chars/ellie/cutscene3.tim iso/chars/ellie/cutscene4.tim iso/chars/ellie/cutscene5.tim 
 
 # RHM
-
+iso/chars/rhm/main.arc: iso/chars/rhm/idle0.tim iso/chars/rhm/idle1.tim iso/chars/rhm/idle2.tim iso/chars/rhm/idle3.tim iso/chars/rhm/idle4.tim iso/chars/rhm/left0.tim iso/chars/rhm/left1.tim iso/chars/rhm/left2.tim iso/chars/rhm/left3.tim iso/chars/rhm/left4.tim iso/chars/rhm/left5.tim iso/chars/rhm/down0.tim iso/chars/rhm/down1.tim iso/chars/rhm/down2.tim iso/chars/rhm/down3.tim iso/chars/rhm/up0.tim iso/chars/rhm/up1.tim iso/chars/rhm/up2.tim iso/chars/rhm/up3.tim iso/chars/rhm/up4.tim iso/chars/rhm/right0.tim iso/chars/rhm/right1.tim iso/chars/rhm/right2.tim iso/chars/rhm/right3.tim 
 # Reginald
 
 # Red V1

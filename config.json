@@ -1,21 +1,41 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "shock",
-			"imgname" : "shock",
-			"hname"   : "Shock"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
 		},
 		{
-			"fnfanim" : "armed",
-			"imgname" : "cutscene",
-			"hname"   : "Cutscene"
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "intro",
+			"imgname" : "intro",
+			"hname"   : "Intro"
 		}
 	],
-	"input":  "iso/chars/henry/HENRY_ASSS",
-	"outdir": "iso/chars/henry/",
-	"charname" : "Henry",
+	"input":  "iso/chars/rhm/rhm",
+	"outdir": "iso/chars/rhm/",
+	"charname" : "RightHandMan",
 	"optimize" : false,
-	"optimizename" : "henry",
+	"optimizename" : "righthandman",
 	"arcname" : "ArcMain",
 	"vrampos" : [
 		768,

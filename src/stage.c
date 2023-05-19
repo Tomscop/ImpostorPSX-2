@@ -106,6 +106,7 @@ static u32 Sounds[10];
 #include "character/henry.h"
 #include "character/charles.h"
 #include "character/ellie.h"
+#include "character/righthandman.h"
 #include "character/redv1.h"
 #include "character/redow.h"
 #include "character/yfronts.h"
@@ -3018,14 +3019,14 @@ void Stage_Tick(void)
 			if (stage.stage_id == StageId_Turbulence)
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
-			if ((stage.opponent2 != NULL) && (stage.stage_id == StageId_Reinforcements))
+			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
 				stage.opponent2->tick(stage.opponent2);
 			stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements))
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
