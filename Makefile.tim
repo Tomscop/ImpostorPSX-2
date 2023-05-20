@@ -63,6 +63,7 @@ all: \
 	iso/chars/gfv1/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfpixel/dead.tim \
+	iso/chars/henryphn/dead.tim \
 	iso/chars/blueow/dead.tim \
 	iso/chars/going2ki/dead.tim \
 	iso/chars/kid/dead.tim \
@@ -76,6 +77,7 @@ all: \
 	iso/stages/christms/fire.arc \
 	iso/stages/gronch/back.arc \
 	iso/stages/henry/back.arc \
+	iso/stages/henry/rhm.arc \
 	iso/stages/v1/back.arc \
 	iso/stages/shields/back.arc \
 	iso/stages/jerma/back.arc \
@@ -258,6 +260,7 @@ iso/stages/gronch/back.arc: iso/stages/gronch/back0.tim iso/stages/gronch/back1.
 
 # Henry Stage
 iso/stages/henry/back.arc: iso/stages/henry/back0.tim iso/stages/henry/back1.tim iso/stages/henry/back2.tim
+iso/stages/henry/rhm.arc: iso/stages/henry/rhm0.tim iso/stages/henry/rhm1.tim iso/stages/henry/rhm2.tim 
 
 # V1
 iso/stages/v1/back.arc: iso/stages/v1/back0.tim iso/stages/v1/back1.tim

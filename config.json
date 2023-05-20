@@ -2,41 +2,21 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
+			"imgname" : "rhm",
+			"hname"   : "RHM"
 		}
 	],
-	"input":  "iso/chars/reginald/Reginald_Assets",
-	"outdir": "iso/chars/reginald/",
-	"charname" : "Reginald",
+	"input":  "iso/stages/henry/i_schee_u_enry",
+	"outdir": "iso/stages/henry/",
+	"charname" : "RHM",
 	"optimize" : false,
-	"optimizename" : "reginald",
+	"optimizename" : "rhm",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		704,
+		832,
 		0,
 		80,
-		480
+		481
 	],
 
 	"bpp" : 4,

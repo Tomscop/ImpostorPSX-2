@@ -29,6 +29,7 @@ typedef enum
 	XA_29, //29
 	XA_30, //30
 	XA_31, //31
+	XA_Cutscene, //Cutscene
 	
 	XA_Max,
 } XA_File;
@@ -87,6 +88,8 @@ typedef enum
 	//31.XA
 	XA_Inflorescence, //Inflorescence
 	XA_Stargazer, //Stargazer
+	//Cutscene.XA
+	XA_ArmedCutscene, //Armed Cutscene
 	
 	XA_TrackMax,
 } XA_Track;

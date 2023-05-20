@@ -129,7 +129,6 @@ void Char_RightHandMan_Tick(Character *character)
 	{
 		if (stage.song_step == 0)
 		{
-			this->character.focus_x = FIXED_DEC(-49,1);
 			this->character.focus_y = FIXED_DEC(-100,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
@@ -214,7 +213,7 @@ Character *Char_RightHandMan_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFE44832;
 	
-	this->character.focus_x = FIXED_DEC(-36,1);
+	this->character.focus_x = FIXED_DEC(-49,1);
 	this->character.focus_y = FIXED_DEC(-111,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	

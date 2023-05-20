@@ -15,7 +15,8 @@ all: \
   iso/music/28.xa \
   iso/music/29.xa \
   iso/music/30.xa \
-  iso/music/31.xa 
+  iso/music/31.xa \
+  iso/music/cutscene.xa
 
 # XA converts
 iso/music/%.xa: iso/music/%.ogg
@@ -41,3 +42,4 @@ iso/music/28.xa: iso/music/chippin/Inst.xa iso/music/chippin/Vocals.xa iso/music
 iso/music/29.xa: iso/music/torture/Inst.xa iso/music/torture/Vocals.xa iso/music/grinch/Inst.xa iso/music/grinch/Vocals.xa
 iso/music/30.xa: iso/music/lemon-lime/Inst.xa iso/music/lemon-lime/Vocals.xa iso/music/chlorophyll/Inst.xa iso/music/chlorophyll/Vocals.xa
 iso/music/31.xa: iso/music/inflorescence/Inst.xa iso/music/inflorescence/Vocals.xa iso/music/stargazer/Inst.xa iso/music/stargazer/Vocals.xa
+iso/music/cutscene.xa: iso/music/armed-cutscene/Inst.xa

@@ -200,6 +200,8 @@
 				<file name = "deadpco.tim" type = "data" source = "iso/chars/dead.tim"/>
 				<!-- Tomongus -->
 				<file name = "deadpix.tim" type = "data" source = "iso/chars/bfpixel/dead.tim"/>
+				<!-- Greatest Plan -->
+				<file name = "deadhen.tim" type = "data" source = "iso/chars/henryphn/dead.tim"/>
 				<!-- Ow -->
 				<file name = "deadow.tim" type = "data" source = "iso/chars/blueow/dead.tim"/>
 				<!-- Who -->
@@ -226,6 +228,7 @@
 				<file name = "gronch.arc" type = "data" source = "iso/stages/gronch/back.arc"/>
 				
 				<file name = "henry.arc" type = "data" source = "iso/stages/henry/back.arc"/>
+				<file name = "rhm.arc" type = "data" source = "iso/stages/henry/rhm.arc"/>
 				
 				<file name = "v1.arc" type = "data" source = "iso/stages/v1/back.arc"/>
 				
@@ -336,6 +339,8 @@
 				<file name = "30.xa" type = "xa" source = "iso/music/30.xa"/>
 				<dummy sectors="128"/>
 				<file name = "31.xa" type = "xa" source = "iso/music/31.xa"/>
+				<dummy sectors="128"/>
+				<file name = "cutscene.xa" type = "xa" source = "iso/music/cutscene.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			
