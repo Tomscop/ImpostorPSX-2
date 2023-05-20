@@ -129,15 +129,43 @@ void Char_RightHandMan_Tick(Character *character)
 	{
 		if (stage.song_step == 0)
 		{
-			this->character.focus_x = FIXED_DEC(53,1);
-			this->character.focus_y = FIXED_DEC(-64,1);
+			this->character.focus_x = FIXED_DEC(-49,1);
+			this->character.focus_y = FIXED_DEC(-100,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
 	}
 	
-	//Perform idle dance
-	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
-		Character_PerformIdle(character);
+	//Handle animation updates
+	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
+	    (character->animatable.anim != CharAnim_Left &&
+	     character->animatable.anim != CharAnim_LeftAlt &&
+	     character->animatable.anim != CharAnim_Down &&
+	     character->animatable.anim != CharAnim_DownAlt &&
+	     character->animatable.anim != CharAnim_Up &&
+	     character->animatable.anim != CharAnim_UpAlt &&
+	     character->animatable.anim != CharAnim_Right &&
+	     character->animatable.anim != CharAnim_RightAlt))
+		Character_CheckEndSing(character);
+	
+	if (stage.flag & STAGE_FLAG_JUST_STEP)
+	{
+		//Perform idle dance
+		if (Animatable_Ended(&character->animatable) &&
+			(character->animatable.anim != CharAnim_Left &&
+		     character->animatable.anim != CharAnim_LeftAlt &&
+		     character->animatable.anim != PlayerAnim_LeftMiss &&
+		     character->animatable.anim != CharAnim_Down &&
+		     character->animatable.anim != CharAnim_DownAlt &&
+		     character->animatable.anim != PlayerAnim_DownMiss &&
+		     character->animatable.anim != CharAnim_Up &&
+		     character->animatable.anim != CharAnim_UpAlt &&
+		     character->animatable.anim != PlayerAnim_UpMiss &&
+		     character->animatable.anim != CharAnim_Right &&
+		     character->animatable.anim != CharAnim_RightAlt &&
+		     character->animatable.anim != PlayerAnim_RightMiss) &&
+			(stage.song_step & 0xF) == 0)
+			character->set_anim(character, CharAnim_Idle);
+	}
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_RightHandMan_SetFrame);
@@ -186,8 +214,8 @@ Character *Char_RightHandMan_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFE44832;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_x = FIXED_DEC(-36,1);
+	this->character.focus_y = FIXED_DEC(-111,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;

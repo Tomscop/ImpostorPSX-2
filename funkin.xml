@@ -151,7 +151,7 @@
 				<file name = "charles.arc" type = "data" source = "iso/chars/charles/main.arc"/>
 				<file name = "ellie.arc" type = "data" source = "iso/chars/ellie/main.arc"/>
 				<file name = "rhm.arc" type = "data" source = "iso/chars/rhm/main.arc"/>
-				<!-- Reginald assets -->
+				<file name = "reginald.arc" type = "data" source = "iso/chars/reginald/main.arc"/>
 				<file name = "redv1.arc" type = "data" source = "iso/chars/redv1/main.arc"/>
 				<file name = "redow.arc" type = "data" source = "iso/chars/redow/main.arc"/>
 				<file name = "yfronts.arc" type = "data" source = "iso/chars/yfronts/main.arc"/>

@@ -24,24 +24,19 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "intro",
-			"imgname" : "intro",
-			"hname"   : "Intro"
 		}
 	],
-	"input":  "iso/chars/rhm/rhm",
-	"outdir": "iso/chars/rhm/",
-	"charname" : "RightHandMan",
+	"input":  "iso/chars/reginald/Reginald_Assets",
+	"outdir": "iso/chars/reginald/",
+	"charname" : "Reginald",
 	"optimize" : false,
-	"optimizename" : "righthandman",
+	"optimizename" : "reginald",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		704,
 		0,
-		0,
-		481
+		80,
+		480
 	],
 
 	"bpp" : 4,

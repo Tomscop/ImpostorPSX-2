@@ -107,6 +107,7 @@ static u32 Sounds[10];
 #include "character/charles.h"
 #include "character/ellie.h"
 #include "character/righthandman.h"
+#include "character/reginald.h"
 #include "character/redv1.h"
 #include "character/redow.h"
 #include "character/yfronts.h"

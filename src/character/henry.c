@@ -129,7 +129,6 @@ void Char_Henry_Tick(Character *character)
 	{
 		if (stage.song_step == 0)
 		{
-			this->character.focus_x = FIXED_DEC(53,1);
 			this->character.focus_y = FIXED_DEC(-64,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
@@ -138,7 +137,6 @@ void Char_Henry_Tick(Character *character)
 	{
 		if (stage.song_step == 0)
 		{
-			this->character.focus_x = FIXED_DEC(53,1);
 			this->character.focus_y = FIXED_DEC(-64,1);
 			this->character.focus_zoom = FIXED_DEC(1,1);
 		}
@@ -216,7 +214,7 @@ Character *Char_Henry_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFBDD7D8;
 	
-	this->character.focus_x = FIXED_DEC(43,1);
+	this->character.focus_x = FIXED_DEC(53,1);
 	this->character.focus_y = FIXED_DEC(-75,1);
 	this->character.focus_zoom = FIXED_DEC(1221,1024);
 	

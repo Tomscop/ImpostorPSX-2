@@ -728,7 +728,7 @@
 		{Char_BF_New,    FIXED_DEC(64,1),  FIXED_DEC(104,1)},
         {NULL},
 		{Char_RightHandMan_New, FIXED_DEC(-88,1),  FIXED_DEC(117,1)},
-        {NULL},
+		{Char_Reginald_New, FIXED_DEC(-143,1),  FIXED_DEC(83,1)},
 		{Char_GF_New,     FIXED_DEC(-48,1),  FIXED_DEC(3,1)},
 		
 		//Stage background

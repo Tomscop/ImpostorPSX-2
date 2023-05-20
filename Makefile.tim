@@ -42,6 +42,7 @@ all: \
 	iso/chars/charles/main.arc \
 	iso/chars/ellie/main.arc \
 	iso/chars/rhm/main.arc \
+	iso/chars/reginald/main.arc \
 	iso/chars/redv1/main.arc \
 	iso/chars/redow/main.arc \
 	iso/chars/yfronts/main.arc \
@@ -171,7 +172,9 @@ iso/chars/ellie/main.arc: iso/chars/ellie/idle0.tim iso/chars/ellie/idle1.tim is
 
 # RHM
 iso/chars/rhm/main.arc: iso/chars/rhm/idle0.tim iso/chars/rhm/idle1.tim iso/chars/rhm/idle2.tim iso/chars/rhm/idle3.tim iso/chars/rhm/idle4.tim iso/chars/rhm/left0.tim iso/chars/rhm/left1.tim iso/chars/rhm/left2.tim iso/chars/rhm/left3.tim iso/chars/rhm/left4.tim iso/chars/rhm/left5.tim iso/chars/rhm/down0.tim iso/chars/rhm/down1.tim iso/chars/rhm/down2.tim iso/chars/rhm/down3.tim iso/chars/rhm/up0.tim iso/chars/rhm/up1.tim iso/chars/rhm/up2.tim iso/chars/rhm/up3.tim iso/chars/rhm/up4.tim iso/chars/rhm/right0.tim iso/chars/rhm/right1.tim iso/chars/rhm/right2.tim iso/chars/rhm/right3.tim 
+
 # Reginald
+iso/chars/reginald/main.arc: iso/chars/reginald/idle0.tim iso/chars/reginald/idle1.tim iso/chars/reginald/idle2.tim iso/chars/reginald/left0.tim iso/chars/reginald/left1.tim iso/chars/reginald/left2.tim iso/chars/reginald/down0.tim iso/chars/reginald/down1.tim iso/chars/reginald/up0.tim iso/chars/reginald/up1.tim iso/chars/reginald/up2.tim iso/chars/reginald/right0.tim iso/chars/reginald/right1.tim iso/chars/reginald/right2.tim iso/chars/reginald/right3.tim 
 
 # Red V1
 iso/chars/redv1/main.arc: iso/chars/redv1/idle0.tim iso/chars/redv1/idle1.tim iso/chars/redv1/idle2.tim iso/chars/redv1/idle3.tim iso/chars/redv1/left0.tim iso/chars/redv1/down0.tim iso/chars/redv1/up0.tim iso/chars/redv1/right0.tim 
