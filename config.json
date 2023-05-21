@@ -26,21 +26,21 @@
 			"hname"   : "Right"
 		},
 		{
-			"fnfanim" : "GETOUT",
-			"imgname" : "getout",
-			"hname"   : "GetOut"
+			"fnfanim" : "rozebud?",
+			"imgname" : "huh",
+			"hname"   : "Huh"
 		}
 	],
-	"input":  "iso/chars/cvaltort/cvaltorture",
-	"outdir": "iso/chars/cvaltort/",
-	"charname" : "CvalTorture",
+	"input":  "iso/chars/piptort/piptorture",
+	"outdir": "iso/chars/piptort/",
+	"charname" : "PipTorture",
 	"optimize" : false,
-	"optimizename" : "cvaltorture",
+	"optimizename" : "piptorture",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		704,
 		0,
-		0,
+		16,
 		481
 	],
 

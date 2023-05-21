@@ -56,6 +56,7 @@ all: \
 	iso/chars/amogus/main.arc \
 	iso/chars/cval/main.arc \
 	iso/chars/cvaltort/main.arc \
+	iso/chars/piptort/main.arc \
 	iso/chars/jads/main.arc \
 	iso/chars/dad/main.arc \
 	iso/chars/gf/main.arc \
@@ -219,10 +220,11 @@ iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim
 # Cval
 iso/chars/cval/main.arc: iso/chars/cval/idle0.tim iso/chars/cval/idle1.tim iso/chars/cval/idle2.tim iso/chars/cval/idle3.tim iso/chars/cval/idle4.tim iso/chars/cval/idle5.tim iso/chars/cval/left0.tim iso/chars/cval/left1.tim iso/chars/cval/left2.tim iso/chars/cval/left3.tim iso/chars/cval/down0.tim iso/chars/cval/down1.tim iso/chars/cval/down2.tim iso/chars/cval/up0.tim iso/chars/cval/up1.tim iso/chars/cval/up2.tim iso/chars/cval/right0.tim iso/chars/cval/right1.tim iso/chars/cval/right2.tim iso/chars/cval/hi0.tim iso/chars/cval/hi1.tim iso/chars/cval/hi2.tim iso/chars/cval/hi3.tim iso/chars/cval/hi4.tim iso/chars/cval/hi5.tim 
 
-# Pip Torture
-
 # Cval Torture
 iso/chars/cvaltort/main.arc: iso/chars/cvaltort/idle0.tim iso/chars/cvaltort/left0.tim iso/chars/cvaltort/down0.tim iso/chars/cvaltort/up0.tim iso/chars/cvaltort/right0.tim iso/chars/cvaltort/getout0.tim iso/chars/cvaltort/getout1.tim iso/chars/cvaltort/getout2.tim iso/chars/cvaltort/getout3.tim iso/chars/cvaltort/getout4.tim iso/chars/cvaltort/getout5.tim 
+
+# Pip Torture
+iso/chars/piptort/main.arc: iso/chars/piptort/idle0.tim iso/chars/piptort/idle1.tim iso/chars/piptort/left0.tim iso/chars/piptort/down0.tim iso/chars/piptort/up0.tim iso/chars/piptort/right0.tim iso/chars/piptort/right1.tim iso/chars/piptort/huh0.tim iso/chars/piptort/huh1.tim iso/chars/piptort/huh2.tim iso/chars/piptort/huh3.tim 
 
 # Jads
 iso/chars/jads/main.arc: iso/chars/jads/idle0.tim iso/chars/jads/idle1.tim iso/chars/jads/idle2.tim iso/chars/jads/left0.tim iso/chars/jads/left1.tim iso/chars/jads/down0.tim iso/chars/jads/down1.tim iso/chars/jads/up0.tim iso/chars/jads/right0.tim iso/chars/jads/right1.tim 

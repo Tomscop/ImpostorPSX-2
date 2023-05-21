@@ -123,6 +123,7 @@ static u32 Sounds[10];
 #include "character/amogus.h"
 #include "character/cval.h"
 #include "character/cvaltorture.h"
+#include "character/piptorture.h"
 #include "character/jads.h"
 #include "character/dad.h"
 //GFs

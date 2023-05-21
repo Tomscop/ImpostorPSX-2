@@ -71,7 +71,7 @@ static const CharFrame char_cvaltorture_frame[] = {
   {CvalTorture_ArcMain_GetOut1, {  0,  0,113,121}, {214-52,169}}, //19 getout 5
   {CvalTorture_ArcMain_GetOut1, {114,  0,115,121}, {214-52,169}}, //20 getout 6
   {CvalTorture_ArcMain_GetOut1, {  0,122,115,117}, {212-52,165}}, //21 getout 7
-  {CvalTorture_ArcMain_GetOut1, {116,122,116,133}, {189-52,192}}, //21 getout 7  //EEEEEEEEEEEEEE
+  {CvalTorture_ArcMain_GetOut1, {116,122,116,133}, {189-52,192}}, //22 getout 7
   {CvalTorture_ArcMain_GetOut2, {  0,  0,116,144}, {189-52,191}}, //23 getout 8
   {CvalTorture_ArcMain_GetOut2, {117,  0,117,140}, {192-52,189}}, //24 getout 9
   {CvalTorture_ArcMain_GetOut3, {  0,  0,126,133}, {197-52,182}}, //25 getout 10
