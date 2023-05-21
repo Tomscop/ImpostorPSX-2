@@ -1,0 +1,193 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-15,
+				13
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left Normal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-27,
+				-23
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down Normal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-39,
+				47
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up Normal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-33,
+				-19
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right Normal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-8,
+				21
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "missLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-10,
+				-12
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "missDown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-41,
+				47
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "missUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-37,
+				30
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "missRight",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-5,
+				0
+			],
+			"anim": "idle-loop",
+			"fps": 24,
+			"name": "Idle",
+			"indices": [
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				19
+			],
+			"anim": "ROZEBUD",
+			"fps": 24,
+			"name": "Rozebud",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-16,
+				15
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "Left Yell",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-26,
+				-21
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "Down Yell",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-39,
+				48
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "Up Yell",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-32,
+				-18
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "Right Yell",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/ziffytorture",
+	"position": [
+		60,
+		170
+	],
+	"healthicon": "ziffy",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		153,
+		51
+	],
+	"camera_position": [
+		-145,
+		70
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

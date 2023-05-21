@@ -2,21 +2,66 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "rhm",
-			"hname"   : "RHM"
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFT-alt",
+			"imgname" : "lefta",
+			"hname"   : "LeftAlt"
+		},
+		{
+			"fnfanim" : "singDOWN-alt",
+			"imgname" : "downa",
+			"hname"   : "DownAlt"
+		},
+		{
+			"fnfanim" : "singUP-alt",
+			"imgname" : "upa",
+			"hname"   : "UpAlt"
+		},
+		{
+			"fnfanim" : "singRIGHT-alt",
+			"imgname" : "righta",
+			"hname"   : "RightAlt"
+		},
+		{
+			"fnfanim" : "ROZEBUD",
+			"imgname" : "help",
+			"hname"   : "Help"
 		}
 	],
-	"input":  "iso/stages/henry/i_schee_u_enry",
-	"outdir": "iso/stages/henry/",
-	"charname" : "RHM",
+	"input":  "iso/chars/ziffy/ziffytorture",
+	"outdir": "iso/chars/ziffy/",
+	"charname" : "Ziffy",
 	"optimize" : false,
-	"optimizename" : "rhm",
+	"optimizename" : "ziffy",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		832,
+		640,
 		0,
-		80,
-		481
+		0,
+		480
 	],
 
 	"bpp" : 4,

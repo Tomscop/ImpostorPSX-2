@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character/bfdrip.c \
 	src/character/picodrip.c \
 	src/character/pip.c \
+	src/character/ziffy.c \
 	src/character/tomongus.c \
 	src/character/loggo.c \
 	src/character/spooker.c \

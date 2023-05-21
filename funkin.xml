@@ -136,7 +136,7 @@
 				<!-- Clowfoe assets -->
 				<!-- Biddle assets -->
 				<file name = "pip.arc" type = "data" source = "iso/chars/pip/main.arc"/>
-				<!-- Ziffy assets -->
+				<file name = "ziffy.arc" type = "data" source = "iso/chars/ziffy/main.arc"/>
 			</dir>
 			
 			<dir name = "opponent">

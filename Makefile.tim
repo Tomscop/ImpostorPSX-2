@@ -33,6 +33,7 @@ all: \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
 	iso/chars/pip/main.arc \
+	iso/chars/ziffy/main.arc \
 	iso/chars/tomong/main.arc \
 	iso/chars/loggo/main.arc \
 	iso/chars/spooker/main.arc \
@@ -144,6 +145,7 @@ iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idl
 iso/chars/pip/main.arc: iso/chars/pip/idle0.tim iso/chars/pip/idle1.tim iso/chars/pip/idle2.tim iso/chars/pip/idle3.tim iso/chars/pip/idle4.tim iso/chars/pip/idle5.tim iso/chars/pip/left0.tim iso/chars/pip/left1.tim iso/chars/pip/left2.tim iso/chars/pip/down0.tim iso/chars/pip/down1.tim iso/chars/pip/down2.tim iso/chars/pip/up0.tim iso/chars/pip/up1.tim iso/chars/pip/up2.tim iso/chars/pip/right0.tim iso/chars/pip/right1.tim iso/chars/pip/right2.tim iso/chars/pip/idlei0.tim iso/chars/pip/idlei1.tim iso/chars/pip/idlei2.tim iso/chars/pip/idlei3.tim iso/chars/pip/idlei4.tim iso/chars/pip/idlei5.tim iso/chars/pip/lefti0.tim iso/chars/pip/lefti1.tim iso/chars/pip/lefti2.tim iso/chars/pip/downi0.tim iso/chars/pip/downi1.tim iso/chars/pip/downi2.tim iso/chars/pip/upi0.tim iso/chars/pip/upi1.tim iso/chars/pip/upi2.tim iso/chars/pip/righti0.tim iso/chars/pip/righti1.tim iso/chars/pip/righti2.tim 
 
 # Ziffy
+iso/chars/ziffy/main.arc: iso/chars/ziffy/idle0.tim iso/chars/ziffy/idle1.tim iso/chars/ziffy/idle2.tim iso/chars/ziffy/idle3.tim iso/chars/ziffy/left0.tim iso/chars/ziffy/left1.tim iso/chars/ziffy/down0.tim iso/chars/ziffy/down1.tim iso/chars/ziffy/up0.tim iso/chars/ziffy/up1.tim iso/chars/ziffy/right0.tim iso/chars/ziffy/right1.tim iso/chars/ziffy/lefta0.tim iso/chars/ziffy/lefta1.tim iso/chars/ziffy/downa0.tim iso/chars/ziffy/downa1.tim iso/chars/ziffy/upa0.tim iso/chars/ziffy/upa1.tim iso/chars/ziffy/righta0.tim iso/chars/ziffy/righta1.tim iso/chars/ziffy/help0.tim iso/chars/ziffy/help1.tim iso/chars/ziffy/help2.tim iso/chars/ziffy/help3.tim iso/chars/ziffy/help4.tim iso/chars/ziffy/help5.tim iso/chars/ziffy/help6.tim iso/chars/ziffy/help7.tim iso/chars/ziffy/help8.tim iso/chars/ziffy/help9.tim iso/chars/ziffy/help10.tim iso/chars/ziffy/help11.tim iso/chars/ziffy/help12.tim iso/chars/ziffy/help13.tim iso/chars/ziffy/help14.tim iso/chars/ziffy/help15.tim iso/chars/ziffy/help16.tim iso/chars/ziffy/help17.tim iso/chars/ziffy/help18.tim iso/chars/ziffy/help19.tim iso/chars/ziffy/help20.tim iso/chars/ziffy/help21.tim iso/chars/ziffy/help22.tim iso/chars/ziffy/help23.tim iso/chars/ziffy/help24.tim 
 
 
 # Tomongus

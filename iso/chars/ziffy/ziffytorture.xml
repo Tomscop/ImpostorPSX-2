@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tortreAGAINI GIVE UP SAJF.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Down Normal0000" x="789" y="2960" width="261" height="559" frameX="-3" frameY="0" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Normal0001" x="4993" y="2962" width="261" height="559" frameX="-3" frameY="0" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Normal0002" x="2387" y="3496" width="264" height="548" frameX="0" frameY="-11" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Normal0003" x="2959" y="3496" width="264" height="548" frameX="0" frameY="-11" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Yell0000" x="6077" y="2982" width="261" height="559" frameX="-3" frameY="0" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Yell0001" x="3318" y="3021" width="261" height="559" frameX="-3" frameY="0" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Yell0002" x="6340" y="3500" width="264" height="548" frameX="0" frameY="-11" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Down Yell0003" x="4111" y="3504" width="264" height="548" frameX="0" frameY="-11" frameWidth="264" frameHeight="559"/>
+	<SubTexture name="Idle0000" x="6783" y="1787" width="280" height="558" frameX="-8" frameY="-24" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0001" x="552" y="1775" width="280" height="559" frameX="-8" frameY="-24" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0002" x="5061" y="1821" width="283" height="548" frameX="-1" frameY="-34" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0003" x="4500" y="1791" width="284" height="549" frameX="0" frameY="-34" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0004" x="5809" y="2359" width="276" height="551" frameX="-3" frameY="-31" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0005" x="2457" y="2358" width="276" height="552" frameX="-3" frameY="-31" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0006" x="1644" y="2351" width="265" height="579" frameX="-10" frameY="-3" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0007" x="1911" y="2352" width="265" height="579" frameX="-10" frameY="-3" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0008" x="7338" y="2373" width="259" height="582" frameX="-16" frameY="0" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0009" x="1353" y="2362" width="259" height="583" frameX="-16" frameY="0" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0010" x="4477" y="2912" width="257" height="580" frameX="-18" frameY="-2" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0011" x="6087" y="2400" width="258" height="580" frameX="-17" frameY="-2" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0012" x="4477" y="2912" width="257" height="580" frameX="-18" frameY="-2" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Idle0013" x="6087" y="2400" width="258" height="580" frameX="-17" frameY="-2" frameWidth="288" frameHeight="583"/>
+	<SubTexture name="Left Normal0000" x="3944" y="2307" width="259" height="598" frameX="-6" frameY="0" frameWidth="265" frameHeight="599"/>
+	<SubTexture name="Left Normal0001" x="6396" y="2321" width="259" height="598" frameX="-6" frameY="0" frameWidth="265" frameHeight="599"/>
+	<SubTexture name="Left Normal0002" x="3910" y="608" width="265" height="599"/>
+	<SubTexture name="Left Normal0003" x="7612" y="608" width="265" height="599"/>
+	<SubTexture name="Left Yell0000" x="1092" y="2339" width="259" height="598" frameX="-6" frameY="0" frameWidth="265" frameHeight="599"/>
+	<SubTexture name="Left Yell0001" x="2799" y="2342" width="259" height="598" frameX="-6" frameY="0" frameWidth="265" frameHeight="599"/>
+	<SubTexture name="Left Yell0002" x="5317" y="629" width="265" height="599"/>
+	<SubTexture name="Left Yell0003" x="7303" y="630" width="265" height="599"/>
+	<SubTexture name="Right Normal0000" x="1592" y="3513" width="256" height="558" frameX="-4" frameY="-6" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="Right Normal0001" x="6606" y="3513" width="256" height="558" frameX="-4" frameY="-6" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="Right Normal0002" x="3851" y="3491" width="258" height="564" frameX="0" frameY="0" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Right Normal0003" x="4422" y="3494" width="258" height="564" frameX="0" frameY="0" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Right Yell0000" x="1850" y="3514" width="256" height="558" frameX="-4" frameY="-6" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Right Yell0001" x="518" y="3517" width="256" height="558" frameX="-4" frameY="-6" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Right Yell0002" x="5519" y="3494" width="258" height="564" frameX="0" frameY="0" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Right Yell0003" x="5779" y="3494" width="258" height="564" frameX="0" frameY="0" frameWidth="260" frameHeight="564"/>
+	<SubTexture name="Rozebud0000" x="3334" y="2439" width="258" height="580" frameX="-42" frameY="-21" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0002" x="3642" y="2376" width="260" height="579" frameX="-40" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0004" x="813" y="2387" width="263" height="571" frameX="-37" frameY="-30" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0006" x="4774" y="2364" width="263" height="574" frameX="-37" frameY="-27" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0008" x="7835" y="2346" width="265" height="583" frameX="-35" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0010" x="1375" y="1774" width="267" height="586" frameX="-33" frameY="-15" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0012" x="822" y="1188" width="270" height="585" frameX="-30" frameY="-16" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0014" x="276" y="1188" width="271" height="583" frameX="-29" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0016" x="2571" y="1183" width="272" height="582" frameX="-28" frameY="-19" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0018" x="3670" y="1801" width="272" height="573" frameX="-28" frameY="-28" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0020" x="7065" y="1822" width="271" height="572" frameX="-29" frameY="-29" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0022" x="6807" y="2" width="270" height="601" frameX="-30" frameY="0" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0024" x="6261" y="2" width="271" height="600" frameX="-29" frameY="-1" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0026" x="7882" y="2" width="270" height="599" frameX="-30" frameY="-2" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0028" x="554" y="604" width="274" height="582" frameX="-26" frameY="-19" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0030" x="4177" y="1154" width="273" height="581" frameX="-27" frameY="-20" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0032" x="2002" y="600" width="274" height="583" frameX="-26" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0034" x="1428" y="601" width="274" height="583" frameX="-26" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0036" x="278" y="603" width="274" height="583" frameX="-26" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0038" x="3124" y="603" width="274" height="583" frameX="-26" frameY="-18" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0040" x="2571" y="599" width="275" height="582" frameX="-25" frameY="-19" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0042" x="4786" y="1791" width="273" height="571" frameX="-27" frameY="-30" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0044" x="4500" y="2342" width="272" height="568" frameX="-28" frameY="-33" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0046" x="3706" y="2" width="276" height="601" frameX="-58" frameY="0" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0048" x="578" y="2" width="285" height="600" frameX="-58" frameY="-1" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0050" x="2" y="2" width="286" height="599" frameX="-58" frameY="-2" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0052" x="1439" y="2" width="284" height="597" frameX="-58" frameY="-4" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0054" x="1725" y="2" width="284" height="596" frameX="-58" frameY="-5" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0056" x="2297" y="2" width="282" height="595" frameX="-58" frameY="-6" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0058" x="3904" y="2907" width="257" height="582" frameX="-44" frameY="-19" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0060" x="1704" y="1184" width="276" height="574" frameX="-24" frameY="-27" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0062" x="3952" y="1737" width="277" height="568" frameX="-23" frameY="-33" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0064" x="2799" y="1775" width="277" height="565" frameX="-23" frameY="-36" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0066" x="271" y="1773" width="279" height="563" frameX="-21" frameY="-38" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0068" x="3670" y="1237" width="280" height="562" frameX="-20" frameY="-39" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0070" x="4561" y="2" width="299" height="550" frameX="-1" frameY="-51" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0072" x="7445" y="3512" width="257" height="559" frameX="-52" frameY="-42" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0074" x="4452" y="1177" width="271" height="585" frameX="-58" frameY="-16" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0076" x="6234" y="1236" width="268" height="588" frameX="-58" frameY="-13" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0078" x="3117" y="1752" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0080" x="1650" y="1760" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0082" x="1919" y="1761" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0084" x="4231" y="1764" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0086" x="2530" y="1767" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0088" x="2530" y="1767" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0090" x="5854" y="1768" width="267" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0092" x="5584" y="1211" width="268" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0094" x="5584" y="1211" width="268" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0096" x="1378" y="1186" width="270" height="586" frameX="-58" frameY="-15" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0098" x="3146" y="2" width="279" height="599" frameX="-58" frameY="-2" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0100" x="2297" y="599" width="272" height="591" frameX="-58" frameY="-10" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0102" x="7290" y="1231" width="268" height="589" frameX="-58" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0104" x="5699" y="2" width="279" height="584" frameX="-58" frameY="-17" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0105" x="5980" y="2" width="279" height="584" frameX="-58" frameY="-17" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0106" x="4862" y="2" width="285" height="573" frameX="-58" frameY="-28" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0107" x="5149" y="2" width="285" height="573" frameX="-58" frameY="-28" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0108" x="6347" y="2921" width="257" height="577" frameX="-48" frameY="-24" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0109" x="4163" y="2925" width="257" height="577" frameX="-48" frameY="-24" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0110" x="2702" y="2942" width="255" height="576" frameX="-50" frameY="-25" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0111" x="1335" y="2947" width="255" height="576" frameX="-50" frameY="-25" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0112" x="7599" y="2931" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0113" x="532" y="2936" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0114" x="7857" y="2931" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0115" x="261" y="2938" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0116" x="1614" y="2932" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0117" x="1078" y="2939" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0118" x="6606" y="2932" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0119" x="4736" y="2940" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0120" x="1872" y="2933" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0121" x="3594" y="2957" width="255" height="575" frameX="-51" frameY="-26" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0122" x="7188" y="2957" width="255" height="575" frameX="-51" frameY="-26" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0123" x="2" y="2362" width="257" height="589" frameX="-51" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0124" x="5039" y="2371" width="256" height="589" frameX="-51" frameY="-12" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0125" x="5818" y="2912" width="257" height="580" frameX="-52" frameY="-21" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0126" x="3060" y="2913" width="256" height="581" frameX="-52" frameY="-20" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0127" x="2130" y="2947" width="255" height="576" frameX="-53" frameY="-25" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Rozebud0128" x="2" y="2953" width="255" height="576" frameX="-53" frameY="-25" frameWidth="344" frameHeight="601"/>
+	<SubTexture name="Up Normal0000" x="6235" y="604" width="253" height="630" frameX="-5" frameY="0" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="Up Normal0001" x="6490" y="604" width="253" height="630" frameX="-5" frameY="0" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="Up Normal0002" x="4531" y="554" width="260" height="621" frameX="0" frameY="-9" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="Up Normal0003" x="4793" y="577" width="260" height="621" frameX="0" frameY="-9" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="Up Yell0000" x="3400" y="605" width="253" height="630" frameX="-5" frameY="0" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="Up Yell0001" x="3655" y="605" width="253" height="630" frameX="-5" frameY="0" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="Up Yell0002" x="5055" y="577" width="260" height="621" frameX="0" frameY="-9" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="Up Yell0003" x="5699" y="588" width="260" height="621" frameX="0" frameY="-9" frameWidth="260" frameHeight="630"/>
+	<SubTexture name="missDown0000" x="5256" y="2962" width="261" height="559" frameX="-21" frameY="-11" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missDown0001" x="6864" y="2969" width="261" height="559" frameX="-21" frameY="-11" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missDown0002" x="6745" y="605" width="284" height="561" frameX="0" frameY="-7" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missDown0003" x="6745" y="605" width="284" height="561" frameX="0" frameY="-7" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missDown0004" x="4205" y="2355" width="270" height="568" frameX="-7" frameY="0" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missDown0005" x="4205" y="2355" width="270" height="568" frameX="-7" frameY="0" frameWidth="284" frameHeight="570"/>
+	<SubTexture name="missLeft0000" x="552" y="2336" width="259" height="598" frameX="-14" frameY="-8" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missLeft0001" x="271" y="2338" width="259" height="598" frameX="-14" frameY="-8" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missLeft0002" x="3984" y="2" width="273" height="604" frameX="0" frameY="0" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missLeft0003" x="3984" y="2" width="273" height="604" frameX="0" frameY="0" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missLeft0004" x="7612" y="2" width="268" height="604" frameX="-5" frameY="0" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missLeft0005" x="7612" y="2" width="268" height="604" frameX="-5" frameY="0" frameWidth="273" frameHeight="606"/>
+	<SubTexture name="missRight0000" x="1592" y="3513" width="256" height="558" frameX="0" frameY="-55" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missRight0001" x="6606" y="3513" width="256" height="558" frameX="0" frameY="-55" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missRight0002" x="834" y="1775" width="256" height="610" frameX="-7" frameY="0" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missRight0003" x="834" y="1775" width="256" height="610" frameX="-7" frameY="0" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missRight0004" x="3386" y="1827" width="254" height="610" frameX="-7" frameY="0" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missRight0005" x="3386" y="1827" width="254" height="610" frameX="-7" frameY="0" frameWidth="263" frameHeight="613"/>
+	<SubTexture name="missUp0000" x="6235" y="604" width="253" height="630" frameX="-3" frameY="0" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="missUp0001" x="6490" y="604" width="253" height="630" frameX="-3" frameY="0" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="missUp0002" x="5436" y="2" width="261" height="625" frameX="0" frameY="-5" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="missUp0003" x="5436" y="2" width="261" height="625" frameX="0" frameY="-5" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="missUp0004" x="7351" y="2" width="259" height="626" frameX="-1" frameY="-4" frameWidth="261" frameHeight="630"/>
+	<SubTexture name="missUp0005" x="7351" y="2" width="259" height="626" frameX="-1" frameY="-4" frameWidth="261" frameHeight="630"/>
+</TextureAtlas>
