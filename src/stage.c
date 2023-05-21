@@ -167,6 +167,7 @@ static u32 Sounds[10];
 #include "stage/drip.h"
 #include "stage/daveoffice.h"
 #include "stage/towers.h"
+#include "stage/warehouse.h"
 #include "stage/o2.h"
 #include "stage/week1.h"
 #include "stage/dummy.h"
@@ -3083,6 +3084,14 @@ void Stage_Tick(void)
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
+			if (stage.stage_id == StageId_Torture)
+			{
+				stage.opponent->tick(stage.opponent);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+			}
 			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.stage_id == StageId_Turbulence)
@@ -3090,16 +3099,17 @@ void Stage_Tick(void)
 					stage.back->draw_md(stage.back);
 			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
 				stage.opponent2->tick(stage.opponent2);
-			stage.opponent->tick(stage.opponent);
+			if (stage.stage_id != StageId_Torture)
+				stage.opponent->tick(stage.opponent);
 			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
 				stage.player->tick(stage.player);
 			if (stage.player2 != NULL)
 				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed))
+			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed) && (stage.stage_id != StageId_Torture))
 				stage.opponent2->tick(stage.opponent2);
 			
 			//Draw stage middle
-			if (stage.stage_id != StageId_Turbulence)
+			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture))
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
 			

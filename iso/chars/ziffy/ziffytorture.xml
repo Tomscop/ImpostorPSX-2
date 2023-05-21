@@ -97,25 +97,15 @@
 	<SubTexture name="Rozebud0106" x="4862" y="2" width="285" height="573" frameX="-58" frameY="-28" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0107" x="5149" y="2" width="285" height="573" frameX="-58" frameY="-28" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0108" x="6347" y="2921" width="257" height="577" frameX="-48" frameY="-24" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0109" x="4163" y="2925" width="257" height="577" frameX="-48" frameY="-24" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0110" x="2702" y="2942" width="255" height="576" frameX="-50" frameY="-25" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0111" x="1335" y="2947" width="255" height="576" frameX="-50" frameY="-25" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0112" x="7599" y="2931" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0113" x="532" y="2936" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0114" x="7857" y="2931" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0115" x="261" y="2938" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0116" x="1614" y="2932" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0117" x="1078" y="2939" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0118" x="6606" y="2932" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0119" x="4736" y="2940" width="255" height="579" frameX="-53" frameY="-22" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0120" x="1872" y="2933" width="256" height="579" frameX="-52" frameY="-22" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0121" x="3594" y="2957" width="255" height="575" frameX="-51" frameY="-26" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0122" x="7188" y="2957" width="255" height="575" frameX="-51" frameY="-26" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0123" x="2" y="2362" width="257" height="589" frameX="-51" frameY="-12" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0124" x="5039" y="2371" width="256" height="589" frameX="-51" frameY="-12" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0125" x="5818" y="2912" width="257" height="580" frameX="-52" frameY="-21" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0126" x="3060" y="2913" width="256" height="581" frameX="-52" frameY="-20" frameWidth="344" frameHeight="601"/>
-	<SubTexture name="Rozebud0127" x="2130" y="2947" width="255" height="576" frameX="-53" frameY="-25" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Rozebud0128" x="2" y="2953" width="255" height="576" frameX="-53" frameY="-25" frameWidth="344" frameHeight="601"/>
 	<SubTexture name="Up Normal0000" x="6235" y="604" width="253" height="630" frameX="-5" frameY="0" frameWidth="261" frameHeight="630"/>
 	<SubTexture name="Up Normal0001" x="6490" y="604" width="253" height="630" frameX="-5" frameY="0" frameWidth="261" frameHeight="630"/>

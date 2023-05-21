@@ -254,7 +254,7 @@
 				
 				<file name = "towers.arc" type = "data" source = "iso/stages/towers/back.arc"/>
 				
-				<!-- Warehouse BG -->
+				<file name = "warehous.arc" type = "data" source = "iso/stages/warehous/back.arc"/>
 				<!-- Rozebud -->
 				<!-- Kill!! -->
 				

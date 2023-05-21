@@ -77,6 +77,7 @@ SRCS = src/main.c \
 	src/stage/drip.c \
 	src/stage/daveoffice.c \
 	src/stage/towers.c \
+	src/stage/warehouse.c \
 	src/stage/o2.c \
 	src/stage/week1.c \
 	src/stage/dummy.c \

@@ -1,51 +1,6 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFT-alt",
-			"imgname" : "lefta",
-			"hname"   : "LeftAlt"
-		},
-		{
-			"fnfanim" : "singDOWN-alt",
-			"imgname" : "downa",
-			"hname"   : "DownAlt"
-		},
-		{
-			"fnfanim" : "singUP-alt",
-			"imgname" : "upa",
-			"hname"   : "UpAlt"
-		},
-		{
-			"fnfanim" : "singRIGHT-alt",
-			"imgname" : "righta",
-			"hname"   : "RightAlt"
-		},
-		{
 			"fnfanim" : "ROZEBUD",
 			"imgname" : "help",
 			"hname"   : "Help"

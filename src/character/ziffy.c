@@ -57,9 +57,6 @@ enum
   Ziffy_ArcMain_Help19,
   Ziffy_ArcMain_Help20,
   Ziffy_ArcMain_Help21,
-  Ziffy_ArcMain_Help22,
-  Ziffy_ArcMain_Help23,
-  Ziffy_ArcMain_Help24,
 	
 	Ziffy_ArcMain_Max,
 };
@@ -83,15 +80,15 @@ typedef struct
 static const CharFrame char_ziffy_frame[] = {
   {Ziffy_ArcMain_Idle0, {  0,  0, 71,140}, {157,154}}, //0 idle 1
   {Ziffy_ArcMain_Idle0, { 71,  0, 71,140}, {157,154}}, //1 idle 2
-  {Ziffy_ArcMain_Idle0, {142,  0, 72,138}, {159,151}}, //2 idle 3
+  {Ziffy_ArcMain_Idle0, {142,  0, 72,138}, {159,152}}, //2 idle 3
   {Ziffy_ArcMain_Idle1, {  0,  0, 72,138}, {159,151}}, //3 idle 4
-  {Ziffy_ArcMain_Idle1, { 72,  0, 70,139}, {158,152}}, //4 idle 5
-  {Ziffy_ArcMain_Idle1, {142,  0, 70,138}, {158,152}}, //5 idle 6
-  {Ziffy_ArcMain_Idle2, {  0,  0, 67,145}, {156,159}}, //6 idle 7
-  {Ziffy_ArcMain_Idle2, { 67,  0, 67,146}, {156,159}}, //7 idle 8
-  {Ziffy_ArcMain_Idle2, {134,  0, 65,147}, {154,160}}, //8 idle 9
-  {Ziffy_ArcMain_Idle3, {  0,  0, 66,147}, {155,160}}, //9 idle 10
-  {Ziffy_ArcMain_Idle3, { 66,  0, 65,146}, {154,159}}, //10 idle 11
+  {Ziffy_ArcMain_Idle1, { 72,  0, 70,139}, {159,152}}, //4 idle 5
+  {Ziffy_ArcMain_Idle1, {142,  0, 70,138}, {159,152}}, //5 idle 6
+  {Ziffy_ArcMain_Idle2, {  0,  0, 67,145}, {157,159}}, //6 idle 7
+  {Ziffy_ArcMain_Idle2, { 67,  0, 67,146}, {157,159}}, //7 idle 8
+  {Ziffy_ArcMain_Idle2, {134,  0, 65,147}, {155,160}}, //8 idle 9
+  {Ziffy_ArcMain_Idle3, {  0,  0, 66,147}, {156,160}}, //9 idle 10
+  {Ziffy_ArcMain_Idle3, { 66,  0, 65,146}, {155,159}}, //10 idle 11
   {Ziffy_ArcMain_Idle3, {131,  0, 65,146}, {155,159}}, //11 idle 12
 
   {Ziffy_ArcMain_Left0, {  0,  0, 66,150}, {155,163}}, //12 left 1
@@ -189,26 +186,16 @@ static const CharFrame char_ziffy_frame[] = {
   {Ziffy_ArcMain_Help17, { 71,  0, 73,144}, {150,156}}, //96 help 53
   {Ziffy_ArcMain_Help17, {144,  0, 72,144}, {150,156}}, //97 help 54
   {Ziffy_ArcMain_Help18, {  0,  0, 65,145}, {153,158}}, //98 help 55
-  {Ziffy_ArcMain_Help18, { 65,  0, 65,145}, {153,158}}, //99 help 56
-  {Ziffy_ArcMain_Help18, {130,  0, 64,144}, {152,158}}, //100 help 57
-  {Ziffy_ArcMain_Help19, {  0,  0, 64,145}, {152,158}}, //101 help 58
-  {Ziffy_ArcMain_Help19, { 64,  0, 65,145}, {152,158}}, //102 help 59
-  {Ziffy_ArcMain_Help19, {129,  0, 65,146}, {152,158}}, //103 help 60
-  {Ziffy_ArcMain_Help20, {  0,  0, 65,145}, {152,158}}, //104 help 61
-  {Ziffy_ArcMain_Help20, { 65,  0, 65,146}, {152,158}}, //105 help 62
-  {Ziffy_ArcMain_Help20, {130,  0, 64,146}, {152,158}}, //106 help 63
-  {Ziffy_ArcMain_Help21, {  0,  0, 64,145}, {152,158}}, //107 help 64
-  {Ziffy_ArcMain_Help21, { 64,  0, 64,146}, {152,158}}, //108 help 65
-  {Ziffy_ArcMain_Help21, {128,  0, 65,146}, {152,158}}, //109 help 66
-  {Ziffy_ArcMain_Help22, {  0,  0, 65,146}, {152,158}}, //110 help 67
-  {Ziffy_ArcMain_Help22, { 65,  0, 64,145}, {151,157}}, //111 help 68
-  {Ziffy_ArcMain_Help22, {129,  0, 65,145}, {152,157}}, //112 help 69
-  {Ziffy_ArcMain_Help23, {  0,  0, 64,149}, {151,161}}, //113 help 70
-  {Ziffy_ArcMain_Help23, { 64,  0, 65,148}, {152,161}}, //114 help 71
-  {Ziffy_ArcMain_Help23, {129,  0, 64,146}, {151,159}}, //115 help 72
-  {Ziffy_ArcMain_Help24, {  0,  0, 65,146}, {152,159}}, //116 help 73
-  {Ziffy_ArcMain_Help24, { 65,  0, 64,145}, {151,158}}, //117 help 74
-  {Ziffy_ArcMain_Help24, {129,  0, 64,145}, {151,158}}, //118 help 75
+  {Ziffy_ArcMain_Help18, { 65,  0, 64,144}, {152,158}}, //99 help 56
+  {Ziffy_ArcMain_Help18, {129,  0, 65,145}, {152,158}}, //100 help 57
+  {Ziffy_ArcMain_Help19, {  0,  0, 65,145}, {152,158}}, //101 help 58
+  {Ziffy_ArcMain_Help19, { 65,  0, 64,146}, {152,158}}, //102 help 59
+  {Ziffy_ArcMain_Help19, {129,  0, 64,146}, {152,158}}, //103 help 60
+  {Ziffy_ArcMain_Help20, {  0,  0, 65,146}, {152,158}}, //104 help 61
+  {Ziffy_ArcMain_Help20, { 65,  0, 65,145}, {152,157}}, //105 help 62
+  {Ziffy_ArcMain_Help20, {130,  0, 65,148}, {152,161}}, //106 help 63
+  {Ziffy_ArcMain_Help21, {  0,  0, 65,146}, {152,159}}, //107 help 64
+  {Ziffy_ArcMain_Help21, { 65,  0, 64,145}, {151,158}}, //108 help 65
 };
 
 static const Animation char_ziffy_anim[PlayerAnim_Max] = {
@@ -222,7 +209,7 @@ static const Animation char_ziffy_anim[PlayerAnim_Max] = {
 	{1, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 1}},             //CharAnim_Right
 	{1, (const u8[]){ 40, 41, 42, 43, ASCR_BACK, 1}},       //CharAnim_RightAlt
 	
-	{1, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special1
+	{2, (const u8[]){ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special1
 	{1, (const u8[]){ 10, 11, ASCR_CHGANI, CharAnim_Special2}},       //CharAnim_Special2
 };
 
@@ -245,6 +232,8 @@ void Char_Ziffy_Tick(Character *character)
 {
 	Char_Ziffy *this = (Char_Ziffy*)character;
 	
+	if (character->animatable.anim != CharAnim_Special1)
+	{
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -275,6 +264,18 @@ void Char_Ziffy_Tick(Character *character)
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
 	}
+	}
+	
+	//Stage specific animations
+		switch (stage.stage_id)
+		{
+			case StageId_Torture:
+				if (stage.song_step == 1024) //ROZEBUD ROZEBUD HELP ME THEYRE GONNA KILL ME
+					character->set_anim(character, CharAnim_Special1);
+				break;
+			default:
+				break;
+		}
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_Ziffy_SetFrame);
@@ -377,9 +378,6 @@ Character *Char_Ziffy_New(fixed_t x, fixed_t y)
   "help19.tim",
   "help20.tim",
   "help21.tim",
-  "help22.tim",
-  "help23.tim",
-  "help24.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

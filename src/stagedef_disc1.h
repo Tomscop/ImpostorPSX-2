@@ -1005,7 +1005,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Warehouse_New,
 		
 		//Song info
 		6, 6,
