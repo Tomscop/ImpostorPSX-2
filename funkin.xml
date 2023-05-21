@@ -166,7 +166,7 @@
 				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
 				<file name = "cval.arc" type = "data" source = "iso/chars/cval/main.arc"/>
 				<!-- Pip Torture assets -->
-				<!-- Cval Torture assets -->
+				<file name = "cvaltort.arc" type = "data" source = "iso/chars/cvaltort/main.arc"/>
 				<file name = "jads.arc" type = "data" source = "iso/chars/jads/main.arc"/>
 				<file name = "dad.arc" type = "data" source = "iso/chars/dad/main.arc"/>
 			</dir>

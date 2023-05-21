@@ -998,9 +998,9 @@
 	},
 	{ //StageId_Torture (Torture)
 		//Characters
-		{Char_Ziffy_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Ziffy_New,    FIXED_DEC(355,1),  FIXED_DEC(230,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_CvalTorture_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
         {NULL},
 		

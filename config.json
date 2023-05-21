@@ -1,26 +1,51 @@
 {
 	"animations": [
 		{
-			"fnfanim" : "ROZEBUD",
-			"imgname" : "help",
-			"hname"   : "Help"
+			"fnfanim" : "idle",
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "GETOUT",
+			"imgname" : "getout",
+			"hname"   : "GetOut"
 		}
 	],
-	"input":  "iso/chars/ziffy/ziffytorture",
-	"outdir": "iso/chars/ziffy/",
-	"charname" : "Ziffy",
+	"input":  "iso/chars/cvaltort/cvaltorture",
+	"outdir": "iso/chars/cvaltort/",
+	"charname" : "CvalTorture",
 	"optimize" : false,
-	"optimizename" : "ziffy",
+	"optimizename" : "cvaltorture",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
 	"bpp" : 4,
-	"resize" : 0.25,
+	"resize" : 0.125,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

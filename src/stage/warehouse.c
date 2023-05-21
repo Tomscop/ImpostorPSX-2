@@ -37,8 +37,8 @@ void Back_Warehouse_DrawMG(StageBack *back)
 	
 	RECT glasses_src = {210,  0, 27, 54};
 	RECT_FIXED glasses_dst = {
-		FIXED_DEC(210 - screen.SCREEN_WIDEOADD2,1) - fx,
-		FIXED_DEC(203,1) - fy,
+		FIXED_DEC(237 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(217,1) - fy,
 		FIXED_DEC(27 + screen.SCREEN_WIDEOADD,1),
 		FIXED_DEC(54,1)
 	};

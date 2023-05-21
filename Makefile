@@ -57,6 +57,7 @@ SRCS = src/main.c \
 	src/character/dave.c \
 	src/character/amogus.c \
 	src/character/cval.c \
+	src/character/cvaltorture.c \
 	src/character/jads.c \
 	src/character/dad.c \
 	src/character/gf.c \
