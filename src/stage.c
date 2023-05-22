@@ -717,9 +717,49 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	Gfx_DrawTexCol(tex, src, &sdst, cr, cg, cb);
 }
 
+void Stage_DrawTexColFlipped(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom, u8 cr, u8 cg, u8 cb)
+{
+	fixed_t xz = dst->x;
+	fixed_t yz = dst->y;
+	fixed_t wz = -dst->w;
+	fixed_t hz = dst->h;
+	
+	
+	//Don't draw if HUD and is disabled
+	if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+	{
+		#ifdef STAGE_NOHUD
+			return;
+		#endif
+	}
+	
+	fixed_t l = (screen.SCREEN_WIDTH2  << FIXED_SHIFT) + FIXED_MUL(xz, zoom);// + FIXED_DEC(1,2);
+	fixed_t t = (screen.SCREEN_HEIGHT2 << FIXED_SHIFT) + FIXED_MUL(yz, zoom);// + FIXED_DEC(1,2);
+	fixed_t r = l + FIXED_MUL(wz, zoom);
+	fixed_t b = t + FIXED_MUL(hz, zoom);
+	
+	l >>= FIXED_SHIFT;
+	t >>= FIXED_SHIFT;
+	r >>= FIXED_SHIFT;
+	b >>= FIXED_SHIFT;
+	
+	RECT sdst = {
+		l,
+		t,
+		r - l,
+		b - t,
+	};
+	Gfx_DrawTexCol(tex, src, &sdst, cr, cg, cb);
+}
+
 void Stage_DrawTex(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom)
 {
 	Stage_DrawTexCol(tex, src, dst, zoom, 0x80, 0x80, 0x80);
+}
+
+void Stage_DrawTexFlipped(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom)
+{
+	Stage_DrawTexColFlipped(tex, src, dst, zoom, 0x80, 0x80, 0x80);
 }
 
 void Stage_DrawTexRotate(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixed_t zoom, u8 angle)
@@ -1776,7 +1816,7 @@ static void Stage_LoadMusic(void)
 	
 	//Initialize music state
 	//added more steps and disable intro
-	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus))
+	if ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Torture))
 	{
 		stage.intro = false;
 		stage.event_chart.note_scroll = stage.chart.note_scroll = FIXED_DEC(-1 * 1 * 12,1);
@@ -3138,6 +3178,9 @@ void Stage_Tick(void)
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
 				stage.player_state[0].charactersecond = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				stage.player_state[1].charactersecond = NULL;
 			}
 			else if (stage.stage_id == StageId_DoubleKill)
 			{

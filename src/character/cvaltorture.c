@@ -71,15 +71,15 @@ static const CharFrame char_cvaltorture_frame[] = {
   {CvalTorture_ArcMain_GetOut1, {  0,  0,113,121}, {214-52,169}}, //19 getout 5
   {CvalTorture_ArcMain_GetOut1, {114,  0,115,121}, {214-52,169}}, //20 getout 6
   {CvalTorture_ArcMain_GetOut1, {  0,122,115,117}, {212-52,165}}, //21 getout 7
-  {CvalTorture_ArcMain_GetOut1, {116,122,116,133}, {189-52,192}}, //22 getout 7
-  {CvalTorture_ArcMain_GetOut2, {  0,  0,116,144}, {189-52,191}}, //23 getout 8
-  {CvalTorture_ArcMain_GetOut2, {117,  0,117,140}, {192-52,189}}, //24 getout 9
-  {CvalTorture_ArcMain_GetOut3, {  0,  0,126,133}, {197-52,182}}, //25 getout 10
-  {CvalTorture_ArcMain_GetOut3, {127,  0,122,118}, {192-52,170}}, //26 getout 11
-  {CvalTorture_ArcMain_GetOut4, {  0,  0,122,118}, {192-52,171}}, //27 getout 12
-  {CvalTorture_ArcMain_GetOut4, {123,  0,123,154}, {166-52,199}}, //28 getout 13
-  {CvalTorture_ArcMain_GetOut5, {  0,  0,123,154}, {167-52,198}}, //29 getout 14
-  {CvalTorture_ArcMain_GetOut5, {124,  0,123,153}, {167-52,198}}, //30 getout 15
+  {CvalTorture_ArcMain_GetOut1, {116,122,116,133}, {189-52,192}}, //22 getout 8
+  {CvalTorture_ArcMain_GetOut2, {  0,  0,116,144}, {189-52,191}}, //23 getout 9
+  {CvalTorture_ArcMain_GetOut2, {117,  0,117,140}, {192-52,189}}, //24 getout 10
+  {CvalTorture_ArcMain_GetOut3, {  0,  0,126,133}, {197-52,182}}, //25 getout 11
+  {CvalTorture_ArcMain_GetOut3, {127,  0,122,118}, {192-52,170}}, //26 getout 12
+  {CvalTorture_ArcMain_GetOut4, {  0,  0,122,118}, {192-52,171}}, //27 getout 13
+  {CvalTorture_ArcMain_GetOut4, {123,  0,123,154}, {166-52,199}}, //28 getout 14
+  {CvalTorture_ArcMain_GetOut5, {  0,  0,123,154}, {167-52,198}}, //29 getout 15
+  {CvalTorture_ArcMain_GetOut5, {124,  0,123,153}, {167-52,198}}, //30 getout 16
 };
 
 static const Animation char_cvaltorture_anim[CharAnim_Max] = {
@@ -93,7 +93,9 @@ static const Animation char_cvaltorture_anim[CharAnim_Max] = {
 	{1, (const u8[]){ 12, 12, 13, 13, 14, 14, 13, 13, 14, 14, 13, 13, 14, 14, 13, ASCR_BACK, 1}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 	
-	{1, (const u8[]){ 15, 15, 16, 16, 17, 17, 17, 17, 17, 17, 18, 18, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 22, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 26, 26, 27, 27, 28, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Special1
+	{1, (const u8[]){ 15, 15, 16, 16, 17, 17, 17, 17, 17, 17, 18, 18, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, ASCR_BACK, 1}},         //CharAnim_Special1
+	{1, (const u8[]){ 22, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 26, 26, 27, 27, ASCR_BACK, 1}},         //CharAnim_Special2
+	{1, (const u8[]){ 28, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Special3
 };
 
 //CvalTorture character functions
@@ -116,7 +118,7 @@ void Char_CvalTorture_Tick(Character *character)
 	Char_CvalTorture *this = (Char_CvalTorture*)character;
 	
 	//Perform idle dance
-	if (character->animatable.anim != CharAnim_Special1)
+	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2) && (character->animatable.anim != CharAnim_Special3))
 	{
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -126,8 +128,12 @@ void Char_CvalTorture_Tick(Character *character)
 		switch (stage.stage_id)
 		{
 			case StageId_Torture: //GTFO
-				if (stage.song_step == 1045)
+				if (stage.song_step == 1045) //what are you doing
 					character->set_anim(character, CharAnim_Special1);
+				if (stage.song_step == 1066) //get the hell out of here
+					character->set_anim(character, CharAnim_Special2);
+				if (stage.song_step == 1085) //AAAA
+					character->set_anim(character, CharAnim_Special3);
 				break;
 			default:
 				break;
@@ -181,7 +187,7 @@ Character *Char_CvalTorture_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF0064CE;
 	
 	this->character.focus_x = FIXED_DEC(-23,1);
-	this->character.focus_y = FIXED_DEC(-102,1);
+	this->character.focus_y = FIXED_DEC(-258,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.zoom_save = this->character.focus_zoom;

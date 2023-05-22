@@ -92,6 +92,7 @@ all: \
 	iso/stages/office/back.arc \
 	iso/stages/towers/back.arc \
 	iso/stages/warehous/back.arc \
+	iso/stages/warehous/blades.arc \
 	iso/stages/o2/back.arc \
 	iso/stages/week1/back.arc \
 
@@ -299,6 +300,7 @@ iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.
 
 # Warehouse
 iso/stages/warehous/back.arc: iso/stages/warehous/back0.tim iso/stages/warehous/back1.tim
+iso/stages/warehous/blades.arc: iso/stages/warehous/blades0.tim iso/stages/warehous/blades1.tim iso/stages/warehous/blades2.tim 
 
 # O2
 iso/stages/o2/back.arc: iso/stages/o2/back0.tim iso/stages/o2/back1.tim

@@ -1001,7 +1001,7 @@
 		{Char_Ziffy_New,    FIXED_DEC(355,1),  FIXED_DEC(230,1)},
         {NULL},
 		{Char_CvalTorture_New, FIXED_DEC(239,1),  FIXED_DEC(378,1)},
-		{Char_PipTorture_New, FIXED_DEC(239,1),  FIXED_DEC(378,1)},
+		{Char_PipTorture_New, FIXED_DEC(253,1),  FIXED_DEC(418,1)},
         {NULL},
 		
 		//Stage background

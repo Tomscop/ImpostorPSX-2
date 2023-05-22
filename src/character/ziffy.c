@@ -199,7 +199,7 @@ static const CharFrame char_ziffy_frame[] = {
 };
 
 static const Animation char_ziffy_anim[PlayerAnim_Max] = {
-	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 10, 11, ASCR_CHGANI, CharAnim_Special2}}, //CharAnim_Idle
+	{1, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 10, 11, ASCR_CHGANI, CharAnim_Special3}}, //CharAnim_Idle
 	{1, (const u8[]){ 12, 13, 14, 15, ASCR_BACK, 1}},             //CharAnim_Left
 	{1, (const u8[]){ 28, 29, 30, 31, ASCR_BACK, 1}},       //CharAnim_LeftAlt
 	{1, (const u8[]){ 16, 17, 18, 19, ASCR_BACK, 1}},             //CharAnim_Down
@@ -209,8 +209,9 @@ static const Animation char_ziffy_anim[PlayerAnim_Max] = {
 	{1, (const u8[]){ 24, 25, 26, 27, ASCR_BACK, 1}},             //CharAnim_Right
 	{1, (const u8[]){ 40, 41, 42, 43, ASCR_BACK, 1}},       //CharAnim_RightAlt
 	
-	{2, (const u8[]){ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 108, ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special1
-	{1, (const u8[]){ 10, 11, ASCR_CHGANI, CharAnim_Special2}},       //CharAnim_Special2
+	{2, (const u8[]){ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, ASCR_BACK, 1}},       //CharAnim_Special1
+	{2, (const u8[]){ 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 108, ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
+	{1, (const u8[]){ 10, 11, ASCR_CHGANI, CharAnim_Special3}},       //CharAnim_Special3
 };
 
 //Ziffy player functions
@@ -232,7 +233,7 @@ void Char_Ziffy_Tick(Character *character)
 {
 	Char_Ziffy *this = (Char_Ziffy*)character;
 	
-	if (character->animatable.anim != CharAnim_Special1)
+	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2))
 	{
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
@@ -269,9 +270,11 @@ void Char_Ziffy_Tick(Character *character)
 	//Stage specific animations
 		switch (stage.stage_id)
 		{
-			case StageId_Torture:
-				if (stage.song_step == 1024) //ROZEBUD ROZEBUD HELP ME THEYRE GONNA KILL ME
-					character->set_anim(character, CharAnim_Special1);
+			case StageId_Torture: //ROZEBUD ROZEBUD HELP ME THEYRE GONNA KILL ME
+				if (stage.song_step == 1024) 
+					character->set_anim(character, CharAnim_Special1); //ROZEBUD HELP
+				if (stage.song_step == 1062) 
+					character->set_anim(character, CharAnim_Special2); //AEWGEGI
 				break;
 			default:
 				break;
@@ -327,7 +330,7 @@ Character *Char_Ziffy_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFFFC972B;
 	
 	this->character.focus_x = FIXED_DEC(-167,1);
-	this->character.focus_y = FIXED_DEC(205,1);
+	this->character.focus_y = FIXED_DEC(-110,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.size = FIXED_DEC(1,1);

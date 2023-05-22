@@ -2,50 +2,25 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "idle",
-			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "rozebud?",
-			"imgname" : "huh",
-			"hname"   : "Huh"
+			"imgname" : "blades",
+			"hname"   : "Blades"
 		}
 	],
-	"input":  "iso/chars/piptort/piptorture",
-	"outdir": "iso/chars/piptort/",
-	"charname" : "PipTorture",
+	"input":  "iso/stages/warehous/blades",
+	"outdir": "iso/stages/warehous/",
+	"charname" : "Blades",
 	"optimize" : false,
-	"optimizename" : "piptorture",
+	"optimizename" : "blades",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		704,
+		320,
 		0,
-		16,
-		481
+		0,
+		484
 	],
 
 	"bpp" : 4,
-	"resize" : 0.125,
+	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,
