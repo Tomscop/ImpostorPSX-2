@@ -255,8 +255,9 @@
 				<file name = "towers.arc" type = "data" source = "iso/stages/towers/back.arc"/>
 				
 				<file name = "warehous.arc" type = "data" source = "iso/stages/warehous/back.arc"/>
-				<!-- Rozebud -->
 				<file name = "blades.arc" type = "data" source = "iso/stages/warehous/blades.arc"/>
+				<!-- Huh -->
+				<file name = "rozebud.arc" type = "data" source = "iso/stages/warehous/rozebud.arc"/>
 				
 				<file name = "o2.arc" type = "data" source = "iso/stages/o2/back.arc"/>
 				

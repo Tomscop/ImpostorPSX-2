@@ -2,20 +2,20 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "blades",
-			"hname"   : "Blades"
+			"imgname" : "rozebud",
+			"hname"   : "rozebud"
 		}
 	],
-	"input":  "iso/stages/warehous/blades",
+	"input":  "iso/stages/warehous/torture_roze",
 	"outdir": "iso/stages/warehous/",
-	"charname" : "Blades",
+	"charname" : "Rozebud",
 	"optimize" : false,
-	"optimizename" : "blades",
+	"optimizename" : "rozebud",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		448,
 		0,
-		0,
+		32,
 		484
 	],
 

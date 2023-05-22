@@ -95,7 +95,7 @@ static const Animation char_cvaltorture_anim[CharAnim_Max] = {
 	
 	{1, (const u8[]){ 15, 15, 16, 16, 17, 17, 17, 17, 17, 17, 18, 18, 19, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, ASCR_BACK, 1}},         //CharAnim_Special1
 	{1, (const u8[]){ 22, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 26, 26, 27, 27, ASCR_BACK, 1}},         //CharAnim_Special2
-	{1, (const u8[]){ 28, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_Special3
+	{1, (const u8[]){ 28, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_BACK, 1}},         //CharAnim_Special3
 };
 
 //CvalTorture character functions
@@ -116,6 +116,43 @@ void Char_CvalTorture_SetFrame(void *user, u8 frame)
 void Char_CvalTorture_Tick(Character *character)
 {
 	Char_CvalTorture *this = (Char_CvalTorture*)character;
+	
+	//Camera stuff
+	if (stage.stage_id == StageId_Torture)
+	{
+		if (stage.camswitch == 1) //cval
+		{
+			this->character.focus_x = FIXED_DEC(19,1);
+			this->character.focus_y = FIXED_DEC(-237,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.camswitch == 2) //pip
+		{
+			this->character.focus_x = FIXED_DEC(-51,1);
+			this->character.focus_y = FIXED_DEC(-237,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.camswitch == 3) //ROZEBUD
+		{
+			this->character.focus_x = FIXED_DEC(-8,1);
+			this->character.focus_y = FIXED_DEC(-251,1);
+			this->character.focus_zoom = FIXED_DEC(965,1024);
+		}
+		if (stage.camswitch == 4) //end
+		{
+			this->character.focus_x = FIXED_DEC(-8,1);
+			this->character.focus_y = FIXED_DEC(-237,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if ((stage.song_step == 258) || (stage.song_step == 494) || (stage.song_step == 508) || (stage.song_step == 674) || (stage.song_step == 928) || (stage.song_step == 1088) || (stage.song_step == 1156) || (stage.song_step == 1200) || (stage.song_step == 1470)) //cval
+			stage.camswitch = 1;
+		if ((stage.song_step == 382) || (stage.song_step == 506) || (stage.song_step == 518) || (stage.song_step == 811) || (stage.song_step == 1120) || (stage.song_step == 1195) || (stage.song_step == 1342)) //pip
+			stage.camswitch = 2;
+		if (stage.song_beat == 255) //rozebud
+			stage.camswitch = 3;
+		if (stage.song_step == 1478) //end
+			stage.camswitch = 4;
+	}
 	
 	//Perform idle dance
 	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2) && (character->animatable.anim != CharAnim_Special3))
@@ -186,9 +223,9 @@ Character *Char_CvalTorture_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF0064CE;
 	
-	this->character.focus_x = FIXED_DEC(-23,1);
-	this->character.focus_y = FIXED_DEC(-258,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-8,1);
+	this->character.focus_y = FIXED_DEC(-238,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(2,1);

@@ -24,13 +24,20 @@ typedef struct
 	
 	//Textures
 	IO_Data arc_blades, arc_blades_ptr[3];
+	IO_Data arc_rozebud, arc_rozebud_ptr[6];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
+	Gfx_Tex tex_monty; //monty
 	
 	//Blades state
 	Gfx_Tex tex_blades;
 	u8 blades_frame, blades_tex_id;
 	Animatable blades_animatable;
+	
+	//Rozebud state
+	Gfx_Tex tex_rozebud;
+	u8 rozebud_frame, rozebud_tex_id;
+	Animatable rozebud_animatable;
 	
 } Back_Warehouse;
 
@@ -91,6 +98,85 @@ void Warehouse_Blades_DrawRight(Back_Warehouse *this, fixed_t x, fixed_t y)
 	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 	Debug_StageMoveDebug(&dst, 8, stage.camera.x, stage.camera.y);
 	Stage_DrawTexFlipped(&this->tex_blades, &src, &dst, stage.camera.bzoom);
+}
+
+//Rozebud animation and rects
+static const CharFrame rozebud_frame[] = {
+  {0, {  0,  0, 84, 97}, {160,123}}, //0 rozebud 1
+  {0, { 84,  0, 80,102}, {133,140}}, //1 rozebud 2
+  {0, {164,  0, 78,106}, {115,152}}, //2 rozebud 3
+  {0, {  0,106, 77,107}, {113,153}}, //3 rozebud 4
+  {0, { 77,106, 79,106}, {113,152}}, //4 rozebud 5
+  {0, {156,106, 74,108}, {112,159}}, //5 rozebud 6
+  {1, {  0,  0, 74,108}, {112,159}}, //6 rozebud 7
+  {1, { 74,  0, 78,107}, {113,155}}, //7 rozebud 8
+  {1, {152,  0, 78,107}, {113,155}}, //8 rozebud 9
+  {1, {  0,108, 78,106}, {113,153}}, //9 rozebud 10
+  {1, { 78,108, 78,106}, {113,153}}, //10 rozebud 11
+  {1, {156,108, 77,107}, {112,154}}, //11 rozebud 12
+  {2, {  0,  0, 76,107}, {111,156}}, //12 rozebud 13
+  {2, { 76,  0, 76,108}, {112,156}}, //13 rozebud 14
+  {2, {152,  0, 78,106}, {113,153}}, //14 rozebud 15
+  {2, {  0,108, 78,106}, {113,153}}, //15 rozebud 16
+  {2, { 78,108, 77,107}, {113,154}}, //16 rozebud 17
+  {2, {155,108, 78,106}, {113,153}}, //17 rozebud 18
+  {3, {  0,  0, 78,107}, {113,154}}, //18 rozebud 19
+  {3, { 78,  0, 77,107}, {113,154}}, //19 rozebud 20
+  {3, {155,  0, 77,107}, {113,154}}, //20 rozebud 21
+  {3, {  0,107, 78,106}, {113,153}}, //21 rozebud 22
+  {3, { 78,107, 80,105}, {113,151}}, //22 rozebud 23
+  {3, {158,107, 78,106}, {113,152}}, //23 rozebud 24
+  {4, {  0,  0, 78,107}, {113,153}}, //24 rozebud 25
+  {4, { 78,  0, 80,105}, {113,151}}, //25 rozebud 26
+  {4, {158,  0, 80,105}, {113,151}}, //26 rozebud 27
+  {4, {  0,107, 79,106}, {113,152}}, //27 rozebud 28
+  {4, { 79,107, 78,106}, {112,152}}, //28 rozebud 29
+  {4, {157,107, 77,107}, {112,154}}, //29 rozebud 30
+  {5, {  0,  0, 77,107}, {113,154}}, //30 rozebud 31
+  {5, { 77,  0, 78,107}, {113,154}}, //31 rozebud 32
+  {5, {155,  0, 81,101}, {141,134}}, //32 rozebud 33
+  {5, {  0,107, 83, 97}, {157,124}}, //33 rozebud 34
+  {5, { 83,107, 83, 97}, {158,123}}, //34 rozebud 35
+  {5, {166,107, 83, 97}, {160,123}}, //35 rozebud 36
+  
+  {0, {166,107,  1,  1}, {160,123}}, //36 rozebud 36
+};
+
+static const Animation rozebud_anim[] = {
+	{2, (const u8[]){ 36, ASCR_BACK, 1}}, //Hide
+	
+	{1, (const u8[]){ 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 11, 11, 11, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, ASCR_BACK, 1}}, //1
+	{1, (const u8[]){ 22, 22, 23, 23, 24, ASCR_BACK, 1}}, //2
+	{1, (const u8[]){ 25, 26, 27, 28, 29, 29, 30, 30, 30, 30, 31, 31, 31, 31, 31, 32, 32, 33, 33, 34, 34, 35, 35, ASCR_CHGANI, 0}}, //3
+};
+
+//Rozebud functions
+void Warehouse_Rozebud_SetFrame(void *user, u8 frame)
+{
+	Back_Warehouse *this = (Back_Warehouse*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->rozebud_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &rozebud_frame[this->rozebud_frame = frame];
+		if (cframe->tex != this->rozebud_tex_id)
+			Gfx_LoadTex(&this->tex_rozebud, this->arc_rozebud_ptr[this->rozebud_tex_id = cframe->tex], 0);
+	}
+}
+
+void Warehouse_Rozebud_Draw(Back_Warehouse *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &rozebud_frame[this->rozebud_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+	Debug_StageMoveDebug(&dst, 12, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_rozebud, &src, &dst, stage.camera.bzoom);
 }
 
 void Back_Warehouse_BladeX(void)
@@ -167,6 +253,32 @@ void Back_Warehouse_BladeX(void)
 	else
 		bladex = 34;
 }
+
+void Back_Warehouse_DrawFG(StageBack *back)
+{
+	Back_Warehouse *this = (Back_Warehouse*)back;
+
+	fixed_t fx, fy;
+
+	//Draw warehouse
+	fx = stage.camera.x;
+	fy = stage.camera.y;
+	
+	RECT monty_src = {  0,  0, 72, 72};
+	RECT_FIXED monty_dst = {
+		FIXED_DEC(104 - screen.SCREEN_WIDEOADD2,1) - fx,
+		FIXED_DEC(200,1) - fy,
+		FIXED_DEC(72 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(72,1)
+	};
+	
+	if (((stage.song_step & 0x1F) == 0) || ((stage.song_step & 0x1F) == 1))
+		monty_src.y += 73;
+	
+	Debug_StageMoveDebug(&monty_dst, 10, fx, fy);
+	Stage_DrawTex(&this->tex_monty, &monty_src, &monty_dst, stage.camera.bzoom);
+}
+
 void Back_Warehouse_DrawMG(StageBack *back)
 {
 	Back_Warehouse *this = (Back_Warehouse*)back;
@@ -176,6 +288,19 @@ void Back_Warehouse_DrawMG(StageBack *back)
 	//Draw warehouse
 	fx = stage.camera.x;
 	fy = stage.camera.y;
+	
+	//Rozebud
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 0))
+		Animatable_SetAnim(&this->rozebud_animatable, 0);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 255))
+		Animatable_SetAnim(&this->rozebud_animatable, 1);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1045))
+		Animatable_SetAnim(&this->rozebud_animatable, 2);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1081))
+		Animatable_SetAnim(&this->rozebud_animatable, 3);
+	Animatable_Animate(&this->rozebud_animatable, (void*)this, Warehouse_Rozebud_SetFrame);
+	if ((stage.song_beat >= 255) && (stage.song_beat <= 273))
+		Warehouse_Rozebud_Draw(this, FIXED_DEC(55 + 113,1) - fx, FIXED_DEC(13 + 153,1) - fy);
 	
 	//Blades
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1))
@@ -249,6 +374,9 @@ void Back_Warehouse_Free(StageBack *back)
 	//Free blades archive
 	Mem_Free(this->arc_blades);
 	
+	//Free rozebud archive
+	Mem_Free(this->arc_rozebud);
+	
 	//Free structure
 	Mem_Free(this);
 }
@@ -261,7 +389,7 @@ StageBack *Back_Warehouse_New(void)
 		return NULL;
 	
 	//Set background functions
-	this->back.draw_fg = NULL;
+	this->back.draw_fg = Back_Warehouse_DrawFG;
 	this->back.draw_md = Back_Warehouse_DrawMG;
 	this->back.draw_bg = Back_Warehouse_DrawBG;
 	this->back.free = Back_Warehouse_Free;
@@ -270,6 +398,7 @@ StageBack *Back_Warehouse_New(void)
 	IO_Data arc_back = IO_Read("\\BG\\WAREHOUS.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
+	Gfx_LoadTex(&this->tex_monty, Archive_Find(arc_back, "monty.tim"), 0);
 	Mem_Free(arc_back);
 	
 	//Load blades textures
@@ -282,6 +411,20 @@ StageBack *Back_Warehouse_New(void)
 	Animatable_Init(&this->blades_animatable, blades_anim);
 	Animatable_SetAnim(&this->blades_animatable, 0);
 	this->blades_frame = this->blades_tex_id = 0xFF; //Force art load
+	
+	//Load rozebud textures
+	this->arc_rozebud = IO_Read("\\BG\\ROZEBUD.ARC;1");
+	this->arc_rozebud_ptr[0] = Archive_Find(this->arc_rozebud, "rozebud0.tim");
+	this->arc_rozebud_ptr[1] = Archive_Find(this->arc_rozebud, "rozebud1.tim");
+	this->arc_rozebud_ptr[2] = Archive_Find(this->arc_rozebud, "rozebud2.tim");
+	this->arc_rozebud_ptr[3] = Archive_Find(this->arc_rozebud, "rozebud3.tim");
+	this->arc_rozebud_ptr[4] = Archive_Find(this->arc_rozebud, "rozebud4.tim");
+	this->arc_rozebud_ptr[5] = Archive_Find(this->arc_rozebud, "rozebud5.tim");
+	
+	//Initialize rozebud state
+	Animatable_Init(&this->rozebud_animatable, rozebud_anim);
+	Animatable_SetAnim(&this->rozebud_animatable, 0);
+	this->rozebud_frame = this->rozebud_tex_id = 0xFF; //Force art load
 	
 	return (StageBack*)this;
 }

@@ -168,6 +168,7 @@ void StageInfo_Draw()
         -58,
         FontAlign_Left
     );
+	
 	//Draw composor name
     stage.font_cdr.draw(&stage.font_cdr,
         stage.composer,
@@ -191,27 +192,90 @@ void StageInfo_Draw()
 	FIXED_DEC(32,1)
 	};
 	
-	if((stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Drippypop) || (stage.stage_id == StageId_Torture))
+	if ((stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Drippypop))
 		block_dst.h += FIXED_DEC(6,1);
-	if((stage.stage_id == StageId_SussusMoogus) || (stage.stage_id == StageId_Sabotage) || (stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Pretender) || (stage.stage_id == StageId_Grinch) || (stage.stage_id == StageId_Titular) || (stage.stage_id == StageId_GreatestPlan) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_Who) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Drippypop) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Dlow) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Top10) || (stage.stage_id == StageId_Torture))
+	if ((stage.stage_id == StageId_SussusMoogus) || (stage.stage_id == StageId_Sabotage) || (stage.stage_id == StageId_SussusToogus) || (stage.stage_id == StageId_Reactor) || (stage.stage_id == StageId_Ashes) || (stage.stage_id == StageId_BoilingPoint) || (stage.stage_id == StageId_Pretender) || (stage.stage_id == StageId_Grinch) || (stage.stage_id == StageId_Titular) || (stage.stage_id == StageId_GreatestPlan) || (stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed) || (stage.stage_id == StageId_Who) || (stage.stage_id == StageId_InsaneStreamer) || (stage.stage_id == StageId_Drippypop) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_Dlow) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Top10))
 		block_dst.w += FIXED_DEC(26,1);
-	if((stage.stage_id == StageId_Magmatic) || (stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_SussusNuzzus) || (stage.stage_id == StageId_Torture))
+	if ((stage.stage_id == StageId_Magmatic) || (stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_SussusNuzzus))
 		block_dst.w += FIXED_DEC(9,1);
 	
-	if (stage.song_step == -29)
+	if ((stage.song_step == -29) || ((stage.song_step == 0) && ((stage.stage_id == StageId_AlphaMoogus) || (stage.stage_id == StageId_ActinSus) || (stage.stage_id == StageId_Torture))))
 	{
 		blockx = -318;
 		blockx2 = -320;
 	}
-	if((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+	if ((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Torture))
 	{
 		blockx += 5;
 		blockx2 += 5;
 	}
-	if((stage.song_step >= 24) && (stage.song_step <= 39) && (blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)))
+	if ((stage.song_step >= 24) && (stage.song_step <= 39) && (blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)))
 	{
 		blockx -= 5;
 		blockx2 -= 5;
+	}
+	
+	if (stage.stage_id == StageId_Torture)
+	{
+		if ((stage.song_step >= (32 * 4)) && (stage.song_step <= (32 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Composer: JADS");
+			strcpy(stage.composer2, "");
+		}
+		if ((stage.song_step >= (128 * 4)) && (stage.song_step <= (128 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Composer: Cval");
+			strcpy(stage.composer2, "");
+		}
+		if ((stage.song_step >= (160 * 4)) && (stage.song_step <= (160 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Composer: Ziffy");
+			strcpy(stage.composer2, "");
+		}
+		if ((stage.song_step >= (224 * 4)) && (stage.song_step <= (224 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Composer: Fluffyhairs");
+			strcpy(stage.composer2, "");
+		}
+		if ((stage.song_step >= (256 * 4)) && (stage.song_step <= (256 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Featuring: Rozebud");
+			strcpy(stage.composer2, "");
+		}
+		if ((stage.song_step >= (272 * 4)) && (stage.song_step <= (272 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Nevermind here's Fluffyhairs");
+			strcpy(stage.composer2, "again.");
+		}
+		if ((stage.song_step >= (336 * 4)) && (stage.song_step <= (336 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		{
+			blockx += 5;
+			blockx2 += 5;
+			strcpy(stage.composer, "Composer: Ziffy (again)");
+			strcpy(stage.composer2, "");
+		}
+		if ((((stage.song_step >= (32 * 4)+39) && (stage.song_step <= (32 * 4)+54)) || ((stage.song_step >= (128 * 4)+39) && (stage.song_step <= (128 * 4)+54)) || ((stage.song_step >= (160 * 4)+39) && (stage.song_step <= (160 * 4)+54)) || ((stage.song_step >= (224 * 4)+39) && (stage.song_step <= (224 * 4)+54)) || ((stage.song_step >= (256 * 4)+39) && (stage.song_step <= (256 * 4)+54)) || ((stage.song_step >= (272 * 4)+39) && (stage.song_step <= (272 * 4)+54)) || ((stage.song_step >= (336 * 4)+39) && (stage.song_step <= (336 * 4)+54))) && ((blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1))))
+		{
+			blockx -= 5;
+			blockx2 -= 5;
+		}
+		if ((stage.song_step >= 1087) && (stage.song_step <= 1143))
+		{
+			block_dst.w += FIXED_DEC(35,1);
+			block_dst.h += FIXED_DEC(6,1);
+		}
 	}
 	
 	Stage_BlendTex(&stage.tex_hud1, &block_src, &block_dst, stage.bump, 1);

@@ -233,6 +233,29 @@ void Char_Ziffy_Tick(Character *character)
 {
 	Char_Ziffy *this = (Char_Ziffy*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_Torture)
+	{
+		if (stage.song_step == 260)
+		{
+			this->character.focus_x = FIXED_DEC(-124,1);
+			this->character.focus_y = FIXED_DEC(-90,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+		if (stage.song_beat == 256) //ROZEBUD
+		{
+			this->character.focus_x = FIXED_DEC(-124,1);
+			this->character.focus_y = FIXED_DEC(-103,1);
+			this->character.focus_zoom = FIXED_DEC(965,1024);
+		}
+		if (stage.song_beat == 272)
+		{
+			this->character.focus_x = FIXED_DEC(-124,1);
+			this->character.focus_y = FIXED_DEC(-90,1);
+			this->character.focus_zoom = FIXED_DEC(1628,1024);
+		}
+	}
+	
 	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2))
 	{
 	//Handle animation updates
@@ -329,9 +352,9 @@ Character *Char_Ziffy_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFFC972B;
 	
-	this->character.focus_x = FIXED_DEC(-167,1);
-	this->character.focus_y = FIXED_DEC(-110,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-124,1);
+	this->character.focus_y = FIXED_DEC(-90,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	
