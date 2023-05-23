@@ -256,7 +256,7 @@
 				
 				<file name = "warehous.arc" type = "data" source = "iso/stages/warehous/back.arc"/>
 				<file name = "blades.arc" type = "data" source = "iso/stages/warehous/blades.arc"/>
-				<!-- Huh -->
+				<file name = "intro.arc" type = "data" source = "iso/stages/warehous/intro.arc"/>
 				<file name = "rozebud.arc" type = "data" source = "iso/stages/warehous/rozebud.arc"/>
 				
 				<file name = "o2.arc" type = "data" source = "iso/stages/o2/back.arc"/>
@@ -289,6 +289,7 @@
 				<file name = "discnect.vag" type = "data" source = "iso/sounds/stage/discnect.ogg.vag"/>
 				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
 				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
+				<file name = "blades.vag" type = "data" source = "iso/sounds/stage/blades.ogg.vag"/>
 				<!-- Game Over Sounds -->
 				<file name = "death.vag" type = "data" source = "iso/sounds/gameover/death.ogg.vag"/>
 				<file name = "deathe.vag" type = "data" source = "iso/sounds/gameover/deathe.ogg.vag"/>

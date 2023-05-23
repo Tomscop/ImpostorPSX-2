@@ -15,6 +15,7 @@
 
 boolean healththing = false;
 int bladex;
+int bladey = -151;
 
 //Warehouse background structure
 typedef struct
@@ -24,6 +25,7 @@ typedef struct
 	
 	//Textures
 	IO_Data arc_blades, arc_blades_ptr[3];
+	IO_Data arc_intro, arc_intro_ptr[1];
 	IO_Data arc_rozebud, arc_rozebud_ptr[6];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
@@ -34,10 +36,18 @@ typedef struct
 	u8 blades_frame, blades_tex_id;
 	Animatable blades_animatable;
 	
+	//Intro state
+	Gfx_Tex tex_intro;
+	u8 intro_frame, intro_tex_id;
+	Animatable intro_animatable;
+	
 	//Rozebud state
 	Gfx_Tex tex_rozebud;
 	u8 rozebud_frame, rozebud_tex_id;
 	Animatable rozebud_animatable;
+	
+	//fade stuff
+	fixed_t fade, fadespd;
 	
 } Back_Warehouse;
 
@@ -179,6 +189,82 @@ void Warehouse_Rozebud_Draw(Back_Warehouse *this, fixed_t x, fixed_t y)
 	Stage_DrawTex(&this->tex_rozebud, &src, &dst, stage.camera.bzoom);
 }
 
+//Intro animation and rects
+static const CharFrame intro_frame[] = {
+  {0, {  0,  0, 22, 27}, {160,150}}, //0 intro 1
+  {0, { 22,  0, 19, 26}, {156,153}}, //1 intro 2
+  {0, { 41,  0, 22, 25}, {156,153}}, //2 intro 3
+  {0, { 63,  0, 23, 23}, {156,153}}, //3 intro 4
+  {0, { 86,  0, 24, 33}, {155,159}}, //4 intro 5
+  {0, {110,  0, 22, 32}, {153,157}}, //5 intro 6
+  {0, {132,  0, 23, 30}, {155,160}}, //6 intro 7
+  {0, {155,  0, 22, 29}, {155,159}}, //7 intro 8
+  {0, {177,  0, 21, 30}, {155,159}}, //8 intro 9
+  {0, {198,  0, 20, 28}, {155,159}}, //9 intro 10
+  {0, {218,  0, 20, 32}, {148,156}}, //10 intro 11
+  {0, {  0, 33, 20, 35}, {150,158}}, //11 intro 12
+  {0, { 20, 33, 20, 29}, {152,159}}, //12 intro 13
+  {0, { 40, 33, 21, 29}, {152,159}}, //13 intro 14
+  {0, { 61, 33, 20, 33}, {158,155}}, //14 intro 15
+  {0, { 81, 33, 20, 32}, {156,158}}, //15 intro 16
+  {0, {101, 33, 19, 30}, {155,159}}, //16 intro 17
+  {0, {120, 33, 23, 30}, {155,159}}, //17 intro 18
+  {0, {143, 33, 20, 35}, {151,157}}, //18 intro 19
+  {0, {163, 33, 20, 31}, {151,159}}, //19 intro 20
+  {0, {183, 33, 20, 32}, {152,159}}, //20 intro 21
+  {0, {203, 33, 17, 30}, {149,157}}, //21 intro 22
+  {0, {220, 33, 17, 30}, {148,157}}, //22 intro 23
+  {0, {237, 33, 17, 28}, {149,156}}, //23 intro 24
+  {0, {  0, 68, 17, 26}, {149,157}}, //24 intro 25
+  {0, { 17, 68, 21, 36}, {152,160}}, //25 intro 26
+  {0, { 38, 68, 20, 33}, {151,159}}, //26 intro 27
+  {0, { 58, 68, 22, 21}, {151,151}}, //27 intro 28
+  {0, { 80, 68, 20, 37}, {152,159}}, //28 intro 29
+  {0, {100, 68, 20, 35}, {152,159}}, //29 intro 30
+  {0, {120, 68, 21, 22}, {151,151}}, //30 intro 31
+  {0, {141, 68, 22, 30}, {154,157}}, //31 intro 32
+  {0, {163, 68, 22, 30}, {155,158}}, //32 intro 33
+  {0, {185, 68, 22, 30}, {154,158}}, //33 intro 34
+  {0, {207, 68, 23, 30}, {153,159}}, //34 intro 35
+  {0, {230, 68, 22, 30}, {153,159}}, //35 intro 36
+  
+  {0, {  0,  0,  1,  1}, {153,159}}, //36 hide
+};
+
+static const Animation intro_anim[] = {
+	{1, (const u8[]){ 36, 36, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 7, 7, 7, 7, 		8, 8, 9, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 15, 15, 16, 16, 16, 16, 17, 17, 8, 8, 9, 9, 9, 18, 18, 19, 19, 20, 20, 12, 12, 13, 13, 13, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 12, 12, 27, 27, 25, 25, 26, 26, 12, 12, 26, 26, 12, 12, 28, 28, 28, 28, 26, 26, 		 29, 29, 29, 29, 30, 30, 31, 31, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 34, 34, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, ASCR_CHGANI, 1}}, //Idle
+	{1, (const u8[]){ 36, ASCR_BACK, 1}}, //Hide
+};
+//8, 9, 12, 13, 
+//Intro functions
+void Warehouse_Intro_SetFrame(void *user, u8 frame)
+{
+	Back_Warehouse *this = (Back_Warehouse*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->intro_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &intro_frame[this->intro_frame = frame];
+		if (cframe->tex != this->intro_tex_id)
+			Gfx_LoadTex(&this->tex_intro, this->arc_intro_ptr[this->intro_tex_id = cframe->tex], 0);
+	}
+}
+
+void Warehouse_Intro_Draw(Back_Warehouse *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &intro_frame[this->intro_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+	Debug_StageMoveDebug(&dst, 11, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_intro, &src, &dst, stage.camera.bzoom);
+}
+
 void Back_Warehouse_BladeX(void)
 {
 	//+587
@@ -264,6 +350,29 @@ void Back_Warehouse_DrawFG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 0))
+		Animatable_SetAnim(&this->intro_animatable, 1);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 2))
+		Animatable_SetAnim(&this->intro_animatable, 0);
+	Animatable_Animate(&this->intro_animatable, (void*)this, Warehouse_Intro_SetFrame);
+	if (stage.song_beat < 24)
+		Warehouse_Intro_Draw(this, FIXED_DEC(220 + 155,1) - fx, FIXED_DEC(92 + 158,1) - fy);
+	
+	//start fade
+	if (stage.song_step == 128)
+	{
+		this->fade = FIXED_DEC(255,1);
+		this->fadespd = FIXED_DEC(36,1);
+	}
+
+	if (this->fade > 0)
+	{
+		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+		u8 flash_col = this->fade >> FIXED_SHIFT;
+		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
+		this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+	}
+	
 	RECT monty_src = {  0,  0, 72, 72};
 	RECT_FIXED monty_dst = {
 		FIXED_DEC(104 - screen.SCREEN_WIDEOADD2,1) - fx,
@@ -306,9 +415,13 @@ void Back_Warehouse_DrawMG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1))
 		Animatable_SetAnim(&this->blades_animatable, 0);
 	Animatable_Animate(&this->blades_animatable, (void*)this, Warehouse_Blades_SetFrame);
-	Warehouse_Blades_DrawLeft(this, FIXED_DEC(157 - bladex + 158,1) - fx, FIXED_DEC(-31 + 158,1) - fy); //L 157  H 123
-	Warehouse_Blades_DrawRight(this, FIXED_DEC(308 + bladex + 158,1) - fx, FIXED_DEC(-31 + 158,1) - fy); //L 308  H 342
+	Warehouse_Blades_DrawLeft(this, FIXED_DEC(157 - bladex + 158,1) - fx, FIXED_DEC(bladey + 158,1) - fy); //L 157  H 123
+	Warehouse_Blades_DrawRight(this, FIXED_DEC(308 + bladex + 158,1) - fx, FIXED_DEC(bladey + 158,1) - fy); //L 308  H 342
 	Back_Warehouse_BladeX();
+	if (stage.song_step == 0)
+		bladey = -151;
+	if ((stage.song_beat >= 62) && (bladey != -31))
+		bladey += 2;
 	
 	RECT glasses_src = {210,  0, 27, 54};
 	RECT_FIXED glasses_dst = {
@@ -374,6 +487,9 @@ void Back_Warehouse_Free(StageBack *back)
 	//Free blades archive
 	Mem_Free(this->arc_blades);
 	
+	//Free intro archive
+	Mem_Free(this->arc_intro);
+	
 	//Free rozebud archive
 	Mem_Free(this->arc_rozebud);
 	
@@ -412,6 +528,15 @@ StageBack *Back_Warehouse_New(void)
 	Animatable_SetAnim(&this->blades_animatable, 0);
 	this->blades_frame = this->blades_tex_id = 0xFF; //Force art load
 	
+	//Load intro textures
+	this->arc_intro = IO_Read("\\BG\\INTRO.ARC;1");
+	this->arc_intro_ptr[0] = Archive_Find(this->arc_intro, "intro0.tim");
+	
+	//Initialize intro state
+	Animatable_Init(&this->intro_animatable, intro_anim);
+	Animatable_SetAnim(&this->intro_animatable, 0);
+	this->intro_frame = this->intro_tex_id = 0xFF; //Force art load
+	
 	//Load rozebud textures
 	this->arc_rozebud = IO_Read("\\BG\\ROZEBUD.ARC;1");
 	this->arc_rozebud_ptr[0] = Archive_Find(this->arc_rozebud, "rozebud0.tim");
@@ -425,6 +550,10 @@ StageBack *Back_Warehouse_New(void)
 	Animatable_Init(&this->rozebud_animatable, rozebud_anim);
 	Animatable_SetAnim(&this->rozebud_animatable, 0);
 	this->rozebud_frame = this->rozebud_tex_id = 0xFF; //Force art load
+	
+	//Initialize Fade
+	this->fade = FIXED_DEC(255,1);
+	this->fadespd = 0;
 	
 	return (StageBack*)this;
 }

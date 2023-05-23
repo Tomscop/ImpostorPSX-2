@@ -1724,6 +1724,15 @@ static void Stage_LoadSFX(void)
 		Mem_Free(data);
 	}
 	
+	//torture saws sound
+	if (stage.stage_id == StageId_Torture)
+	{
+		IO_FindFile(&file, "\\SOUNDS\\BLADES.VAG;1");
+		u32 *data = IO_ReadFile(&file);
+		Sounds[7] = Audio_LoadVAGData(data, file.size);
+		Mem_Free(data);
+	}
+	
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
@@ -1917,7 +1926,10 @@ static void Stage_LoadState(void)
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
-		stage.hudfade = 0;
+		if (stage.stage_id != StageId_Torture)
+			stage.hudfade = 0;
+		else
+			stage.hudfade = 1;
 		stage.camswitch = 0;
 		cutscene = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
@@ -2365,6 +2377,8 @@ void Stage_Tick(void)
 			if ((stage.stage_id == StageId_Rivals) && (stage.song_step == 1034) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			if ((stage.stage_id == StageId_Crewicide) && (stage.song_step == 2064) && stage.flag & STAGE_FLAG_JUST_STEP)
+				Audio_PlaySound(Sounds[7], 0x3fff);
+			if ((stage.stage_id == StageId_Torture) && (stage.song_beat == 62) && stage.flag & STAGE_FLAG_JUST_STEP)
 				Audio_PlaySound(Sounds[7], 0x3fff);
 			
 			if (stage.prefs.debug)

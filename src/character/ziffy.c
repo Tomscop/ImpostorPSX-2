@@ -296,7 +296,7 @@ void Char_Ziffy_Tick(Character *character)
 			case StageId_Torture: //ROZEBUD ROZEBUD HELP ME THEYRE GONNA KILL ME
 				if (stage.song_step == 1024) 
 					character->set_anim(character, CharAnim_Special1); //ROZEBUD HELP
-				if (stage.song_step == 1062) 
+				if (stage.song_step == 1061) 
 					character->set_anim(character, CharAnim_Special2); //AEWGEGI
 				break;
 			default:

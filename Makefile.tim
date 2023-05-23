@@ -93,6 +93,7 @@ all: \
 	iso/stages/towers/back.arc \
 	iso/stages/warehous/back.arc \
 	iso/stages/warehous/blades.arc \
+	iso/stages/warehous/intro.arc \
 	iso/stages/warehous/rozebud.arc \
 	iso/stages/o2/back.arc \
 	iso/stages/week1/back.arc \
@@ -302,6 +303,7 @@ iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.
 # Warehouse
 iso/stages/warehous/back.arc: iso/stages/warehous/back0.tim iso/stages/warehous/back1.tim iso/stages/warehous/monty.tim
 iso/stages/warehous/blades.arc: iso/stages/warehous/blades0.tim iso/stages/warehous/blades1.tim iso/stages/warehous/blades2.tim 
+iso/stages/warehous/intro.arc: iso/stages/warehous/intro0.tim 
 iso/stages/warehous/rozebud.arc: iso/stages/warehous/rozebud0.tim iso/stages/warehous/rozebud1.tim iso/stages/warehous/rozebud2.tim iso/stages/warehous/rozebud3.tim iso/stages/warehous/rozebud4.tim iso/stages/warehous/rozebud5.tim 
 
 # O2

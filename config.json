@@ -2,20 +2,20 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "rozebud",
-			"hname"   : "rozebud"
+			"imgname" : "intro",
+			"hname"   : "Intro"
 		}
 	],
-	"input":  "iso/stages/warehous/torture_roze",
+	"input":  "iso/stages/warehous/torture_startZiffy",
 	"outdir": "iso/stages/warehous/",
-	"charname" : "Rozebud",
+	"charname" : "Intro",
 	"optimize" : false,
-	"optimizename" : "rozebud",
+	"optimizename" : "intro",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		448,
+		512,
 		0,
-		32,
+		48,
 		484
 	],
 
