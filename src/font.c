@@ -11,18 +11,20 @@
 
 #include <string.h>
 
+static Gfx_Tex font_tex;
+
 static void Font_DrawTex(struct FontData *this, RECT* src, s32 x, s32 y, u8 r, u8 g, u8 b)
 {
 	//Draw a stage font (it bump)
 	if (this->is_stage == true)
 	{
 		RECT_FIXED dst = {x * FIXED_UNIT, y * FIXED_UNIT, src->w * FIXED_UNIT, src->h * FIXED_UNIT};
-		Stage_DrawTexCol(&this->tex, src, &dst, stage.bump, r, g, b);
+		Stage_DrawTexCol(&font_tex, src, &dst, stage.bump, r, g, b);
 	}
 	else
 	{
 		RECT dst = {x, y, src->w, src->h};
-		Gfx_DrawTexCol(&this->tex, src, &dst, r, g, b);
+		Gfx_DrawTexCol(&font_tex, src, &dst, r, g, b);
 	}
 }
 
@@ -210,32 +212,33 @@ void Font_Draw(struct FontData *this, const char *text, s32 x, s32 y, FontAlign 
 }
 
 //Font functions
+void FontTex_Load(void)
+{
+	//Load texture
+	Gfx_LoadTex(&font_tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+}
 void FontData_Load(FontData *this, Font font, boolean is_stage)
 {
 	//Load the given font
 	switch (font)
 	{
 		case Font_Bold:
-			//Load texture and set functions
-			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+			//Set functions
 			this->get_width = Font_Bold_GetWidth;
 			this->draw_col = Font_Bold_DrawCol;
 			break;
 		case Font_Arial:
-			//Load texture and set functions
-			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+			//Set functions
 			this->get_width = Font_Arial_GetWidth;
 			this->draw_col = Font_Arial_DrawCol;
 			break;
 	case Font_CDR:
-			//Load texture and set functions
-			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+			//Set functions
 			this->get_width = Font_CDR_GetWidth;
 			this->draw_col = Font_CDR_DrawCol;
 			break;
 	case Font_Sus:
-			//Load texture and set functions
-			Gfx_LoadTex(&this->tex, IO_Read("\\FONT\\FONT.TIM;1"), GFX_LOADTEX_FREE);
+			//Set functions
 			this->get_width = Font_Sus_GetWidth;
 			this->draw_col = Font_Sus_DrawCol;
 			break;

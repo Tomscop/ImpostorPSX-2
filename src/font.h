@@ -37,6 +37,7 @@ typedef struct FontData
 } FontData;
 
 //Font functions
+void FontTex_Load(void);
 void FontData_Load(FontData *this, Font font, boolean is_stage);
 
 #endif
