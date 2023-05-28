@@ -232,7 +232,10 @@ static const CharFrame intro_frame[] = {
 };
 
 static const Animation intro_anim[] = {
-	{1, (const u8[]){ 36, 36, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 7, 7, 7, 7, 		8, 8, 9, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 15, 15, 16, 16, 16, 16, 17, 17, 8, 8, 9, 9, 9, 18, 18, 19, 19, 20, 20, 12, 12, 13, 13, 13, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 12, 12, 27, 27, 25, 25, 26, 26, 12, 12, 26, 26, 12, 12, 28, 28, 28, 28, 26, 26, 		 29, 29, 29, 29, 30, 30, 31, 31, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 34, 34, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, ASCR_CHGANI, 1}}, //Idle
+	{1, (const u8[]){ 36, 36, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, ASCR_BACK, 1}}, //Idle
+	{1, (const u8[]){ 6, 6, 7, 7, 7, 7, 8, 8, 9, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 15, 15, 16, 16, 16, 16, 17, 17, 8, 8, 9, 9, 9, 18, 18, 19, 19, 20, 20, 12, 12, 13, 13, 13, ASCR_BACK, 1}}, //Idle
+	{1, (const u8[]){ 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 12, 12, 27, 27, 25, 25, 26, 26, 12, 12, 26, 26, 12, 12, 28, 28, 28, 28, 26, 26, 		 29, 29, 29, 29, 30, 30, 31, 31, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, ASCR_BACK, 1}}, //Idle
+	{1, (const u8[]){ 34, 34, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, ASCR_BACK, 4}}, //Idle
 	{1, (const u8[]){ 36, ASCR_BACK, 1}}, //Hide
 };
 //8, 9, 12, 13, 
@@ -351,9 +354,17 @@ void Back_Warehouse_DrawFG(StageBack *back)
 	fy = stage.camera.y;
 	
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 0))
-		Animatable_SetAnim(&this->intro_animatable, 1);
+		Animatable_SetAnim(&this->intro_animatable, 4);
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 2))
 		Animatable_SetAnim(&this->intro_animatable, 0);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 20))
+		Animatable_SetAnim(&this->intro_animatable, 1);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 48))
+		Animatable_SetAnim(&this->intro_animatable, 2);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 76))
+		Animatable_SetAnim(&this->intro_animatable, 3);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_beat == 24))
+		Animatable_SetAnim(&this->intro_animatable, 4);
 	Animatable_Animate(&this->intro_animatable, (void*)this, Warehouse_Intro_SetFrame);
 	if (stage.song_beat < 24)
 		Warehouse_Intro_Draw(this, FIXED_DEC(220 + 155,1) - fx, FIXED_DEC(92 + 158,1) - fy);
@@ -370,7 +381,8 @@ void Back_Warehouse_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+		if (stage.paused == false)
+			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
 	
 	RECT monty_src = {  0,  0, 72, 72};
@@ -418,10 +430,13 @@ void Back_Warehouse_DrawMG(StageBack *back)
 	Warehouse_Blades_DrawLeft(this, FIXED_DEC(157 - bladex + 158,1) - fx, FIXED_DEC(bladey + 158,1) - fy); //L 157  H 123
 	Warehouse_Blades_DrawRight(this, FIXED_DEC(308 + bladex + 158,1) - fx, FIXED_DEC(bladey + 158,1) - fy); //L 308  H 342
 	Back_Warehouse_BladeX();
+	if (stage.paused == false)
+	{
 	if (stage.song_step == 0)
 		bladey = -151;
 	if ((stage.song_beat >= 62) && (bladey != -31))
 		bladey += 2;
+	}
 	
 	RECT glasses_src = {210,  0, 27, 54};
 	RECT_FIXED glasses_dst = {

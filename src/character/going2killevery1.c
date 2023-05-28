@@ -230,11 +230,11 @@ void Char_Going2KillEvery1_Tick(Character *character)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim);
 		if (stage.song_step == 872)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim2);
-		if (stage.song_step == 985)
+		if (stage.song_step == 980)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim);
-		if (stage.song_step == 1022)
+		if (stage.song_step == 1016)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim2);
-		if (stage.song_step == 1055)
+		if (stage.song_step == 1044)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim);
 		if (stage.song_step == 1080)
 			Animatable_Init(&this->character.animatable, char_going2killevery1_anim2);

@@ -104,7 +104,7 @@ void Back_Shields_DrawFG(StageBack *back)
 	if ((stage.song_step >= 1155) && (stage.song_step <= 1167))
 		Stage_DrawTex(&this->tex_alert, &alert1_src, &alert1_dst, FIXED_DEC(1,1));
 	
-	if (stage.song_step >= 1168)
+	if ((stage.song_step >= 1168) && (stage.paused == false))
 	{
 		eject += 1;
 		sprite_angle += 1;

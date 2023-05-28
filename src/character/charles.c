@@ -163,7 +163,7 @@ void Char_Charles_Tick(Character *character)
 			stage.camera.y = stage.opponent->y + stage.opponent->focus_y;
 			this->character.focus_zoom = FIXED_DEC(1731,1024);
 		}
-		if ((stage.song_step >= 42) && (stage.opponent->x <= FIXED_DEC(-239,1)))
+		if ((stage.song_step >= 42) && (stage.opponent->x <= FIXED_DEC(-239,1)) && (stage.paused == false))
 		{
 			stage.opponent->x += FIXED_DEC(17,10);
 		}

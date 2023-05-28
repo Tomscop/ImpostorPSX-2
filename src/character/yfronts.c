@@ -180,7 +180,7 @@ void Char_YFronts_Tick(Character *character)
 	{
 		if (stage.song_step == -29)
 			Animatable_Init(&this->character.animatable, char_yfronts_anim);
-		if (stage.song_step == 852)
+		if (stage.song_step == 846)
 			Animatable_Init(&this->character.animatable, char_yfronts_anim2);
 		if (stage.song_step == 1030) //changed a bit to look better this is just a note in case it ends up sucking so i know
 			Animatable_Init(&this->character.animatable, char_yfronts_anim);

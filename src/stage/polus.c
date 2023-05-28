@@ -186,7 +186,8 @@ void Back_Polus_DrawFG(StageBack *back)
 		RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 		u8 flash_col = this->fade >> FIXED_SHIFT;
 		Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 2);
-		this->fade -= FIXED_MUL(this->fadespd, timer_dt);
+		if (stage.paused == false)
+			this->fade -= FIXED_MUL(this->fadespd, timer_dt);
 	}
 	
 	if ((stage.stage_id == StageId_Meltdown) && (stage.song_step >= 1156) && (stage.song_step <= 1157))

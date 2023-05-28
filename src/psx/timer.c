@@ -204,12 +204,12 @@ void StageInfo_Draw()
 		blockx = -318;
 		blockx2 = -320;
 	}
-	if ((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Torture))
+	if ((stage.song_step >= -15) && (stage.song_step <= 15) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Torture) && (stage.paused == false))
 	{
 		blockx += 5;
 		blockx2 += 5;
 	}
-	if ((stage.song_step >= 24) && (stage.song_step <= 39) && (blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)))
+	if ((stage.song_step >= 24) && (stage.song_step <= 39) && (blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)) && (stage.paused == false))
 	{
 		blockx -= 5;
 		blockx2 -= 5;
@@ -217,56 +217,56 @@ void StageInfo_Draw()
 	
 	if (stage.stage_id == StageId_Torture)
 	{
-		if ((stage.song_step >= (32 * 4)) && (stage.song_step <= (32 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (32 * 4)) && (stage.song_step <= (32 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Composer: JADS");
 			strcpy(stage.composer2, "");
 		}
-		if ((stage.song_step >= (128 * 4)) && (stage.song_step <= (128 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (128 * 4)) && (stage.song_step <= (128 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Composer: Cval");
 			strcpy(stage.composer2, "");
 		}
-		if ((stage.song_step >= (160 * 4)) && (stage.song_step <= (160 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (160 * 4)) && (stage.song_step <= (160 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Composer: Ziffy");
 			strcpy(stage.composer2, "");
 		}
-		if ((stage.song_step >= (224 * 4)) && (stage.song_step <= (224 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (224 * 4)) && (stage.song_step <= (224 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Composer: Fluffyhairs");
 			strcpy(stage.composer2, "");
 		}
-		if ((stage.song_step >= (256 * 4)) && (stage.song_step <= (256 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (256 * 4)) && (stage.song_step <= (256 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Featuring: Rozebud");
 			strcpy(stage.composer2, "");
 		}
-		if ((stage.song_step >= (272 * 4)) && (stage.song_step <= (272 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (272 * 4)) && (stage.song_step <= (272 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Nevermind here's Fluffyhairs");
 			strcpy(stage.composer2, "again.");
 		}
-		if ((stage.song_step >= (336 * 4)) && (stage.song_step <= (336 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)))
+		if ((stage.song_step >= (336 * 4)) && (stage.song_step <= (336 * 4)+30) && (blockx != -158) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-160,1)) && (stage.paused == false))
 		{
 			blockx += 5;
 			blockx2 += 5;
 			strcpy(stage.composer, "Composer: Ziffy (again)");
 			strcpy(stage.composer2, "");
 		}
-		if ((((stage.song_step >= (32 * 4)+39) && (stage.song_step <= (32 * 4)+54)) || ((stage.song_step >= (128 * 4)+39) && (stage.song_step <= (128 * 4)+54)) || ((stage.song_step >= (160 * 4)+39) && (stage.song_step <= (160 * 4)+54)) || ((stage.song_step >= (224 * 4)+39) && (stage.song_step <= (224 * 4)+54)) || ((stage.song_step >= (256 * 4)+39) && (stage.song_step <= (256 * 4)+54)) || ((stage.song_step >= (272 * 4)+39) && (stage.song_step <= (272 * 4)+54)) || ((stage.song_step >= (336 * 4)+39) && (stage.song_step <= (336 * 4)+54))) && ((blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1))))
+		if (((((stage.song_step >= (32 * 4)+39) && (stage.song_step <= (32 * 4)+54)) || ((stage.song_step >= (128 * 4)+39) && (stage.song_step <= (128 * 4)+54)) || ((stage.song_step >= (160 * 4)+39) && (stage.song_step <= (160 * 4)+54)) || ((stage.song_step >= (224 * 4)+39) && (stage.song_step <= (224 * 4)+54)) || ((stage.song_step >= (256 * 4)+39) && (stage.song_step <= (256 * 4)+54)) || ((stage.song_step >= (272 * 4)+39) && (stage.song_step <= (272 * 4)+54)) || ((stage.song_step >= (336 * 4)+39) && (stage.song_step <= (336 * 4)+54))) && ((blockx != -318) && (FIXED_DEC(blockx2,1) != FIXED_DEC(-320,1)))) && (stage.paused == false))
 		{
 			blockx -= 5;
 			blockx2 -= 5;
