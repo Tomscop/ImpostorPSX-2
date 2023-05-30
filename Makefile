@@ -25,6 +25,7 @@ SRCS = src/main.c \
 	src/character.c \
 	src/character/bf.c \
 	src/character/bfpixel.c \
+	src/character/bfimpostor.c \
 	src/character/bfchristmas.c \
 	src/character/loggop.c \
 	src/character/henryphone.c \
@@ -37,6 +38,7 @@ SRCS = src/main.c \
 	src/character/pip.c \
 	src/character/ziffy.c \
 	src/character/tomongus.c \
+	src/character/tomongushd.c \
 	src/character/loggo.c \
 	src/character/spooker.c \
 	src/character/grinch.c \

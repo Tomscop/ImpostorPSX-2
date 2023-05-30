@@ -2,24 +2,74 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "intro",
-			"hname"   : "Intro"
+			"imgname" : "idle",
+			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
+		},
+		{
+			"fnfanim" : "singLEFTmiss",
+			"imgname" : "leftm",
+			"hname"   : "LeftM"
+		},
+		{
+			"fnfanim" : "singDOWNmiss",
+			"imgname" : "downm",
+			"hname"   : "DownM"
+		},
+		{
+			"fnfanim" : "singUPmiss",
+			"imgname" : "upm",
+			"hname"   : "UpM"
+		},
+		{
+			"fnfanim" : "singRIGHTmiss",
+			"imgname" : "rightm",
+			"hname"   : "RightM"
+		},
+		{
+			"fnfanim" : "pull",
+			"imgname" : "pull",
+			"hname"   : "Pull"
+		},
+		{
+			"fnfanim" : "shoot",
+			"imgname" : "shoot",
+			"hname"   : "Shoot"
 		}
 	],
-	"input":  "iso/stages/warehous/torture_startZiffy",
-	"outdir": "iso/stages/warehous/",
-	"charname" : "Intro",
+	"input":  "iso/chars/bfimp/bfsusreal",
+	"outdir": "iso/chars/bfimp/",
+	"charname" : "BFImpostor",
 	"optimize" : false,
-	"optimizename" : "intro",
+	"optimizename" : "BFImpostor",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		512,
+		640,
 		0,
-		48,
-		484
+		0,
+		480
 	],
 
-	"bpp" : 4,
+	"bpp" : 8,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,

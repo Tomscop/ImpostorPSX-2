@@ -23,6 +23,7 @@ all: \
 	iso/stage/countpix.tim \
 	iso/chars/bf/main.arc \
 	iso/chars/bfpixel/main.arc \
+	iso/chars/bfimp/main.arc \
 	iso/chars/bfchrist/main.arc \
 	iso/chars/loggop/main.arc \
 	iso/chars/henryphn/main.arc \
@@ -35,6 +36,7 @@ all: \
 	iso/chars/pip/main.arc \
 	iso/chars/ziffy/main.arc \
 	iso/chars/tomong/main.arc \
+	iso/chars/tomonghd/main.arc \
 	iso/chars/loggo/main.arc \
 	iso/chars/spooker/main.arc \
 	iso/chars/grinch/main.arc \
@@ -114,7 +116,8 @@ iso/chars/bf/main.arc: iso/chars/bf/bf0.tim iso/chars/bf/bf1.tim iso/chars/bf/bf
 # BF Pixel
 iso/chars/bfpixel/main.arc: iso/chars/bfpixel/idle0.tim iso/chars/bfpixel/left0.tim iso/chars/bfpixel/down0.tim iso/chars/bfpixel/up0.tim iso/chars/bfpixel/right0.tim iso/chars/bfpixel/leftm0.tim iso/chars/bfpixel/downm0.tim iso/chars/bfpixel/upm0.tim iso/chars/bfpixel/rightm0.tim iso/chars/bfpixel/idles0.tim iso/chars/bfpixel/lefts0.tim iso/chars/bfpixel/downs0.tim iso/chars/bfpixel/ups0.tim iso/chars/bfpixel/rights0.tim iso/chars/bfpixel/leftsm0.tim iso/chars/bfpixel/downsm0.tim iso/chars/bfpixel/upsm0.tim iso/chars/bfpixel/righsm0.tim iso/chars/bfpixel/shoot0.tim 
 
-# BF Tuesday
+# BF Impostor
+iso/chars/bfimp/main.arc: iso/chars/bfimp/idle0.tim iso/chars/bfimp/idle1.tim iso/chars/bfimp/left0.tim iso/chars/bfimp/down0.tim iso/chars/bfimp/up0.tim iso/chars/bfimp/right0.tim iso/chars/bfimp/leftm0.tim iso/chars/bfimp/downm0.tim iso/chars/bfimp/upm0.tim iso/chars/bfimp/rightm0.tim iso/chars/bfimp/shoot0.tim iso/chars/bfimp/shoot1.tim iso/chars/bfimp/shoot2.tim iso/chars/bfimp/shoot3.tim iso/chars/bfimp/shoot4.tim 
 
 # BF Christmas
 iso/chars/bfchrist/main.arc: iso/chars/bfchrist/idle0.tim iso/chars/bfchrist/idle1.tim iso/chars/bfchrist/idle2.tim iso/chars/bfchrist/idle3.tim iso/chars/bfchrist/left0.tim iso/chars/bfchrist/left1.tim iso/chars/bfchrist/down.tim iso/chars/bfchrist/up.tim iso/chars/bfchrist/right0.tim iso/chars/bfchrist/right1.tim iso/chars/bfchrist/leftm0.tim iso/chars/bfchrist/leftm1.tim iso/chars/bfchrist/downm.tim iso/chars/bfchrist/upm.tim iso/chars/bfchrist/rightm0.tim iso/chars/bfchrist/rightm1.tim
@@ -158,6 +161,7 @@ iso/chars/ziffy/main.arc: iso/chars/ziffy/idle0.tim iso/chars/ziffy/idle1.tim is
 iso/chars/tomong/main.arc: iso/chars/tomong/idle0.tim iso/chars/tomong/left0.tim iso/chars/tomong/down0.tim iso/chars/tomong/up0.tim iso/chars/tomong/right0.tim iso/chars/tomong/idleh0.tim iso/chars/tomong/lefth0.tim iso/chars/tomong/downh0.tim iso/chars/tomong/uph0.tim iso/chars/tomong/righth0.tim 
 
 # Tomongus HD
+iso/chars/tomonghd/main.arc: iso/chars/tomonghd/idle0.tim iso/chars/tomonghd/left0.tim iso/chars/tomonghd/down0.tim iso/chars/tomonghd/up0.tim iso/chars/tomonghd/right0.tim iso/chars/tomonghd/prep0.tim iso/chars/tomonghd/shot0.tim iso/chars/tomonghd/shot1.tim iso/chars/tomonghd/shot2.tim iso/chars/tomonghd/shot3.tim iso/chars/tomonghd/shot4.tim iso/chars/tomonghd/shot5.tim iso/chars/tomonghd/shot6.tim iso/chars/tomonghd/hampter0.tim 
 
 # Loggo
 iso/chars/loggo/main.arc: iso/chars/loggo/idle0.tim iso/chars/loggo/idle1.tim iso/chars/loggo/left.tim iso/chars/loggo/down.tim iso/chars/loggo/up0.tim iso/chars/loggo/up1.tim iso/chars/loggo/right.tim

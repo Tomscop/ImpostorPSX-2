@@ -123,7 +123,7 @@
 				<!-- Players -->
 				<file name = "bf.arc" type = "data" source = "iso/chars/bf/main.arc"/>
 				<file name = "bfpixel.arc" type = "data" source = "iso/chars/bfpixel/main.arc"/>
-				<!-- Boyfriend Tuesday assets -->
+				<file name = "bfimp.arc" type = "data" source = "iso/chars/bfimp/main.arc"/>
 				<file name = "bfchrist.arc" type = "data" source = "iso/chars/bfchrist/main.arc"/>
 				<file name = "loggop.arc" type = "data" source = "iso/chars/loggop/main.arc"/>
 				<file name = "henryphn.arc" type = "data" source = "iso/chars/henryphn/main.arc"/>
@@ -142,7 +142,7 @@
 			<dir name = "opponent">
 				
 				<file name = "tomongus.arc" type = "data" source = "iso/chars/tomong/main.arc"/>
-				<!-- Tomongus HD assets -->
+				<file name = "tomonghd.arc" type = "data" source = "iso/chars/tomonghd/main.arc"/>
 				<file name = "loggo.arc" type = "data" source = "iso/chars/loggo/main.arc"/>
 				<file name = "spooker.arc" type = "data" source = "iso/chars/spooker/main.arc"/>
 				<file name = "grinch.arc" type = "data" source = "iso/chars/grinch/main.arc"/>
