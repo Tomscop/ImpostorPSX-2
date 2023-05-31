@@ -107,8 +107,7 @@ static const Animation char_bfimpostor_anim[PlayerAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
 	
 	{1, (const u8[]){ 24, 24, 25, 26, 27, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_BACK, 1}},       //CharAnim_Special1
-	{2, (const u8[]){ 31, 32, 32, ASCR_CHGANI, CharAnim_Special3}},       //CharAnim_Special2
-	{2, (const u8[]){ 32, ASCR_CHGANI, CharAnim_Special3}},       //CharAnim_Special3
+	{2, (const u8[]){ 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
 	
 	{1, (const u8[]){ 13, 14, 15, 16, ASCR_BACK, 1}},     //PlayerAnim_LeftMiss
 	{2, (const u8[]){ 17, 18, ASCR_BACK, 1}},     //PlayerAnim_DownMiss
@@ -134,6 +133,19 @@ void Char_BFImpostor_SetFrame(void *user, u8 frame)
 void Char_BFImpostor_Tick(Character *character)
 {
 	Char_BFImpostor *this = (Char_BFImpostor*)character;
+	
+	//Camera stuff
+	if (stage.stage_id == StageId_TomongusTuesday)
+	{
+		if (stage.song_step == 196)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 983)
+		{
+			this->character.focus_x = FIXED_DEC(-214,1);
+			this->character.focus_y = FIXED_DEC(-150,1);
+			this->character.focus_zoom = FIXED_DEC(1162,1024);
+		}
+	}
 	
 	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2) && (character->animatable.anim != CharAnim_Special3))
 	{
@@ -232,9 +244,9 @@ Character *Char_BFImpostor_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFF29B5D6;
 	
-	this->character.focus_x = FIXED_DEC(-1,1);
-	this->character.focus_y = FIXED_DEC(0,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-162,1);
+	this->character.focus_y = FIXED_DEC(-147,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

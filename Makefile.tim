@@ -76,6 +76,7 @@ all: \
 	iso/stages/polus/snow.arc \
 	iso/stages/polus/people.arc \
 	iso/stages/cafe/back.arc \
+	iso/stages/cafehd/back.arc \
 	iso/stages/christms/back.arc \
 	iso/stages/christms/people.arc \
 	iso/stages/christms/person.arc \
@@ -262,6 +263,9 @@ iso/stages/polus/people.arc: iso/stages/polus/people0.tim iso/stages/polus/peopl
 
 # Cafeteria
 iso/stages/cafe/back.arc: iso/stages/cafe/back0.tim iso/stages/cafe/back1.tim
+
+# Cafeteria HD
+iso/stages/cafehd/back.arc: iso/stages/cafehd/back0.tim iso/stages/cafehd/back1.tim iso/stages/cafehd/box.tim
 
 # Christmas
 iso/stages/christms/back.arc: iso/stages/christms/back0.tim iso/stages/christms/back1.tim

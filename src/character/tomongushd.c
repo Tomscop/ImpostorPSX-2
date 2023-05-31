@@ -161,6 +161,19 @@ void Char_TomongusHD_Tick(Character *character)
 {
 	Char_TomongusHD *this = (Char_TomongusHD*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_TomongusTuesday)
+	{
+		if (stage.song_step == 196)
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		if (stage.song_step == 983)
+		{
+			this->character.focus_x = FIXED_DEC(-36,1);
+			this->character.focus_y = FIXED_DEC(-91,1);
+			this->character.focus_zoom = FIXED_DEC(1162,1024);
+		}
+	}
+	
 	if ((character->animatable.anim != CharAnim_Special1) && (character->animatable.anim != CharAnim_Special2) && (character->animatable.anim != CharAnim_Special3))
 	{
 	//Perform idle dance
@@ -232,9 +245,9 @@ Character *Char_TomongusHD_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFFF4C61;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(-72,1);
+	this->character.focus_y = FIXED_DEC(-88,1);
+	this->character.focus_zoom = FIXED_DEC(1357,1024);
 	
 	this->character.zoom_save = this->character.focus_zoom;
 	this->character.size = FIXED_DEC(1,1);

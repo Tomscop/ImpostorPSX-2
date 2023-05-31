@@ -597,14 +597,14 @@
 	},
 	{ //StageId_TomongusTuesday (Tomongus Tuesday)
 		//Characters
-		{Char_BFImpostor_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_BFImpostor_New,    FIXED_DEC(454,1),  FIXED_DEC(256,1)},
         {NULL},
-		{Char_TomongusHD_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_TomongusHD_New, FIXED_DEC(276,1),  FIXED_DEC(197,1)},
         {NULL},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_GF_New,     FIXED_DEC(243,1),  FIXED_DEC(96,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_CafeteriaHD_New,
 		
 		//Song info
 		4, 4,

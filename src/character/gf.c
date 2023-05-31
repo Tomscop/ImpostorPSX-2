@@ -139,7 +139,8 @@ void Char_GF_Tick(Character *character)
 		Character_DrawParallax(character, &this->tex, &char_gf_frame[this->frame], parallax);
 	
 	//Tick speakers
-	Speaker_Tick(&this->speaker, character->x, character->y, parallax);
+	if (stage.stage_id != StageId_TomongusTuesday)
+		Speaker_Tick(&this->speaker, character->x, character->y, parallax);
 }
 
 void Char_GF_SetAnim(Character *character, u8 anim)

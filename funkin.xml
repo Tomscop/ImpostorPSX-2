@@ -218,7 +218,7 @@
 				
 				<file name = "cafe.arc" type = "data" source = "iso/stages/cafe/back.arc"/>
 				
-				<!-- HD Cafeteria BG -->
+				<file name = "cafehd.arc" type = "data" source = "iso/stages/cafehd/back.arc"/>
 				
 				<file name = "christms.arc" type = "data" source = "iso/stages/christms/back.arc"/>
 				<file name = "people2.arc" type = "data" source = "iso/stages/christms/people.arc"/>

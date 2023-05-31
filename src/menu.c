@@ -842,7 +842,7 @@ void Menu_Tick(void)
 			if (menu.page_swap)
 			{
 				menu.last_select = 0;
-				menu.freeplaypage = 0;
+				menu.freeplaypage = 3;
 				storymove = 0;
 				storyx = 152;
 				storyy = 132;

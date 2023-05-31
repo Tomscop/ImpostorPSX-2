@@ -166,6 +166,7 @@ static u32 Sounds[10];
 #include "stage/victory.h"
 #include "stage/lobby.h"
 #include "stage/cafeteria.h"
+#include "stage/cafeteriahd.h"
 #include "stage/christmas.h"
 #include "stage/gronch.h"
 #include "stage/henrybg.h"

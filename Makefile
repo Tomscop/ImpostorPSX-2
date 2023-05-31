@@ -69,6 +69,7 @@ SRCS = src/main.c \
 	src/character/gfv1.c \
 	src/stage/polus.c \
 	src/stage/cafeteria.c \
+	src/stage/cafeteriahd.c \
 	src/stage/christmas.c \
 	src/stage/gronch.c \
 	src/stage/henrybg.c \
