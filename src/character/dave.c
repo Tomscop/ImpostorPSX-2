@@ -144,19 +144,19 @@ void Char_Dave_Tick(Character *character)
 		if (stage.song_step == 16)
 		{
 			this->character.focus_x = FIXED_DEC(-47,1);
-			this->character.focus_y = FIXED_DEC(-85,1);
+			this->character.focus_y = FIXED_DEC(-82,1);
 			this->character.focus_zoom = FIXED_DEC(549,512);
 		}
 		if (stage.song_step == 2032)
 		{
 			this->character.focus_x = FIXED_DEC(-61,1);
-			this->character.focus_y = FIXED_DEC(-78,1);
+			this->character.focus_y = FIXED_DEC(-80,1);
 			this->character.focus_zoom = FIXED_DEC(617,512);
 		}
 		if (stage.song_step == 2064)
 		{
 			this->character.focus_x = FIXED_DEC(-69,1);
-			this->character.focus_y = FIXED_DEC(-85,1);
+			this->character.focus_y = FIXED_DEC(-82,1);
 			this->character.focus_zoom = FIXED_DEC(549,512);
 		}
 	}

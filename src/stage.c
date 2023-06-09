@@ -1992,7 +1992,7 @@ static void Stage_LoadState(void)
 		stage.camswitch = 0;
 		cutscene = 0;
 		strcpy(stage.player_state[i].accuracy_text, "Accuracy: ?");
-		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1))
+		if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat == 1) && (stage.mode != StageMode_2P))
 			sprintf(stage.player_state[i].miss_text, "Misses: 0 / %d", stage.defeatmiss);
 		else
 			strcpy(stage.player_state[i].miss_text, "Misses: 0");
@@ -2002,6 +2002,15 @@ static void Stage_LoadState(void)
 			sprintf(stage.player_state[i].score_text, "Score: You won!");
 		
 		stage.player_state[i].pad_held = stage.player_state[i].pad_press = 0;
+		if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_LightsDown) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Grinch))
+		{
+			stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+			stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+			stage.player_state[0].charactersecond = NULL;
+			stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+			stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+			stage.player_state[1].charactersecond = NULL;
+		}
 	}
 	
 	//BF
@@ -2016,7 +2025,7 @@ static void Stage_LoadState(void)
 	note_y[7] = FIXED_DEC(32 - screen.SCREEN_HEIGHT2 + 5, 1);
 
 	//middle note x
-	if((stage.prefs.middlescroll) || (stage.stage_id == StageId_Defeat))
+	if ((stage.mode != StageMode_2P) && ((stage.prefs.middlescroll) || (stage.stage_id == StageId_Defeat)))
 	{
 		//bf
 		note_x[0] = FIXED_DEC(26 - 78,1) + FIXED_DEC(screen.SCREEN_WIDEADD,4);
@@ -2042,7 +2051,7 @@ static void Stage_LoadState(void)
 		note_x[6] = FIXED_DEC(-60,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 		note_x[7] = FIXED_DEC(-26,1) - FIXED_DEC(screen.SCREEN_WIDEADD,4);
 	}
-	if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
+	if ((stage.mode != StageMode_2P) && ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale)))
 	{
 		note_x[4] = FIXED_DEC(1000,1);
 		note_x[5] = FIXED_DEC(1000,1);
@@ -2913,7 +2922,7 @@ void Stage_Tick(void)
 
 				if (this->refresh_miss)
 				{
-					if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat))
+					if ((stage.stage_id == StageId_Defeat) && (stage.prefs.defeat) && (stage.mode != StageMode_2P))
 					{
 						if (this->miss != 0)
 							sprintf(this->miss_text, "Misses: %d / %d", this->miss, stage.defeatmiss);
@@ -2936,7 +2945,7 @@ void Stage_Tick(void)
 					{
 						stage.font_cdr.draw_col(&stage.font_cdr,
 							this->miss_text,
-							(stage.mode == StageMode_2P && i == 0) ? 100 : -60, 
+							(stage.mode == StageMode_2P && i == 0) ? 85 : (stage.mode == StageMode_2P && i == 1) ? -75 : -60, 
 							(stage.prefs.downscroll) ? -(screen.SCREEN_HEIGHT2 - 35) : (screen.SCREEN_HEIGHT2 - 21),
 							FontAlign_Left,
 							sred >> 1, sblue >> 1, sgreen >> 1
@@ -2973,7 +2982,7 @@ void Stage_Tick(void)
 				//sorry for this shit lmao
 				if (((stage.stage_id == StageId_Defeat) && ((stage.song_step <= 1167) || (stage.song_step >= 1440))) || ((stage.stage_id != StageId_AlphaMoogus) && (stage.stage_id != StageId_ActinSus) && (stage.stage_id != StageId_Defeat)))
 				{
-					if (show)
+					if ((show) && (stage.mode != StageMode_2P))
 					{
 						stage.font_cdr.draw_col(&stage.font_cdr,
 							this->accuracy_text,
@@ -3493,16 +3502,6 @@ void Stage_Tick(void)
 				stage.player_state[1].charactersecond = NULL;
 			}
 			else
-			{
-				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
-				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
-				stage.player_state[0].charactersecond = NULL;
-				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
-				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
-				stage.player_state[1].charactersecond = NULL;
-			}
-			//extra thing
-			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_LightsDown) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Grinch))
 			{
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);

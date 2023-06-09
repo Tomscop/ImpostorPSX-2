@@ -33,7 +33,6 @@ static char scoredisp[30];
 int starmove = 0;
 int starfgx = 0;
 int starbgx = 20;
-int storymove, storymove1, storymove2, storymove3, storymove4, storymove1l, storymove2l, storymove3l, storymove4l = 0;
 int storyx = 152;
 int storyy = 132;
 s16 targetstoryx = 152;
@@ -243,53 +242,49 @@ static int increase_Story(int length, int thesong)
 	return result * 10;
 }
 
-static void Menu_DrawWeek(const char *week, s32 y)
+static void Menu_DrawWeek(u8 week, s32 y)
 {
-	//Draw label
-	if (week == NULL)
-	{
-		return;
-	}
-	else if (week == "11")
-	{
-		//Tomongus
-		RECT label_src = {0, 0, 98, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (98 / 2), y);
-	}
-	else if (week == "12")
-	{
-		//Boo!
-		RECT label_src = {102, 0, 36, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (36 / 2), y);
-	}
-	else if (week == "13")
-	{
-		//Henry
-		RECT label_src = {46, 32, 46, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (46 / 2), y);
-	}
-	else if (week == "10")
-	{
-		//Defeat
-		RECT label_src = {142, 0, 22, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (22 / 2), y);
-	}
-	else
-	{
-		//Week
-		RECT label_src = {0, 32, 42, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (66 / 2), y);
-		
-		//Number
-		for (; *week != '\0'; week++)
-		{
-			//Draw number
-			u8 i = *week - '0';
-			
-			RECT num_src = {(174 + (i * 12)) - 12, 0, 10, 32};
-			Gfx_BlitTex(&menu.tex_story, &num_src, (160 - (66 / 2)) + 56, y);
-		}
-	}
+    //Draw label
+    if (week == 0)
+    {
+        return;
+    }
+    else if (week == 11)
+    {
+        //Tomongus
+        RECT label_src = {0, 0, 98, 32};
+        Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (98 / 2), y);
+    }
+    else if (week == 12)
+    {
+        //Boo!
+        RECT label_src = {102, 0, 36, 32};
+        Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (36 / 2), y);
+    }
+    else if (week == 13)
+    {
+        //Henry
+        RECT label_src = {46, 32, 46, 32};
+        Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (46 / 2), y);
+    }
+    else if (week == 10)
+    {
+        //Defeat
+        RECT label_src = {142, 0, 22, 32};
+        Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (22 / 2), y);
+    }
+    else
+    {
+        //Week
+        RECT label_src = {0, 32, 42, 32};
+        Gfx_BlitTex(&menu.tex_story, &label_src, 160 - (66 / 2), y);
+
+        //Number
+        u8 i = week;
+
+        RECT num_src = {(174 + (i * 12)) - 12, 0, 10, 32};
+        Gfx_BlitTex(&menu.tex_story, &num_src, (160 - (66 / 2)) + 56, y);
+    }
 }
 
 static void Menu_DrawShip(void)
@@ -383,7 +378,7 @@ static void Menu_DrawStory(void)
 }
 
 static void Menu_DrawDefeat(void) {
-    // Define the source and destination rectangles for numbers
+    //Define the source and destination rectangles for numbers
     RECT number_src[6] = {
 		{54, 67, 10, 15},
 		{43, 67, 10, 15},
@@ -402,10 +397,10 @@ static void Menu_DrawDefeat(void) {
         {5 + 15, 42, 16, 24}
     };
     
-    // Draw the selected number
+    //Draw the selected number
     Gfx_DrawTex(&menu.tex_stuff, &number_src[menu.select], &number_dst[menu.select]);
     
-    // Define the source and destination rectangles for text
+    //Define the source and destination rectangles for text
     RECT combo_src = {0, 35, 55, 15};
     RECT combo_dst = {76 + 15, 42, 88, 24};
     RECT break_src = {0, 51, 66, 15};
@@ -414,13 +409,13 @@ static void Menu_DrawDefeat(void) {
     RECT slash_dst = {23 + 15, 42, 16, 24};
     RECT five2_dst = {41 + 15, 42, 16, 24};
     
-    // Draw the text
+    //Draw the text
     Gfx_DrawTex(&menu.tex_stuff, &combo_src, &combo_dst);
     Gfx_DrawTex(&menu.tex_stuff, &break_src, &break_dst);
     Gfx_DrawTex(&menu.tex_stuff, &slash_src, &slash_dst);
     Gfx_DrawTex(&menu.tex_stuff, &number_src[0], &five2_dst);
     
-    // Define the source and destination rectangles for dead people
+    //Define the source and destination rectangles for dead people
     RECT ghost_src = {0, 0, 28, 30};
     RECT dead_src = {29, 0, 28, 30};
     RECT bone_src = {58, 0, 28, 30};
@@ -440,7 +435,7 @@ static void Menu_DrawDefeat(void) {
         {210 + 41, 150, 28, 30}
     };
     
-    // Draw the dead people
+    //Draw the dead people
     Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst[0]);
     Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst[1]);
     Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead_dst[0]);
@@ -448,13 +443,14 @@ static void Menu_DrawDefeat(void) {
     Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst[0]);
     Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst[1]);
     
-    // Define the source and destination rectangles for the arrow
+    //Define the source and destination rectangles for the arrow
     RECT arrow_src = {0, 31, 28, 3};
     RECT arrow_dst = {(42 * menu.select) + 41, 138, 28, 3};
     
-    // Draw the arrow
+    //Draw the arrow
     Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 }
+
 
 void diskchange()
 {
@@ -495,7 +491,7 @@ void diskchange()
 void story_get_target_position() {
     targetstoryx = 152;
     targetstoryy = 132;
-
+    
     if (menu.select == 1) {
         targetstoryx = 54;
     } else if (menu.select == 2) {
@@ -527,6 +523,7 @@ void story_get_target_position() {
         targetstoryy = 34;
     }
 }
+
 //Menu functions
 void Menu_Load(MenuPage page)
 {
@@ -574,7 +571,7 @@ void Menu_Load(MenuPage page)
 	
 	stage.song_step = 0;
 
-	// to load
+	//to load
 	CdlFILE file;
     IO_FindFile(&file, "\\SOUNDS\\SCROLL.VAG;1");
     u32 *data = IO_ReadFile(&file);
@@ -812,96 +809,50 @@ void Menu_Tick(void)
 				"OPTIONS",
 				"CREDITS",
 			};
-			
+
 			//Initialize page
 			if (menu.page_swap)
 			{
 				menu.last_select = 0;
 				menu.freeplaypage = 3;
-				storymove = 0;
-				targetstoryx = 152;
-				targetstoryy = 132;
-				menu.scroll = menu.select * FIXED_DEC(12,1);
-				menu.page_state.title.fade = FIXED_DEC(0,1);
-				menu.page_state.title.fadespd = FIXED_DEC(0,1);
+				menu.scroll = menu.select * FIXED_DEC(12, 1);
+				menu.page_state.title.fade = FIXED_DEC(0, 1);
+				menu.page_state.title.fadespd = FIXED_DEC(0, 1);
 			}
 			
 			//Draw white fade
-			if (stage.prefs.flash != 0)
-			{
-			if (menu.page_state.title.fade > 0)
+			if (stage.prefs.flash != 0 && menu.page_state.title.fade > 0)
 			{
 				RECT flash2 = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
 				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
 				Gfx_BlendRect(&flash2, flash_col, flash_col, flash_col, 1);
 				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
 			}
-			}
-			
+
 			//Handle option and selection
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
 				Trans_Start();
-			
+
 			if (menu.next_page == menu.page && Trans_Idle())
 			{
 				//Change option
-				if (pad_state.press & PAD_UP)
+				if (pad_state.press & (PAD_UP | PAD_DOWN))
 				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select == 0)
-						menu.select = 2;
-					else if (menu.select == 1)
-						menu.select = 3;
-					else if (menu.select == 2)
-						menu.select = 0;
-					else if (menu.select == 3)
-						menu.select = 1;
+					//Play scroll sound
+					Audio_PlaySound(Sounds[0], 0x3fff);
+					menu.select = (menu.select + 2) % 4;
 				}
-				if (pad_state.press & PAD_DOWN)
+				if (pad_state.press & (PAD_LEFT | PAD_RIGHT))
 				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select == 0)
-						menu.select = 2;
-					else if (menu.select == 1)
-						menu.select = 3;
-					else if (menu.select == 2)
-						menu.select = 0;
-					else if (menu.select == 3)
-						menu.select = 1;
+					//Play scroll sound
+					Audio_PlaySound(Sounds[0], 0x3fff);
+					menu.select = (menu.select + 1) % 2 + (menu.select / 2) * 2;
 				}
-				if (pad_state.press & PAD_LEFT)
-				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select == 0)
-						menu.select = 1;
-					else if (menu.select == 1)
-						menu.select = 0;
-					else if (menu.select == 2)
-						menu.select = 3;
-					else if (menu.select == 3)
-						menu.select = 2;
-				}
-				if (pad_state.press & PAD_RIGHT)
-				{
-					//play scroll sound
-                    Audio_PlaySound(Sounds[0], 0x3fff);
-					if (menu.select == 0)
-						menu.select = 1;
-					else if (menu.select == 1)
-						menu.select = 0;
-					else if (menu.select == 2)
-						menu.select = 3;
-					else if (menu.select == 3)
-						menu.select = 2;
-				}
-				
+
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					//play confirm sound
+					//Play confirm sound
 					Audio_PlaySound(Sounds[1], 0x3fff);
 					switch (menu.select)
 					{
@@ -920,14 +871,14 @@ void Menu_Tick(void)
 					}
 					menu.next_select = 0;
 					menu.trans_time = FIXED_UNIT;
-					menu.page_state.title.fade = FIXED_DEC(255,1);
-					menu.page_state.title.fadespd = FIXED_DEC(510,1);
+					menu.page_state.title.fade = FIXED_DEC(255, 1);
+					menu.page_state.title.fadespd = FIXED_DEC(510, 1);
 				}
-				
+
 				//Return to title screen if circle is pressed
 				if (pad_state.press & PAD_CIRCLE)
 				{
-					//play cancel sound
+					//Play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
 					menu.next_page = MenuPage_Title;
 					Trans_Start();
@@ -942,45 +893,28 @@ void Menu_Tick(void)
 			);
 			
 			//Draw disk thing
-			RECT diskn_src = {  0, 73, 36, 36};
-			RECT diskn_dst = {284,204, 72, 72};
+			RECT diskn_src = {0, 73, 36, 36};
+			RECT diskn_dst = {284, 204, 72, 72};
 			Gfx_DrawTex(&menu.tex_disk, &diskn_src, &diskn_dst);
 			
 			//Draw logo
-			RECT logo_src = {  0,  0,191,164};
-			RECT logo_dst = {
-				74,
-				2,
-				172,
-				148
-			};
+			RECT logo_src = {0, 0, 191, 164};
+			RECT logo_dst = {74, 2, 172, 148};
 			Gfx_DrawTex(&menu.tex_title, &logo_src, &logo_dst);
 			
 			//Draw menu options
-			RECT story_src = {main1, 85, 88, 36};
-			RECT story_dst = {71,155, 88, 36};
-			RECT freeplay_src = {main2, 24, 88, 36};
-			RECT freeplay_dst = {71+91,155, 88, 36};
-			RECT options_src = {main3, 61, 88, 23};
-			RECT options_dst = {71,155+40, 88, 23};
-			RECT credits_src = {main4,  0, 88, 23};
-			RECT credits_dst = {71+91,155+40, 88, 23};
-			if (menu.select == 0)
-				main1 = 89;
-			else
-				main1 = 0;
-			if (menu.select == 1)
-				main2 = 89;
-			else
-				main2 = 0;
-			if (menu.select == 2)
-				main3 = 89;
-			else
-				main3 = 0;
-			if (menu.select == 3)
-				main4 = 89;
-			else
-				main4 = 0;
+			u8 main_indices[4] = {0};
+			main_indices[menu.select] = 89;
+
+			RECT story_src = {main_indices[0], 85, 88, 36};
+			RECT story_dst = {71, 155, 88, 36};
+			RECT freeplay_src = {main_indices[1], 24, 88, 36};
+			RECT freeplay_dst = {71 + 91, 155, 88, 36};
+			RECT options_src = {main_indices[2], 61, 88, 23};
+			RECT options_dst = {71, 155 + 40, 88, 23};
+			RECT credits_src = {main_indices[3], 0, 88, 23};
+			RECT credits_dst = {71 + 91, 155 + 40, 88, 23};
+			
 			Gfx_DrawTex(&menu.tex_buttons, &story_src, &story_dst);
 			Gfx_DrawTex(&menu.tex_buttons, &freeplay_src, &freeplay_dst);
 			Gfx_DrawTex(&menu.tex_buttons, &options_src, &options_dst);
@@ -994,35 +928,30 @@ void Menu_Tick(void)
 		{
 			static const struct
 			{
-				const char *week;
+				u8 week;
 				StageId stage;
-				const char *name;
-				const char *tracks[5];
-				int length;
+				const char* name;
+				const char* tracks[5];
+				u8 length;
 			} menu_options[] = {
-				{NULL, StageId_Temp, NULL, { NULL, NULL, NULL, NULL, NULL}, 3},
-				{"1", StageId_SussusMoogus,">POLUS PROBLEMS", {"SUSSUS MOOGUS","SABOTAGE","MELTDOWN", NULL, NULL}, 3},
-				{"2", StageId_SussusToogus,"MIRA MANIA<", {"SUSSUS TOOGUS","LIGHTS DOWN","REACTOR","EJECTED", NULL}, 4},
-				{"3", StageId_Mando,">AIRSHIP ATROCITIES", {"MANDO","DLOW","OVERSIGHT","DANGER","DOUBLE KILL"}, 5},
-				{"10", StageId_Defeat,">DEFEAT", {NULL, NULL, NULL, NULL, NULL}, 1},
-				{"5", StageId_Ashes,"MAGMATIC MONSTROSITY<<<<", {"ASHES","MAGMATIC","BOILING POINT", NULL, NULL}, 3},
-				{"6", StageId_Delusion,"DEADLY DELUSION", {"DELUSION","BLACKOUT","NEUROTIC", NULL, NULL}, 3},
-				{"7", StageId_Heartbeat,"HUMANE HEARTBEAT<", {"HEARTBEAT","PINKWAVE","PRETENDER", NULL, NULL}, 3},
-				{"4", StageId_O2,"JORSAWSEES JAMS<", {"O2","VOTING TIME","TURBULENCE","VICTORY", NULL}, 4},
-				{"11", StageId_SussyBussy,"ROUSEY RIVAL", {"SUSSY BUSSY","RIVALS","CHEWMATE", NULL, NULL}, 3},
-				{"12", StageId_Christmas,"LOGGOS HALLOWEEN<", {"CHRISTMAS","SPOOKPOSTOR", NULL, NULL, NULL}, 2},
-				{"13", StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
+				{NULL, StageId_Temp, NULL, { NULL, NULL, NULL, NULL, NULL }, 3 },
+				{1, StageId_SussusMoogus,">POLUS PROBLEMS", {"SUSSUS MOOGUS","SABOTAGE","MELTDOWN", NULL, NULL}, 3},
+				{2, StageId_SussusToogus,"MIRA MANIA<", {"SUSSUS TOOGUS","LIGHTS DOWN","REACTOR","EJECTED", NULL}, 4},
+				{3, StageId_Mando,">AIRSHIP ATROCITIES", {"MANDO","DLOW","OVERSIGHT","DANGER","DOUBLE KILL"}, 5},
+				{10, StageId_Defeat,">DEFEAT", {NULL, NULL, NULL, NULL, NULL}, 1},
+				{5, StageId_Ashes,"MAGMATIC MONSTROSITY<<<<", {"ASHES","MAGMATIC","BOILING POINT", NULL, NULL}, 3},
+				{6, StageId_Delusion,"DEADLY DELUSION", {"DELUSION","BLACKOUT","NEUROTIC", NULL, NULL}, 3},
+				{7, StageId_Heartbeat,"HUMANE HEARTBEAT<", {"HEARTBEAT","PINKWAVE","PRETENDER", NULL, NULL}, 3},
+				{4, StageId_O2,"JORSAWSEES JAMS<", {"O2","VOTING TIME","TURBULENCE","VICTORY", NULL}, 4},
+				{11, StageId_SussyBussy,"ROUSEY RIVAL", {"SUSSY BUSSY","RIVALS","CHEWMATE", NULL, NULL}, 3},
+				{12, StageId_Christmas,"LOGGOS HALLOWEEN<", {"CHRISTMAS","SPOOKPOSTOR", NULL, NULL, NULL}, 2},
+				{13, StageId_Titular,"BATTLING THE BOYFRIEND", {"TITULAR","GREATEST PLAN","REINFORCEMENTS","ARMED", NULL}, 4},
 			};
 			
 			diskchange();
 			
 			//Draw score
-			menu.font_arial.draw(&menu.font_arial,
-				scoredisp,
-				26,
-				22,
-				FontAlign_Left
-			);
+			menu.font_arial.draw(&menu.font_arial, scoredisp, 26, 22, FontAlign_Left);
 			
 			if (menu.select != 0)
 				sprintf(scoredisp, "HIGH SCORE: %d", increase_Story(menu_options[menu.select].length, menu_options[menu.select].stage));
@@ -1037,6 +966,14 @@ void Menu_Tick(void)
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
 				menu.page_param.stage.last = true;
+				if (menu.last_select == 0)
+				{
+					storyx = 152;
+					storyy = 132;
+					fstoryx = FIXED_DEC(152,1);
+					fstoryy = FIXED_DEC(132,1);
+					ship = 0;
+				}
 			}
 			
 			//Handle option and selection
@@ -1051,121 +988,147 @@ void Menu_Tick(void)
 					if ((menu.select == 0) || (menu.select == 2) || (menu.select == 5) || (menu.select == 9) || (menu.select == 11))
 					{
 						Audio_PlaySound(Sounds[0], 0x3fff);
-						storymove1 = 1;
 						ship = 2;
-						storymove1l += 1;
 					}
 					disk = false;
-					if (menu.select == 0)
-						menu.select = 8;
-					else if (menu.select == 2)
-						menu.select = 10;
-					else if (menu.select == 5)
-						menu.select = 0;
-					else if (menu.select == 9)
-						menu.select = 2;
-					else if (menu.select == 11)
-						menu.select = 3;
+					switch (menu.select)
+					{
+						case 0:
+							menu.select = 8;
+							break;
+						case 2:
+							menu.select = 10;
+							break;
+						case 5:
+							menu.select = 0;
+							break;
+						case 9:
+							menu.select = 2;
+							break;
+						case 11:
+							menu.select = 3;
+							break;
+					}
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
 					if ((menu.select == 0) || (menu.select == 2) || (menu.select == 3) || (menu.select == 8) || (menu.select == 10))
 					{
 						Audio_PlaySound(Sounds[0], 0x3fff);
-						storymove2 = 1;
 						ship = 3;
-						storymove2l += 1;
 					}
 					disk = false;
-					if (menu.select == 0)
-						menu.select = 5;
-					else if (menu.select == 2)
-						menu.select = 9;
-					else if (menu.select == 3)
-						menu.select = 11;
-					else if (menu.select == 8)
-						menu.select = 0;
-					else if (menu.select == 10)
-						menu.select = 2;
+					switch (menu.select)
+					{
+						case 0:
+							menu.select = 5;
+							break;
+						case 2:
+							menu.select = 9;
+							break;
+						case 3:
+							menu.select = 11;
+							break;
+						case 8:
+							menu.select = 0;
+							break;
+						case 10:
+							menu.select = 2;
+							break;
+					}
 				}
 				if (pad_state.press & PAD_LEFT)
 				{
 					if ((menu.select == 1) || (menu.select == 2) || (menu.select == 3) || (menu.select == 4) || (menu.select == 5) || (menu.select == 6))
 					{
 						Audio_PlaySound(Sounds[0], 0x3fff);
-						storymove3 = 1;
 						ship = 1;
-						storymove3l += 1;
 					}
 					disk = false;
-					if (menu.select == 1)
-						menu.select = 0;
-					else if (menu.select == 2)
-						menu.select = 1;
-					else if (menu.select == 3)
-						menu.select = 2;
-					else if (menu.select == 4)
-						menu.select = 3;
-					else if (menu.select == 5)
-						menu.select = 6;
-					else if (menu.select == 6)
-						menu.select = 7;
+					switch (menu.select)
+					{
+						case 1:
+							menu.select = 0;
+							break;
+						case 2:
+							menu.select = 1;
+							break;
+						case 3:
+							menu.select = 2;
+							break;
+						case 4:
+							menu.select = 3;
+							break;
+						case 5:
+							menu.select = 6;
+							break;
+						case 6:
+							menu.select = 7;
+							break;
+					}
 				}
 				if (pad_state.press & PAD_RIGHT)
 				{
 					if ((menu.select == 0) || (menu.select == 1) || (menu.select == 2) || (menu.select == 3) || (menu.select == 6) || (menu.select == 7))
 					{
 						Audio_PlaySound(Sounds[0], 0x3fff);
-						storymove4 = 1;
 						ship = 0;
-						storymove4l += 1;
 					}
 					disk = false;
-					if (menu.select == 0)
-						menu.select = 1;
-					else if (menu.select == 1)
-						menu.select = 2;
-					else if (menu.select == 2)
-						menu.select = 3;
-					else if (menu.select == 3)
-						menu.select = 4;
-					else if (menu.select == 6)
-						menu.select = 5;
-					else if (menu.select == 7)
-						menu.select = 6;
+					switch (menu.select)
+					{
+						case 0:
+							menu.select = 1;
+							break;
+						case 1:
+							menu.select = 2;
+							break;
+						case 2:
+							menu.select = 3;
+							break;
+						case 3:
+							menu.select = 4;
+							break;
+						case 6:
+							menu.select = 5;
+							break;
+						case 7:
+							menu.select = 6;
+							break;
+					}
 				}
 				
 				story_get_target_position();
-				fstoryx = lerp(fstoryx, FIXED_DEC(targetstoryx,1), FIXED_DEC(3,10));
-				fstoryy = lerp(fstoryy, FIXED_DEC(targetstoryy,1), FIXED_DEC(3,10));
+				fstoryx = fixed_lerp(fstoryx, FIXED_DEC(targetstoryx, 1), FIXED_DEC(3, 10));
+				fstoryy = fixed_lerp(fstoryy, FIXED_DEC(targetstoryy, 1), FIXED_DEC(3, 10));
 				storyx = fstoryx >> FIXED_SHIFT;
 				storyy = fstoryy >> FIXED_SHIFT;
 				
 				//Select option if cross is pressed
-				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))
+				if ((pad_state.press & (PAD_START | PAD_CROSS)))
 				{
 					if ((menu.select == 0) || (menu.select == 9) || (menu.select == 10) || (menu.select == 11))
 					{
-					if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
-					{
-						//play confirm sound
-						Audio_PlaySound(Sounds[1], 0x3fff);
-						menu.last_select = menu.select;
-						menu.next_page = MenuPage_Stage;
-						menu.page_param.stage.id = menu_options[menu.select].stage;
-						menu.page_param.stage.story = true;
-						menu.trans_time = FIXED_UNIT;
-					}
-					else if ((menu.select == 4) && (stage.prefs.defeat == 1))
-					{
-						//play confirm sound
-						Audio_PlaySound(Sounds[1], 0x3fff);
-						menu.last_select = menu.select;
-						menu.next_page = MenuPage_Defeat;
-						menu.page_param.stage.id = menu_options[menu.select].stage;
-						menu.page_param.stage.story = true;
-						menu.trans_time = FIXED_UNIT;
-					}
+						if (((menu.select != 4) || ((menu.select == 4) && (stage.prefs.defeat != 1))) && (menu.select != 0))
+						{
+							//Play confirm sound
+							Audio_PlaySound(Sounds[1], 0x3fff);
+							menu.last_select = menu.select;
+							menu.next_page = MenuPage_Stage;
+							menu.page_param.stage.id = menu_options[menu.select].stage;
+							menu.page_param.stage.story = true;
+							menu.trans_time = FIXED_UNIT;
+						}
+						else if ((menu.select == 4) && (stage.prefs.defeat == 1))
+						{
+							//Play confirm sound
+							Audio_PlaySound(Sounds[1], 0x3fff);
+							menu.last_select = menu.select;
+							menu.next_page = MenuPage_Defeat;
+							menu.page_param.stage.id = menu_options[menu.select].stage;
+							menu.page_param.stage.story = true;
+							menu.trans_time = FIXED_UNIT;
+						}
 					}
 					else if (disk == true)
 					{
@@ -1179,13 +1142,13 @@ void Menu_Tick(void)
 				//Return to main menu if circle is pressed
 				if (pad_state.press & PAD_CIRCLE)
 				{
-					//play cancel sound
+					//Play cancel sound
 					Audio_PlaySound(Sounds[2], 0x3fff);
 					if (disk == false)
 					{
-					menu.next_page = MenuPage_Main;
-					menu.next_select = 0; //Story Mode
-					Trans_Start();
+						menu.next_page = MenuPage_Main;
+						menu.next_select = 0; //Story Mode
+						Trans_Start();
 					}
 					else
 						disk = false;
@@ -1200,7 +1163,7 @@ void Menu_Tick(void)
 				FontAlign_Center
 			);
 			
-			const char * const *trackp = menu_options[menu.select].tracks;
+			const char *const *trackp = menu_options[menu.select].tracks;
 			for (size_t i = 0; i < COUNT_OF(menu_options[menu.select].tracks); i++, trackp++)
 			{
 				if (*trackp != NULL)
@@ -1213,15 +1176,15 @@ void Menu_Tick(void)
 			}
 			
 			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(48,1);
+			s32 next_scroll = menu.select * FIXED_DEC(48, 1);
 			menu.scroll += (next_scroll - menu.scroll) >> 3;
 			
 			//Draw selected option
 			Menu_DrawWeek(menu_options[menu.select].week, 31);
 			
 			//Draw border
-			RECT border_src = {  0,  0,255,191};
-			RECT border_dst = {  0,  0,320,240};
+			RECT border_src = { 0, 0, 255, 191 };
+			RECT border_dst = { 0, 0, 320, 240 };
 			Gfx_DrawTex(&menu.tex_border, &border_src, &border_dst);
 			
 			//Draw map
@@ -1907,7 +1870,7 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Options:
 		{
-			static const char *gamemode_strs[] = {"NORMAL", "SWAP", "TWO PLAYER"};
+			static const char *gamemode_strs[] = {"NORMAL", "TWO PLAYER"};
 			static const struct
 			{
 				enum
