@@ -36,6 +36,10 @@ int starbgx = 20;
 int storymove, storymove1, storymove2, storymove3, storymove4, storymove1l, storymove2l, storymove3l, storymove4l = 0;
 int storyx = 152;
 int storyy = 132;
+s16 targetstoryx = 152;
+s16 targetstoryy = 132;
+fixed_t fstoryx = 152;
+fixed_t fstoryy = 132;
 int ship = 0;
 int main1, main2, main3, main4 = 0;
 boolean disk = false;
@@ -378,79 +382,78 @@ static void Menu_DrawStory(void)
 	Gfx_DrawTex(&menu.tex_stuff, &vertline_src, &vertline4_dst);
 }
 
-static void Menu_DrawDefeat(void)
-{
-	//Draw number
-	RECT zero_src = {0, 67, 10, 15};
-	RECT zero_dst = {5 + 15, 42, 16, 24};
-	RECT one_src = {11, 67, 8, 15};
-	RECT one_dst = {5 + 15, 42, 13, 24};
-	RECT two_src = {20, 67, 10, 15};
-	RECT two_dst = {5 + 15, 42, 16, 24};
-	RECT three_src = {31, 67, 10, 15};
-	RECT three_dst = {5 + 15, 42, 16, 24};
-	RECT four_src = {43, 67, 10, 15};
-	RECT four_dst = {5 + 15, 42, 16, 24};
-	RECT five_src = {54, 67, 10, 15};
-	RECT five_dst = {5 + 15, 42, 16, 24};
-	if (menu.select == 5)
-		Gfx_DrawTex(&menu.tex_stuff, &zero_src, &zero_dst);
-	else if (menu.select == 4)
-		Gfx_DrawTex(&menu.tex_stuff, &one_src, &one_dst);
-	else if (menu.select == 3)
-		Gfx_DrawTex(&menu.tex_stuff, &two_src, &two_dst);
-	else if (menu.select == 2)
-		Gfx_DrawTex(&menu.tex_stuff, &three_src, &three_dst);
-	else if (menu.select == 1)
-		Gfx_DrawTex(&menu.tex_stuff, &four_src, &four_dst);
-	else if (menu.select == 0)
-		Gfx_DrawTex(&menu.tex_stuff, &five_src, &five_dst);
-	
-	//Draw text
-	RECT combo_src = {0, 35, 55, 15};
-	RECT combo_dst = {76 + 15, 42, 88, 24};
-	RECT break_src = {0, 51, 66, 15};
-	RECT break_dst = {183 + 15, 42, 107, 24};
-	RECT slash_src = {65, 67, 10, 15};
-	RECT slash_dst = {23 + 15, 42, 16, 24};
-	RECT five2_dst = {41 + 15, 42, 16, 24};
-	Gfx_DrawTex(&menu.tex_stuff, &combo_src, &combo_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &break_src, &break_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &slash_src, &slash_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &five_src, &five2_dst);
-	
-	//Draw dead people
-	RECT ghost_src = {0, 0, 28, 30};
-	RECT ghost_dst = {0 + 41, 150, 28, 30};
-	RECT ghost2_dst = {42 + 41, 150, 28, 30};
-	RECT dead_src = {29, 0, 28, 30};
-	RECT dead_dst = {84 + 41, 150, 28, 30};
-	RECT dead2_dst = {126 + 41, 150, 28, 30};
-	RECT bone_src = {58, 0, 28, 30};
-	RECT bone_dst = {168 + 41, 150, 28, 30};
-	RECT bone2_dst = {210 + 41, 150, 28, 30};
-	Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost2_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead2_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst);
-	Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone2_dst);
-	
-	//Draw arrow
-	RECT arrow_src = {0, 31, 28, 3};
-	RECT arrow_dst = {(42 * menu.select) + 41,138, 28, 3};
-	if (menu.select == 0)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
-	else if (menu.select == 1)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
-	else if (menu.select == 2)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
-	else if (menu.select == 3)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
-	else if (menu.select == 4)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
-	else if (menu.select == 5)
-		Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
+static void Menu_DrawDefeat(void) {
+    // Define the source and destination rectangles for numbers
+    RECT number_src[6] = {
+		{54, 67, 10, 15},
+		{43, 67, 10, 15},
+		{31, 67, 10, 15},
+        {20, 67, 10, 15},
+        {11, 67, 8, 15},
+        {0, 67, 10, 15}
+    };
+    
+    RECT number_dst[6] = {
+        {5 + 15, 42, 16, 24},
+        {5 + 15, 42, 16, 24},
+        {5 + 15, 42, 16, 24},
+        {5 + 15, 42, 16, 24},
+		{5 + 15, 42, 13, 24},
+        {5 + 15, 42, 16, 24}
+    };
+    
+    // Draw the selected number
+    Gfx_DrawTex(&menu.tex_stuff, &number_src[menu.select], &number_dst[menu.select]);
+    
+    // Define the source and destination rectangles for text
+    RECT combo_src = {0, 35, 55, 15};
+    RECT combo_dst = {76 + 15, 42, 88, 24};
+    RECT break_src = {0, 51, 66, 15};
+    RECT break_dst = {183 + 15, 42, 107, 24};
+    RECT slash_src = {65, 67, 10, 15};
+    RECT slash_dst = {23 + 15, 42, 16, 24};
+    RECT five2_dst = {41 + 15, 42, 16, 24};
+    
+    // Draw the text
+    Gfx_DrawTex(&menu.tex_stuff, &combo_src, &combo_dst);
+    Gfx_DrawTex(&menu.tex_stuff, &break_src, &break_dst);
+    Gfx_DrawTex(&menu.tex_stuff, &slash_src, &slash_dst);
+    Gfx_DrawTex(&menu.tex_stuff, &number_src[0], &five2_dst);
+    
+    // Define the source and destination rectangles for dead people
+    RECT ghost_src = {0, 0, 28, 30};
+    RECT dead_src = {29, 0, 28, 30};
+    RECT bone_src = {58, 0, 28, 30};
+    
+    RECT ghost_dst[2] = {
+        {0 + 41, 150, 28, 30},
+        {42 + 41, 150, 28, 30}
+    };
+    
+    RECT dead_dst[2] = {
+        {84 + 41, 150, 28, 30},
+        {126 + 41, 150, 28, 30}
+    };
+    
+    RECT bone_dst[2] = {
+        {168 + 41, 150, 28, 30},
+        {210 + 41, 150, 28, 30}
+    };
+    
+    // Draw the dead people
+    Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst[0]);
+    Gfx_DrawTex(&menu.tex_stuff, &ghost_src, &ghost_dst[1]);
+    Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead_dst[0]);
+    Gfx_DrawTex(&menu.tex_stuff, &dead_src, &dead_dst[1]);
+    Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst[0]);
+    Gfx_DrawTex(&menu.tex_stuff, &bone_src, &bone_dst[1]);
+    
+    // Define the source and destination rectangles for the arrow
+    RECT arrow_src = {0, 31, 28, 3};
+    RECT arrow_dst = {(42 * menu.select) + 41, 138, 28, 3};
+    
+    // Draw the arrow
+    Gfx_DrawTex(&menu.tex_stuff, &arrow_src, &arrow_dst);
 }
 
 void diskchange()
@@ -489,68 +492,40 @@ void diskchange()
 	}
 }
 
-void idk()
-{
-	if (menu.select == 0)
-	{
-		storyx = 152;
-		storyy = 132;
-	}
-	if (menu.select == 1)
-	{
-		storyx = 54;
-		storyy = 132;
-	}
-	if (menu.select == 2)
-	{
-		storyx = -44;
-		storyy = 132;
-	}
-	if (menu.select == 3)
-	{
-		storyx = -142;
-		storyy = 132;
-	}
-	if (menu.select == 4)
-	{
-		storyx = -240;
-		storyy = 132;
-	}
-	if (menu.select == 5)
-	{
-		storyx = 152;
-		storyy = 34;
-	}
-	if (menu.select == 6)
-	{
-		storyx = 250;
-		storyy = 34;
-	}
-	if (menu.select == 7)
-	{
-		storyx = 348;
-		storyy = 34;
-	}
-	if (menu.select == 8)
-	{
-		storyx = 152;
-		storyy = 230;
-	}
-	if (menu.select == 9)
-	{
-		storyx = -44;
-		storyy = 34;
-	}
-	if (menu.select == 10)
-	{
-		storyx = -44;
-		storyy = 230;
-	}
-	if (menu.select == 11)
-	{
-		storyx = -142;
-		storyy = 34;
-	}
+void story_get_target_position() {
+    targetstoryx = 152;
+    targetstoryy = 132;
+
+    if (menu.select == 1) {
+        targetstoryx = 54;
+    } else if (menu.select == 2) {
+        targetstoryx = -44;
+    } else if (menu.select == 3) {
+        targetstoryx = -142;
+    } else if (menu.select == 4) {
+        targetstoryx = -240;
+    } else if (menu.select == 5) {
+        targetstoryx = 152;
+        targetstoryy = 34;
+    } else if (menu.select == 6) {
+        targetstoryx = 250;
+        targetstoryy = 34;
+    } else if (menu.select == 7) {
+        targetstoryx = 348;
+        targetstoryy = 34;
+    } else if (menu.select == 8) {
+        targetstoryx = 152;
+        targetstoryy = 230;
+    } else if (menu.select == 9) {
+        targetstoryx = -44;
+        targetstoryy = 34;
+    } else if (menu.select == 10) {
+        targetstoryx = -44;
+        targetstoryy = 230;
+    } else if (menu.select == 11) {
+        targetstoryx = -142;
+        targetstoryy = 34;
+    }
 }
 //Menu functions
 void Menu_Load(MenuPage page)
@@ -844,8 +819,8 @@ void Menu_Tick(void)
 				menu.last_select = 0;
 				menu.freeplaypage = 3;
 				storymove = 0;
-				storyx = 152;
-				storyy = 132;
+				targetstoryx = 152;
+				targetstoryy = 132;
 				menu.scroll = menu.select * FIXED_DEC(12,1);
 				menu.page_state.title.fade = FIXED_DEC(0,1);
 				menu.page_state.title.fadespd = FIXED_DEC(0,1);
@@ -1160,78 +1135,11 @@ void Menu_Tick(void)
 						menu.select = 6;
 				}
 				
-				if (storymove1 == 1)
-				{
-					if (storymove <= ((98 * storymove1l)-1))
-					{
-						storymove += 7;
-						storyy += 7;
-					}
-				}
-				else if (storymove2 == 1)
-				{
-					if (storymove <= ((98 * storymove2l)-1))
-					{
-						storymove += 7;
-						storyy -= 7;
-					}
-				}
-				else if (storymove3 == 1)
-				{
-					if (storymove <= ((98 * storymove3l)-1))
-					{
-						storymove += 7;
-						storyx += 7;
-					}
-				}
-				else if (storymove4 == 1)
-				{
-					if (storymove <= ((98 * storymove4l)-1))
-					{
-						storymove += 7;
-						storyx -= 7;
-					}
-				}
-				if ((storymove1 == 1) && (storymove >= (98 * storymove1l)))
-				{
-					storymove1 = 0;
-					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
-					{
-						idk();
-					}
-					storymove = 0;
-					storymove1l = 0;
-				}
-				else if ((storymove2 == 1) && (storymove >= (98 * storymove2l)))
-				{
-					storymove2 = 0;
-					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
-					{
-						idk();
-					}
-					storymove = 0;
-					storymove2l = 0;
-				}
-				else if ((storymove3 == 1) && (storymove >= (98 * storymove3l)))
-				{
-					storymove3 = 0;
-					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
-					{
-						idk();
-					}
-					storymove = 0;
-					storymove3l = 0;
-				}
-				else if ((storymove4 == 1) && (storymove >= (98 * storymove4l)))
-				{
-					storymove4 = 0;
-					if ((storymove1 == 0) && (storymove2 == 0) && (storymove3 == 0) && (storymove4 == 0))
-					{
-						idk();
-					}
-					storymove = 0;
-					storymove4l = 0;
-				}
+				story_get_target_position();
+				fstoryx = lerp(fstoryx, FIXED_DEC(targetstoryx,1), FIXED_DEC(3,10));
+				fstoryy = lerp(fstoryy, FIXED_DEC(targetstoryy,1), FIXED_DEC(3,10));
+				storyx = fstoryx >> FIXED_SHIFT;
+				storyy = fstoryy >> FIXED_SHIFT;
 				
 				//Select option if cross is pressed
 				if ((pad_state.press & (PAD_START | PAD_CROSS)) && (storymove == 0))

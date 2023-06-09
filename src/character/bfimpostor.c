@@ -108,6 +108,7 @@ static const Animation char_bfimpostor_anim[PlayerAnim_Max] = {
 	
 	{1, (const u8[]){ 24, 24, 25, 26, 27, 28, 29, 29, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, ASCR_BACK, 1}},       //CharAnim_Special1
 	{2, (const u8[]){ 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special2
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_Special3
 	
 	{1, (const u8[]){ 13, 14, 15, 16, ASCR_BACK, 1}},     //PlayerAnim_LeftMiss
 	{2, (const u8[]){ 17, 18, ASCR_BACK, 1}},     //PlayerAnim_DownMiss

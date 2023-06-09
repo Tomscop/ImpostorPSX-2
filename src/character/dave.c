@@ -231,7 +231,7 @@ Character *Char_Dave_New(fixed_t x, fixed_t y)
 	this->character.health_bar = 0xFF4C52B4;
 	
 	this->character.focus_x = FIXED_DEC(-51,1);
-	this->character.focus_y = FIXED_DEC(-83,1);
+	this->character.focus_y = FIXED_DEC(-82,1);
 	this->character.focus_zoom = FIXED_DEC(153,128);
 	
 	this->character.zoom_save = this->character.focus_zoom;

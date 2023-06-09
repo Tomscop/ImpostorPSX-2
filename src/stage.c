@@ -57,6 +57,7 @@ static u32 Sounds[10];
 #include "character/bfrun.h"
 #include "character/bflegs.h"
 #include "character/bfdefeat.h"
+#include "character/bfic.h"
 #include "character/bfpolus.h"
 #include "character/bflava.h"
 #include "character/bfairship.h"
@@ -93,6 +94,7 @@ static u32 Sounds[10];
 #include "character/blackdk.h"
 #include "character/black.h"
 #include "character/blackp.h"
+#include "character/monotone.h"
 #include "character/maroon.h"
 #include "character/maroonparasite.h"
 #include "character/gray.h"
@@ -154,6 +156,7 @@ static u32 Sounds[10];
 #include "stage/cargo.h"
 #include "stage/defeat.h"
 #include "stage/finale.h"
+#include "stage/skeld.h"
 #include "stage/polusmaroon.h"
 #include "stage/lava.h"
 #include "stage/powerroom.h"
@@ -1790,14 +1793,14 @@ static void Stage_LoadSFX(void)
 	//death sound
 	if (stage.stage_id == StageId_Ejected)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHE.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHE.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Defeat)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHD.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHD.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1811,21 +1814,21 @@ static void Stage_LoadSFX(void)
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHP.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATHH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATHH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\DEATH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\DEATH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[8] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1834,28 +1837,28 @@ static void Stage_LoadSFX(void)
 	//retry sound
 	if ((stage.stage_id >= StageId_O2) && (stage.stage_id <= StageId_Victory))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYJ.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYJ.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_Roomcode)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYP.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYP.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if (stage.stage_id == StageId_GreatestPlan)
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRYH.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRYH.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
 	}
 	else if ((stage.stage_id != StageId_SussyBussy) && (stage.stage_id != StageId_Rivals) && (stage.stage_id != StageId_Chewmate))
 	{
-		IO_FindFile(&file, "\\SOUNDS\\RETRY.VAG;1");
+		IO_FindFile(&file, "\\GAMEOVER\\RETRY.VAG;1");
 		u32 *data = IO_ReadFile(&file);
 		Sounds[9] = Audio_LoadVAGData(data, file.size);
 		Mem_Free(data);
@@ -1980,7 +1983,9 @@ static void Stage_LoadState(void)
 		stage.charbump = FIXED_UNIT;
 		stage.sbump = FIXED_UNIT;
 		stage.opacity = 100;
-		if (stage.stage_id != StageId_Torture)
+		stage.flash = 0;
+		stage.flashspd = 0;
+		if ((stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_IdentityCrisis))
 			stage.hudfade = 0;
 		else
 			stage.hudfade = 1;
@@ -2402,7 +2407,23 @@ void Stage_Tick(void)
 				}
 			}
 			
+			if ((stage.back->draw_fg != NULL) && (stage.stage_id == StageId_IdentityCrisis))
+				stage.back->draw_fg(stage.back);
+			
+			if (stage.black == true)
+			{
+				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+				Gfx_DrawRect(&screen_src, 0, 0, 0);
+			}
+			
 			//front flash
+			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 112))
+			{
+				flashf = FIXED_DEC(1,1);
+				flashspdf = FIXED_DEC(200,1);
+			}
+			if ((stage.stage_id == StageId_Finale) && (stage.song_step == 128))
+				flashf = 0;
 			if (stage.prefs.flash != 0)
 				if (flashf > 0)
 				{
@@ -2410,13 +2431,24 @@ void Stage_Tick(void)
 					u8 flashf_col = flashf >> FIXED_SHIFT;
 					Gfx_BlendRect(&flashff, flashf_col, flashf_col, flashf_col, 1);
 					if (stage.paused == false)
-						flashf -= FIXED_MUL(flashspdf, timer_dt);
+					{
+						if (stage.stage_id != StageId_Finale)
+							flashf -= FIXED_MUL(flashspdf, timer_dt);
+						else if ((stage.stage_id == StageId_Finale) && (flashf <= FIXED_DEC(254,1)))
+							flashf += FIXED_MUL(flashspdf, timer_dt);
+					}
 				}
-			
-			if (stage.black == true)
+			if ((stage.stage_id == StageId_IdentityCrisis) && (stage.pink == 1))
 			{
-				RECT screen_src = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-				Gfx_DrawRect(&screen_src, 0, 0, 0);
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
 			}
 			
 			if (((stage.stage_id == StageId_BoilingPoint) && (((stage.song_step >= 320) && (stage.song_step <= 327)) || ((stage.song_step >= 448) && (stage.song_step <= 463)))))
@@ -2481,6 +2513,8 @@ void Stage_Tick(void)
 				show = false;
 			else if ((stage.stage_id == StageId_Who) && (stage.song_step >= 1152))
 				show = false;
+			else if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 1984))
+				show = false;
 			else
 				show = true;
 			
@@ -2496,7 +2530,7 @@ void Stage_Tick(void)
 				stage.black = true;
 			else if ((stage.stage_id == StageId_Reinforcements) && (cutscene >= 210))
 				stage.black = true;
-			else
+			else if (stage.stage_id != StageId_IdentityCrisis)
 				stage.black = false;
 			
 			if ((stage.stage_id == StageId_Reinforcements) && (stage.song_step >= 1280) && (stage.paused == false))
@@ -3096,6 +3130,8 @@ void Stage_Tick(void)
 						}
 						if ((stage.stage_id == StageId_Defeat) && (stage.song_step == 1167))
 							stage.player_state[0].health = 10000;
+						if ((stage.stage_id == StageId_Finale) && (stage.song_beat == 68))
+							stage.player_state[0].health = 1000;
 						if (stage.player_state[0].health > 20000)
 							stage.player_state[0].health = 20000;
 
@@ -3108,7 +3144,7 @@ void Stage_Tick(void)
 							if (stage.back->draw_md != NULL)
 								stage.back->draw_md(stage.back);
 						}
-						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
+						if (((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Finale)) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)) || ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272)))
 						{
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[0].character->health_i,    1);
 							Stage_DrawHealth(stage.player_state[0].health, stage.player_state[1].character->health_i, -1);
@@ -3131,7 +3167,7 @@ void Stage_Tick(void)
 							}
 						}
 						}
-						else
+						else if ((stage.stage_id == StageId_Finale) && (stage.song_step >= 272))
 						{
 						if ((((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2)) || ((stage.stage_id == StageId_Defeat) && (stage.song_step >= 1168) && (stage.song_step <= 1439))) || ((stage.stage_id == StageId_DoubleKill) && (stage.song_step <= 3407)) || ((stage.stage_id == StageId_O2) && (stage.song_step <= 408)))
 						{
@@ -3153,7 +3189,8 @@ void Stage_Tick(void)
 								hdst.y = FIXED_DEC(-60,1);
 								hdst.h = FIXED_DEC(-76,1);
 							}
-							Stage_DrawTex(&stage.tex_hud1, &hsrc, &hdst, stage.bump);
+							if (show)
+								Stage_DrawTex(&stage.tex_hud1, &hsrc, &hdst, stage.bump);
 						}
 					}
 				}
@@ -3202,22 +3239,6 @@ void Stage_Tick(void)
 				}
 			}
 			
-			//Draw white flash
-			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
-			{
-				stage.flash = FIXED_DEC(255,1);
-				stage.flashspd = FIXED_DEC(1000,1);
-			}
-			if (stage.prefs.flash != 0)
-				if (stage.flash > 0)
-				{
-					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
-					u8 flash_col = stage.flash >> FIXED_SHIFT;
-					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-					if (stage.paused == false)
-						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
-				}
-			
 			if ((stage.stage_id == StageId_Finale) || (stage.stage_id == StageId_IdentityCrisis) || (stage.stage_id == StageId_VotingTime))
 			{
 				//Draw border
@@ -3231,48 +3252,129 @@ void Stage_Tick(void)
 					Stage_DrawTex(&stage.tex_hud1, &border_src, &border_dst, stage.bump);
 			}
 			
+			//Draw white flash
+			if ((stage.stage_id == StageId_Temp)) //PLACEHOLDER
+			{
+				stage.flash = FIXED_DEC(255,1);
+				stage.flashspd = FIXED_DEC(1000,1);
+			}
+			if (stage.stage_id != StageId_IdentityCrisis)
+			{
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
+			}
+			if ((stage.stage_id == StageId_IdentityCrisis) && (stage.pink == 0))
+			{
+			if (stage.prefs.flash != 0)
+				if (stage.flash > 0)
+				{
+					RECT flash = {0, 0, screen.SCREEN_WIDTH, screen.SCREEN_HEIGHT};
+					u8 flash_col = stage.flash >> FIXED_SHIFT;
+					Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
+					if (stage.paused == false)
+						stage.flash -= FIXED_MUL(stage.flashspd, timer_dt);
+				}
+			}
+			if (stage.stage_id == StageId_IdentityCrisis)
+			{
+				if (stage.song_step == -29)
+					stage.pink = 0;
+				if (stage.song_step == 634)
+					stage.pink = 1;
+				if (stage.song_step == 675)
+					stage.pink = 0;
+				if (stage.song_step == 1172)
+					stage.pink = 1;
+				if (stage.song_step == 2080)
+					stage.pink = 0;
+			}
+			
 			//Draw stage foreground
-			if (stage.back->draw_fg != NULL)
+			if ((stage.back->draw_fg != NULL) && (stage.stage_id != StageId_IdentityCrisis))
 				stage.back->draw_fg(stage.back);
 			
 			//Tick foreground objects
 			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
-			if (stage.stage_id == StageId_Torture)
+			if (stage.stage_id == StageId_DoubleKill)
+			{
+				stage.player->tick(stage.player);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
+			else if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
+			{
+				stage.opponent->tick(stage.opponent);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				stage.player->tick(stage.player);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+			}
+			else if (stage.stage_id == StageId_Turbulence)
+			{
+				stage.player->tick(stage.player);
+				if (stage.back->draw_md != NULL)
+					stage.back->draw_md(stage.back);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
+			else if ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed))
+			{
+				stage.player->tick(stage.player);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+				stage.opponent->tick(stage.opponent);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+			}
+			else if (stage.stage_id == StageId_Torture)
 			{
 				stage.opponent->tick(stage.opponent);
 				if (stage.opponent2 != NULL)
 					stage.opponent2->tick(stage.opponent2);
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+				stage.player->tick(stage.player);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
 			}
-			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_Finale))
+			else
+			{
 				stage.player->tick(stage.player);
-			if (stage.stage_id == StageId_Turbulence)
-				if (stage.back->draw_md != NULL)
-					stage.back->draw_md(stage.back);
-			if ((stage.opponent2 != NULL) && ((stage.stage_id == StageId_Reinforcements) || (stage.stage_id == StageId_Armed)))
-				stage.opponent2->tick(stage.opponent2);
-			if (stage.stage_id != StageId_Torture)
 				stage.opponent->tick(stage.opponent);
-			if ((stage.stage_id == StageId_Defeat) || (stage.stage_id == StageId_Finale))
-				stage.player->tick(stage.player);
-			if (stage.player2 != NULL)
-				stage.player2->tick(stage.player2);
-			if ((stage.opponent2 != NULL) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Reinforcements) && (stage.stage_id != StageId_Armed) && (stage.stage_id != StageId_Torture))
-				stage.opponent2->tick(stage.opponent2);
+				if (stage.player2 != NULL)
+					stage.player2->tick(stage.player2);
+				if (stage.opponent2 != NULL)
+					stage.opponent2->tick(stage.opponent2);
+			}
 			
 			//Draw stage middle
-			if ((stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+			if ((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+			{
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
+			}
 			
 			//Tick girlfriend
 			if (stage.gf != NULL)
 				stage.gf->tick(stage.gf);
-			if ((stage.opponent2 != NULL) && (stage.stage_id == StageId_DoubleKill))
-				stage.opponent2->tick(stage.opponent2);
 			
 			//Tick background objects
 			ObjectList_Tick(&stage.objlist_bg);
@@ -3391,6 +3493,16 @@ void Stage_Tick(void)
 				stage.player_state[1].charactersecond = NULL;
 			}
 			else
+			{
+				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
+				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);
+				stage.player_state[0].charactersecond = NULL;
+				stage.player_state[1].character = Stage_ChangeChars(stage.player_state[1].character, stage.opponent);
+				stage.player_state[1].character2 = Stage_ChangeChars(stage.player_state[1].character, stage.opponent2);
+				stage.player_state[1].charactersecond = NULL;
+			}
+			//extra thing
+			if ((stage.stage_id != StageId_Defeat) && (stage.stage_id != StageId_LightsDown) && (stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_O2) && (stage.stage_id != StageId_Victory) && (stage.stage_id != StageId_Grinch))
 			{
 				stage.player_state[0].character = Stage_ChangeChars(stage.player_state[0].character, stage.player);
 				stage.player_state[0].character2 = Stage_ChangeChars(stage.player_state[0].character, stage.player2);

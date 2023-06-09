@@ -290,6 +290,12 @@
 				<file name = "tomshot.vag" type = "data" source = "iso/sounds/stage/tomshot.ogg.vag"/>
 				<file name = "davedie.vag" type = "data" source = "iso/sounds/stage/davedie.ogg.vag"/>
 				<file name = "blades.vag" type = "data" source = "iso/sounds/stage/blades.ogg.vag"/>
+				<!-- Miss Sounds -->
+				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
+				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
+				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
+			</dir>
+			<dir name = "gameover">
 				<!-- Game Over Sounds -->
 				<file name = "death.vag" type = "data" source = "iso/sounds/gameover/death.ogg.vag"/>
 				<file name = "deathe.vag" type = "data" source = "iso/sounds/gameover/deathe.ogg.vag"/>
@@ -300,10 +306,6 @@
 				<file name = "retryj.vag" type = "data" source = "iso/sounds/gameover/retryj.ogg.vag"/>
 				<file name = "retryp.vag" type = "data" source = "iso/sounds/gameover/retryp.ogg.vag"/>
 				<file name = "retryh.vag" type = "data" source = "iso/sounds/gameover/retryh.ogg.vag"/>
-				<!-- Miss Sounds -->
-				<file name = "miss1.vag" type = "data" source = "iso/sounds/stage/miss1.VAG"/>
-				<file name = "miss2.vag" type = "data" source = "iso/sounds/stage/miss2.VAG"/>
-				<file name = "miss3.vag" type = "data" source = "iso/sounds/stage/miss3.VAG"/>
 			</dir>
 			
 			<!-- Music -->
