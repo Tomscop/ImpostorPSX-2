@@ -83,11 +83,14 @@ void Back_Henry_DrawFG(StageBack *back)
 	fx = stage.camera.x;
 	fy = stage.camera.y;
 	
+	if (stage.stage_id == StageId_Reinforcements)
+	{
 	if ((stage.stage_id == StageId_Reinforcements) && (stage.pink == 1))
 		Animatable_SetAnim(&this->rhm_animatable, 0);
 	Animatable_Animate(&this->rhm_animatable, (void*)this, Henry_RHM_SetFrame);
 	if ((stage.stage_id == StageId_Reinforcements) && (stage.pink >= 1))
 		Henry_RHM_Draw(this, FIXED_DEC(-179 - 129,1) - fx, FIXED_DEC(-17 - 28,1) - fy);
+	}
 }
 void Back_Henry_DrawBG(StageBack *back)
 {
@@ -124,8 +127,11 @@ void Back_Henry_Free(StageBack *back)
 {
 	Back_Henry *this = (Back_Henry*)back;
 	
-	//Free rhm archive
-	Mem_Free(this->arc_rhm);
+	if (stage.stage_id == StageId_Reinforcements)
+	{
+		//Free rhm archive
+		Mem_Free(this->arc_rhm);
+	}
 	
 	//Free structure
 	Mem_Free(this);
@@ -154,16 +160,19 @@ StageBack *Back_Henry_New(void)
 	//Load rhm textures
 	if (stage.stage_id == StageId_Reinforcements)
 	{
-	this->arc_rhm = IO_Read("\\BG\\RHM.ARC;1");
-	this->arc_rhm_ptr[0] = Archive_Find(this->arc_rhm, "rhm0.tim");
-	this->arc_rhm_ptr[1] = Archive_Find(this->arc_rhm, "rhm1.tim");
-	this->arc_rhm_ptr[2] = Archive_Find(this->arc_rhm, "rhm2.tim");
+		this->arc_rhm = IO_Read("\\BG\\RHM.ARC;1");
+		this->arc_rhm_ptr[0] = Archive_Find(this->arc_rhm, "rhm0.tim");
+		this->arc_rhm_ptr[1] = Archive_Find(this->arc_rhm, "rhm1.tim");
+		this->arc_rhm_ptr[2] = Archive_Find(this->arc_rhm, "rhm2.tim");
 	}
 	
 	//Initialize rhm state
-	Animatable_Init(&this->rhm_animatable, rhm_anim);
-	Animatable_SetAnim(&this->rhm_animatable, 0);
-	this->rhm_frame = this->rhm_tex_id = 0xFF; //Force art load
+	if (stage.stage_id == StageId_Reinforcements)
+	{
+		Animatable_Init(&this->rhm_animatable, rhm_anim);
+		Animatable_SetAnim(&this->rhm_animatable, 0);
+		this->rhm_frame = this->rhm_tex_id = 0xFF; //Force art load
+	}
 
 	Gfx_SetClear(0, 0, 0);
 	
