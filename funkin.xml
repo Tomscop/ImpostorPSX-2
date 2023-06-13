@@ -177,9 +177,8 @@
 				<file name = "gftut.arc" type = "data" source = "iso/chars/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/chars/gf/speaker.tim"/>
 				<file name = "gfpixel.arc" type = "data" source = "iso/chars/gfpixel/main.arc"/>
-				<!-- GF Tuesday assets -->
 				<file name = "gfv1.arc" type = "data" source = "iso/chars/gfv1/main.arc"/>
-				<!-- Loggo MA assets -->
+				<file name = "loggoma.arc" type = "data" source = "iso/chars/loggoma/main.arc"/>
 			</dir>
 			
 			<!-- Dead assets -->

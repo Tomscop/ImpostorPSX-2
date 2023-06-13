@@ -148,6 +148,7 @@ static u32 Sounds[10];
 #include "character/gfmira.h"
 #include "character/gfpixel.h"
 #include "character/gfv1.h"
+#include "character/loggoma.h"
 //Stages
 #include "stage/polus.h"
 #include "stage/mira.h"

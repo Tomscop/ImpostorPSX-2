@@ -68,6 +68,7 @@ all: \
 	iso/chars/gf/speaker.tim \
 	iso/chars/gfpixel/main.arc \
 	iso/chars/gfv1/main.arc \
+	iso/chars/loggoma/main.arc \
 	iso/chars/dead.tim \
 	iso/chars/bfpixel/dead.tim \
 	iso/chars/henryphn/dead.tim \
@@ -253,12 +254,11 @@ iso/chars/gf/tut.arc: iso/chars/gf/tut0.tim iso/chars/gf/tut1.tim
 # GF Pixel
 iso/chars/gfpixel/main.arc: iso/chars/gfpixel/gf0.tim iso/chars/gfpixel/gf1.tim iso/chars/gfpixel/gf2.tim 
 
-# GF Tuesday
-
 # GF V1
 iso/chars/gfv1/main.arc: iso/chars/gfv1/gf0.tim iso/chars/gfv1/gf1.tim iso/chars/gfv1/gf2.tim iso/chars/gfv1/gf3.tim iso/chars/gfv1/gf4.tim iso/chars/gfv1/gf5.tim 
 
 # Loggo MA
+iso/chars/loggoma/main.arc: iso/chars/loggoma/idle0.tim iso/chars/loggoma/idle1.tim 
 
 
 # Polus

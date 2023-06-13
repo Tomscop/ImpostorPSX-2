@@ -4,39 +4,19 @@
 			"fnfanim" : "idle",
 			"imgname" : "idle",
 			"hname"   : "Idle"
-		},
-		{
-			"fnfanim" : "singLEFT",
-			"imgname" : "left",
-			"hname"   : "Left"
-		},
-		{
-			"fnfanim" : "singDOWN",
-			"imgname" : "down",
-			"hname"   : "Down"
-		},
-		{
-			"fnfanim" : "singUP",
-			"imgname" : "up",
-			"hname"   : "Up"
-		},
-		{
-			"fnfanim" : "singRIGHT",
-			"imgname" : "right",
-			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/monodoc/attack",
-	"outdir": "iso/chars/monodoc/",
-	"charname" : "MonotoneDoc",
+	"input":  "iso/chars/loggoma/loggoattack",
+	"outdir": "iso/chars/loggoma/",
+	"charname" : "LoggoMA",
 	"optimize" : false,
-	"optimizename" : "monotonedoc",
+	"optimizename" : "loggoma",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		768,
+		576,
 		0,
 		0,
-		481
+		488
 	],
 
 	"bpp" : 4,

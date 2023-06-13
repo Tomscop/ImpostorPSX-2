@@ -69,6 +69,7 @@ SRCS = src/main.c \
 	src/character/speaker.c \
 	src/character/gfpixel.c \
 	src/character/gfv1.c \
+	src/character/loggoma.c \
 	src/stage/polus.c \
 	src/stage/cafeteria.c \
 	src/stage/cafeteriahd.c \
