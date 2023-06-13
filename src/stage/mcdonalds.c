@@ -22,9 +22,31 @@ typedef struct
 	//Textures
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
+	Gfx_Tex tex_back2; //back2
 
 } Back_McDonalds;
 
+void Back_McDonalds_DrawMG(StageBack *back)
+{
+	Back_McDonalds *this = (Back_McDonalds*)back;
+
+	fixed_t fx, fy;
+
+	//Draw mcdonalds
+	fx = stage.camera.x;
+	fy = stage.camera.y;
+	
+	RECT back2_src = {  0,  0,127, 79};
+	RECT_FIXED back2_dst = {
+		stage.gf->x-FIXED_DEC(161,1) - fx,
+		stage.gf->y-FIXED_DEC(90,1) - fy,
+		FIXED_DEC(127 + screen.SCREEN_WIDEOADD,1),
+		FIXED_DEC(79,1)
+	};
+	
+	Debug_StageMoveDebug(&back2_dst, 7, fx, fy);
+	Stage_DrawTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom);
+}
 
 void Back_McDonalds_DrawBG(StageBack *back)
 {
@@ -75,7 +97,7 @@ StageBack *Back_McDonalds_New(void)
 	
 	//Set background functions
 	this->back.draw_fg = NULL;
-	this->back.draw_md = NULL;
+	this->back.draw_md = Back_McDonalds_DrawMG;
 	this->back.draw_bg = Back_McDonalds_DrawBG;
 	this->back.free = Back_McDonalds_Free;
 	
@@ -83,6 +105,7 @@ StageBack *Back_McDonalds_New(void)
 	IO_Data arc_back = IO_Read("\\BG\\MCDONLDS.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
+	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 	Mem_Free(arc_back);
 	
 	return (StageBack*)this;

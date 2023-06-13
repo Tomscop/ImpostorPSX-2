@@ -57,6 +57,7 @@ all: \
 	iso/chars/dripostr/main.arc \
 	iso/chars/dave/main.arc \
 	iso/chars/monodoc/main.arc \
+	iso/chars/fabs/main.arc \
 	iso/chars/amogus/main.arc \
 	iso/chars/cval/main.arc \
 	iso/chars/cvaltort/main.arc \
@@ -227,6 +228,7 @@ iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/c
 iso/chars/monodoc/main.arc: iso/chars/monodoc/idle0.tim iso/chars/monodoc/left0.tim iso/chars/monodoc/down0.tim iso/chars/monodoc/up0.tim iso/chars/monodoc/right0.tim 
 
 # Fabs
+iso/chars/fabs/main.arc: iso/chars/fabs/idle0.tim iso/chars/fabs/idle1.tim iso/chars/fabs/idle2.tim iso/chars/fabs/left0.tim iso/chars/fabs/left1.tim iso/chars/fabs/down0.tim iso/chars/fabs/up0.tim iso/chars/fabs/right0.tim iso/chars/fabs/right1.tim 
 
 # Amogus
 iso/chars/amogus/main.arc: iso/chars/amogus/idle0.tim iso/chars/amogus/left0.tim iso/chars/amogus/down0.tim iso/chars/amogus/up0.tim iso/chars/amogus/right0.tim 
@@ -311,7 +313,7 @@ iso/stages/drip/back.arc: iso/stages/drip/back0.tim iso/stages/drip/back1.tim
 iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
 
 # McDonalds
-iso/stages/mcdonlds/back.arc: iso/stages/mcdonlds/back0.tim iso/stages/mcdonlds/back1.tim
+iso/stages/mcdonlds/back.arc: iso/stages/mcdonlds/back0.tim iso/stages/mcdonlds/back1.tim iso/stages/mcdonlds/back2.tim
 
 # Towers
 iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.tim iso/stages/towers/back2.tim iso/stages/towers/back3.tim iso/stages/towers/back4.tim iso/stages/towers/back5.tim iso/stages/towers/back6.tim iso/stages/towers/back7.tim

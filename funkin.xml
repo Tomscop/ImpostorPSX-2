@@ -162,7 +162,7 @@
 				<file name = "dripostr.arc" type = "data" source = "iso/chars/dripostr/main.arc"/>
 				<file name = "dave.arc" type = "data" source = "iso/chars/dave/main.arc"/>
 				<file name = "monodoc.arc" type = "data" source = "iso/chars/monodoc/main.arc"/>
-				<!-- Fabs assets -->
+				<file name = "fabs.arc" type = "data" source = "iso/chars/fabs/main.arc"/>
 				<file name = "amogus.arc" type = "data" source = "iso/chars/amogus/main.arc"/>
 				<file name = "cval.arc" type = "data" source = "iso/chars/cval/main.arc"/>
 				<file name = "cvaltort.arc" type = "data" source = "iso/chars/cvaltort/main.arc"/>

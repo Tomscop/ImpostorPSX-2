@@ -4,23 +4,43 @@
 			"fnfanim" : "idle",
 			"imgname" : "idle",
 			"hname"   : "Idle"
+		},
+		{
+			"fnfanim" : "singLEFT",
+			"imgname" : "left",
+			"hname"   : "Left"
+		},
+		{
+			"fnfanim" : "singDOWN",
+			"imgname" : "down",
+			"hname"   : "Down"
+		},
+		{
+			"fnfanim" : "singUP",
+			"imgname" : "up",
+			"hname"   : "Up"
+		},
+		{
+			"fnfanim" : "singRIGHT",
+			"imgname" : "right",
+			"hname"   : "Right"
 		}
 	],
-	"input":  "iso/chars/loggoma/loggoattack",
-	"outdir": "iso/chars/loggoma/",
-	"charname" : "LoggoMA",
+	"input":  "iso/chars/fabs/fabs",
+	"outdir": "iso/chars/fabs/",
+	"charname" : "Fabs",
 	"optimize" : false,
-	"optimizename" : "loggoma",
+	"optimizename" : "fabs",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		576,
+		832,
 		0,
-		0,
-		488
+		16,
+		481
 	],
 
 	"bpp" : 4,
-	"resize" : 0.25,
+	"resize" : 0.225,
 	"xmlscale" : 1.0,
 	"padding" : 1,
 	"max_width" : 256,

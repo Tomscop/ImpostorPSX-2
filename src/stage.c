@@ -130,6 +130,7 @@ static u32 Sounds[10];
 #include "character/drippostor.h"
 #include "character/dave.h"
 #include "character/monotonedoc.h"
+#include "character/fabs.h"
 #include "character/amogus.h"
 #include "character/cval.h"
 #include "character/cvaltorture.h"
