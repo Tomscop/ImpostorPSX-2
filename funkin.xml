@@ -134,7 +134,7 @@
 				<file name = "bfdrip.arc" type = "data" source = "iso/chars/bfdrip/main.arc"/>
 				<file name = "picodrip.arc" type = "data" source = "iso/chars/picodrip/main.arc"/>
 				<file name = "clowfoe.arc" type = "data" source = "iso/chars/clowfoe/main.arc"/>
-				<!-- Biddle assets -->
+				<file name = "biddle.arc" type = "data" source = "iso/chars/biddle/main.arc"/>
 				<file name = "pip.arc" type = "data" source = "iso/chars/pip/main.arc"/>
 				<file name = "ziffy.arc" type = "data" source = "iso/chars/ziffy/main.arc"/>
 			</dir>
@@ -247,9 +247,10 @@
 				<file name = "office.arc" type = "data" source = "iso/stages/office/back.arc"/>
 				
 				<file name = "mcdonlds.arc" type = "data" source = "iso/stages/mcdonlds/back.arc"/>
-				<!-- Guys -->
+				<!-- Orbyy -->
+				<!-- Offbi -->
 				<!-- NickT -->
-				<!-- RedMung -->
+				<file name = "cooper.arc" type = "data" source = "iso/stages/mcdonlds/cooper.arc"/>
 				
 				<file name = "towers.arc" type = "data" source = "iso/stages/towers/back.arc"/>
 				
@@ -259,8 +260,6 @@
 				<file name = "rozebud.arc" type = "data" source = "iso/stages/warehous/rozebud.arc"/>
 				
 				<file name = "o2.arc" type = "data" source = "iso/stages/o2/back.arc"/>
-				
-				<file name = "week1.arc" type = "data" source = "iso/stages/week1/back.arc"/>
 			</dir>
 		    
 			<!-- Sound effects -->

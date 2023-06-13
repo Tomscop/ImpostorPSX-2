@@ -78,6 +78,7 @@ static u32 Sounds[10];
 #include "character/bfdrip.h"
 #include "character/picodrip.h"
 #include "character/clowfoe.h"
+#include "character/biddle.h"
 #include "character/pip.h"
 #include "character/ziffy.h"
 //Opponents

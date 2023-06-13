@@ -34,6 +34,7 @@ all: \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
 	iso/chars/clowfoe/main.arc \
+	iso/chars/biddle/main.arc \
 	iso/chars/pip/main.arc \
 	iso/chars/ziffy/main.arc \
 	iso/chars/tomong/main.arc \
@@ -98,6 +99,7 @@ all: \
 	iso/stages/drip/back.arc \
 	iso/stages/office/back.arc \
 	iso/stages/mcdonlds/back.arc \
+	iso/stages/mcdonlds/cooper.arc \
 	iso/stages/towers/back.arc \
 	iso/stages/warehous/back.arc \
 	iso/stages/warehous/blades.arc \
@@ -156,6 +158,7 @@ iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idl
 iso/chars/clowfoe/main.arc: iso/chars/clowfoe/idle0.tim iso/chars/clowfoe/left0.tim iso/chars/clowfoe/down0.tim iso/chars/clowfoe/up0.tim iso/chars/clowfoe/right0.tim 
 
 # Biddle
+iso/chars/biddle/main.arc: iso/chars/biddle/idle0.tim iso/chars/biddle/idle1.tim iso/chars/biddle/idle2.tim iso/chars/biddle/left0.tim iso/chars/biddle/left1.tim iso/chars/biddle/left2.tim iso/chars/biddle/left3.tim iso/chars/biddle/left4.tim iso/chars/biddle/down0.tim iso/chars/biddle/down1.tim iso/chars/biddle/down2.tim iso/chars/biddle/down3.tim iso/chars/biddle/down4.tim iso/chars/biddle/up0.tim iso/chars/biddle/up1.tim iso/chars/biddle/up2.tim iso/chars/biddle/right0.tim iso/chars/biddle/right1.tim iso/chars/biddle/right2.tim iso/chars/biddle/right3.tim 
 
 # Pip
 iso/chars/pip/main.arc: iso/chars/pip/idle0.tim iso/chars/pip/idle1.tim iso/chars/pip/idle2.tim iso/chars/pip/idle3.tim iso/chars/pip/idle4.tim iso/chars/pip/idle5.tim iso/chars/pip/left0.tim iso/chars/pip/left1.tim iso/chars/pip/left2.tim iso/chars/pip/down0.tim iso/chars/pip/down1.tim iso/chars/pip/down2.tim iso/chars/pip/up0.tim iso/chars/pip/up1.tim iso/chars/pip/up2.tim iso/chars/pip/right0.tim iso/chars/pip/right1.tim iso/chars/pip/right2.tim iso/chars/pip/idlei0.tim iso/chars/pip/idlei1.tim iso/chars/pip/idlei2.tim iso/chars/pip/idlei3.tim iso/chars/pip/idlei4.tim iso/chars/pip/idlei5.tim iso/chars/pip/lefti0.tim iso/chars/pip/lefti1.tim iso/chars/pip/lefti2.tim iso/chars/pip/downi0.tim iso/chars/pip/downi1.tim iso/chars/pip/downi2.tim iso/chars/pip/upi0.tim iso/chars/pip/upi1.tim iso/chars/pip/upi2.tim iso/chars/pip/righti0.tim iso/chars/pip/righti1.tim iso/chars/pip/righti2.tim 
@@ -314,6 +317,7 @@ iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.
 
 # McDonalds
 iso/stages/mcdonlds/back.arc: iso/stages/mcdonlds/back0.tim iso/stages/mcdonlds/back1.tim iso/stages/mcdonlds/back2.tim
+iso/stages/mcdonlds/cooper.arc: iso/stages/mcdonlds/cooper0.tim iso/stages/mcdonlds/cooper1.tim iso/stages/mcdonlds/cooper2.tim iso/stages/mcdonlds/cooper3.tim 
 
 # Towers
 iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.tim iso/stages/towers/back2.tim iso/stages/towers/back3.tim iso/stages/towers/back4.tim iso/stages/towers/back5.tim iso/stages/towers/back6.tim iso/stages/towers/back7.tim

@@ -102,7 +102,7 @@ void Char_LoggoMA_Tick(Character *character)
 		     character->animatable.anim != CharAnim_UpAlt &&
 		     character->animatable.anim != CharAnim_Right &&
 		     character->animatable.anim != CharAnim_RightAlt) &&
-			(stage.song_step & 0x3) == 0)
+			(stage.song_step & 0x7) == 4)
 			character->set_anim(character, CharAnim_Idle);
 	}
 	

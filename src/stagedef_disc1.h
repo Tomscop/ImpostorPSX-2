@@ -926,7 +926,7 @@
 	{ //StageId_MonotoneAttack (Monotone Attack)
 		//Characters
 		{Char_Clowfoe_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-        {NULL},
+		{Char_Biddle_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
 		{Char_MonotoneDoc_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_Fabs_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_LoggoMA_New,     FIXED_DEC(370,1),  FIXED_DEC(250,1)},
