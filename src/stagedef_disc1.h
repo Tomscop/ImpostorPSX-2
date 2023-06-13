@@ -925,14 +925,14 @@
 	},
 	{ //StageId_MonotoneAttack (Monotone Attack)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
+		{Char_Clowfoe_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
         {NULL},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_MonotoneDoc_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
         {NULL},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_McDonalds_New,
 		
 		//Song info
 		6, 2,

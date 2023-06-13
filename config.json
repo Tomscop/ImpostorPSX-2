@@ -24,52 +24,22 @@
 			"fnfanim" : "singRIGHT",
 			"imgname" : "right",
 			"hname"   : "Right"
-		},
-		{
-			"fnfanim" : "singLEFTmiss",
-			"imgname" : "leftm",
-			"hname"   : "LeftM"
-		},
-		{
-			"fnfanim" : "singDOWNmiss",
-			"imgname" : "downm",
-			"hname"   : "DownM"
-		},
-		{
-			"fnfanim" : "singUPmiss",
-			"imgname" : "upm",
-			"hname"   : "UpM"
-		},
-		{
-			"fnfanim" : "singRIGHTmiss",
-			"imgname" : "rightm",
-			"hname"   : "RightM"
-		},
-		{
-			"fnfanim" : "pull",
-			"imgname" : "pull",
-			"hname"   : "Pull"
-		},
-		{
-			"fnfanim" : "shoot",
-			"imgname" : "shoot",
-			"hname"   : "Shoot"
 		}
 	],
-	"input":  "iso/chars/bfimp/bfsusreal",
-	"outdir": "iso/chars/bfimp/",
-	"charname" : "BFImpostor",
+	"input":  "iso/chars/monodoc/attack",
+	"outdir": "iso/chars/monodoc/",
+	"charname" : "MonotoneDoc",
 	"optimize" : false,
-	"optimizename" : "BFImpostor",
+	"optimizename" : "monotonedoc",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		640,
+		768,
 		0,
 		0,
-		480
+		481
 	],
 
-	"bpp" : 8,
+	"bpp" : 4,
 	"resize" : 0.25,
 	"xmlscale" : 1.0,
 	"padding" : 1,

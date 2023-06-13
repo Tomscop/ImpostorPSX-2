@@ -77,6 +77,7 @@ static u32 Sounds[10];
 #include "character/kid.h"
 #include "character/bfdrip.h"
 #include "character/picodrip.h"
+#include "character/clowfoe.h"
 #include "character/pip.h"
 #include "character/ziffy.h"
 //Opponents
@@ -128,6 +129,7 @@ static u32 Sounds[10];
 #include "character/brown.h"
 #include "character/drippostor.h"
 #include "character/dave.h"
+#include "character/monotonedoc.h"
 #include "character/amogus.h"
 #include "character/cval.h"
 #include "character/cvaltorture.h"
@@ -181,6 +183,7 @@ static u32 Sounds[10];
 #include "stage/electrical.h"
 #include "stage/drip.h"
 #include "stage/daveoffice.h"
+#include "stage/mcdonalds.h"
 #include "stage/towers.h"
 #include "stage/warehouse.h"
 #include "stage/o2.h"
@@ -254,9 +257,17 @@ static void Stage_CutVocal(void)
 static void Stage_FocusCharacter(Character *ch, fixed_t div)
 {
 	//Use character focus settings to update target position and zoom
-	if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-240,1))))
-		stage.camera.tx = ch->x + ch->focus_x;
-	stage.camera.ty = ch->y + ch->focus_y;
+	if (stage.stage_id != StageId_IdentityCrisis)
+	{
+		if ((stage.stage_id != StageId_GreatestPlan) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x == FIXED_DEC(-446,1))) || ((stage.stage_id == StageId_GreatestPlan) && (stage.opponent->x >= FIXED_DEC(-240,1))))
+			stage.camera.tx = ch->x + ch->focus_x;
+		stage.camera.ty = ch->y + ch->focus_y;
+	}
+	else
+	{
+		stage.camera.tx = ch->focus_x;
+		stage.camera.ty = ch->focus_y;
+	}
 	stage.camera.tz = ch->focus_zoom;
 	stage.camera.td = div;
 }

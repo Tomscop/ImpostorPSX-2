@@ -35,6 +35,7 @@ SRCS = src/main.c \
 	src/character/kid.c \
 	src/character/bfdrip.c \
 	src/character/picodrip.c \
+	src/character/clowfoe.c \
 	src/character/pip.c \
 	src/character/ziffy.c \
 	src/character/tomongus.c \
@@ -57,6 +58,7 @@ SRCS = src/main.c \
 	src/character/brown.c \
 	src/character/drippostor.c \
 	src/character/dave.c \
+	src/character/monotonedoc.c \
 	src/character/amogus.c \
 	src/character/cval.c \
 	src/character/cvaltorture.c \
@@ -81,6 +83,7 @@ SRCS = src/main.c \
 	src/stage/electrical.c \
 	src/stage/drip.c \
 	src/stage/daveoffice.c \
+	src/stage/mcdonalds.c \
 	src/stage/towers.c \
 	src/stage/warehouse.c \
 	src/stage/o2.c \

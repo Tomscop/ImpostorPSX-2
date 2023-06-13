@@ -33,6 +33,7 @@ all: \
 	iso/chars/kid/main.arc \
 	iso/chars/bfdrip/main.arc \
 	iso/chars/picodrip/main.arc \
+	iso/chars/clowfoe/main.arc \
 	iso/chars/pip/main.arc \
 	iso/chars/ziffy/main.arc \
 	iso/chars/tomong/main.arc \
@@ -55,6 +56,7 @@ all: \
 	iso/chars/brown/main.arc \
 	iso/chars/dripostr/main.arc \
 	iso/chars/dave/main.arc \
+	iso/chars/monodoc/main.arc \
 	iso/chars/amogus/main.arc \
 	iso/chars/cval/main.arc \
 	iso/chars/cvaltort/main.arc \
@@ -93,6 +95,7 @@ all: \
 	iso/stages/electric/back.arc \
 	iso/stages/drip/back.arc \
 	iso/stages/office/back.arc \
+	iso/stages/mcdonlds/back.arc \
 	iso/stages/towers/back.arc \
 	iso/stages/warehous/back.arc \
 	iso/stages/warehous/blades.arc \
@@ -148,6 +151,7 @@ iso/chars/bfdrip/main.arc: iso/chars/bfdrip/idle0.tim iso/chars/bfdrip/idle1.tim
 iso/chars/picodrip/main.arc: iso/chars/picodrip/idle0.tim iso/chars/picodrip/idle1.tim iso/chars/picodrip/left0.tim iso/chars/picodrip/left1.tim iso/chars/picodrip/down0.tim iso/chars/picodrip/down1.tim iso/chars/picodrip/down2.tim iso/chars/picodrip/up0.tim iso/chars/picodrip/up1.tim iso/chars/picodrip/right0.tim iso/chars/picodrip/right1.tim iso/chars/picodrip/kill0.tim iso/chars/picodrip/kill1.tim iso/chars/picodrip/kill2.tim iso/chars/picodrip/kill3.tim iso/chars/picodrip/mongo0.tim 
 
 # Clowfoe
+iso/chars/clowfoe/main.arc: iso/chars/clowfoe/idle0.tim iso/chars/clowfoe/left0.tim iso/chars/clowfoe/down0.tim iso/chars/clowfoe/up0.tim iso/chars/clowfoe/right0.tim 
 
 # Biddle
 
@@ -219,6 +223,7 @@ iso/chars/dripostr/main.arc: iso/chars/dripostr/idle0.tim iso/chars/dripostr/idl
 iso/chars/dave/main.arc: iso/chars/dave/idle0.tim iso/chars/dave/idle1.tim iso/chars/dave/idle2.tim iso/chars/dave/idle3.tim iso/chars/dave/left0.tim iso/chars/dave/left1.tim iso/chars/dave/down0.tim iso/chars/dave/down1.tim iso/chars/dave/up0.tim iso/chars/dave/up1.tim iso/chars/dave/right0.tim iso/chars/dave/jump0.tim iso/chars/dave/jump1.tim iso/chars/dave/jump2.tim iso/chars/dave/jump3.tim iso/chars/dave/jump4.tim iso/chars/dave/jump5.tim iso/chars/dave/jump6.tim iso/chars/dave/jump7.tim iso/chars/dave/jump8.tim iso/chars/dave/jump9.tim iso/chars/dave/jump10.tim 
 
 # Monotone Doc
+iso/chars/monodoc/main.arc: iso/chars/monodoc/idle0.tim iso/chars/monodoc/left0.tim iso/chars/monodoc/down0.tim iso/chars/monodoc/up0.tim iso/chars/monodoc/right0.tim 
 
 # Fabs
 
@@ -304,6 +309,9 @@ iso/stages/drip/back.arc: iso/stages/drip/back0.tim iso/stages/drip/back1.tim
 
 # Dave Office
 iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.tim iso/stages/office/back2.tim
+
+# McDonalds
+iso/stages/mcdonlds/back.arc: iso/stages/mcdonlds/back0.tim iso/stages/mcdonlds/back1.tim
 
 # Towers
 iso/stages/towers/back.arc: iso/stages/towers/back0.tim iso/stages/towers/back1.tim iso/stages/towers/back2.tim iso/stages/towers/back3.tim iso/stages/towers/back4.tim iso/stages/towers/back5.tim iso/stages/towers/back6.tim iso/stages/towers/back7.tim
