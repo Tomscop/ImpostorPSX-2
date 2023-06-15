@@ -925,11 +925,11 @@
 	},
 	{ //StageId_MonotoneAttack (Monotone Attack)
 		//Characters
-		{Char_Clowfoe_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Biddle_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_MonotoneDoc_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_Fabs_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_LoggoMA_New,     FIXED_DEC(370,1),  FIXED_DEC(250,1)},
+		{Char_Clowfoe_New,    FIXED_DEC(499,1),  FIXED_DEC(322,1)},
+		{Char_Biddle_New,    FIXED_DEC(524,1),  FIXED_DEC(199,1)},
+		{Char_MonotoneDoc_New, FIXED_DEC(261,1),  FIXED_DEC(288,1)},
+		{Char_Fabs_New, FIXED_DEC(181,1),  FIXED_DEC(224,1)},
+		{Char_LoggoMA_New,     FIXED_DEC(362,1),  FIXED_DEC(255,1)},
 		
 		//Stage background
 		Back_McDonalds_New,

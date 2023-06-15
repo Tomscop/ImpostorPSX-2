@@ -92,6 +92,77 @@ void Char_Clowfoe_Tick(Character *character)
 {
 	Char_Clowfoe *this = (Char_Clowfoe*)character;
 	
+	//Camera stuff
+	if (stage.stage_id == StageId_MonotoneAttack)
+	{
+		if (stage.song_beat == 64)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 80)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.song_beat == 95)
+		{
+			this->character.focus_x = FIXED_DEC(179,1);
+			this->character.focus_y = FIXED_DEC(124,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 99)
+		{
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(163,1);
+			this->character.focus_zoom = FIXED_DEC(1018,1024);
+		}
+		if (stage.song_beat == 196)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 229)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.song_beat == 276)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+		if (stage.song_beat == 292)
+		{
+			this->character.focus_x = FIXED_DEC(359,1);
+			this->character.focus_y = FIXED_DEC(163,1);
+			this->character.focus_zoom = FIXED_DEC(1018,1024);
+		}
+		if (stage.song_beat == 324)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(950,1024);
+		}
+		if (stage.song_beat == 355)
+		{
+			this->character.focus_x = FIXED_DEC(179,1);
+			this->character.focus_y = FIXED_DEC(124,1);
+			this->character.focus_zoom = FIXED_DEC(1221,1024);
+		}
+		if (stage.song_beat == 360)
+		{
+			this->character.focus_x = FIXED_DEC(262,1);
+			this->character.focus_y = FIXED_DEC(151,1);
+			this->character.focus_zoom = FIXED_DEC(814,1024);
+		}
+	}
+	
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -172,9 +243,9 @@ Character *Char_Clowfoe_New(fixed_t x, fixed_t y)
 	//health bar color
 	this->character.health_bar = 0xFFFFFFFF;
 	
-	this->character.focus_x = FIXED_DEC(-167,1);
-	this->character.focus_y = FIXED_DEC(205,1);
-	this->character.focus_zoom = FIXED_DEC(1,1);
+	this->character.focus_x = FIXED_DEC(359,1);
+	this->character.focus_y = FIXED_DEC(163,1);
+	this->character.focus_zoom = FIXED_DEC(1018,1024);
 	
 	this->character.size = FIXED_DEC(1,1);
 	

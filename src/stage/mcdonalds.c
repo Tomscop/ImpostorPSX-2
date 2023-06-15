@@ -264,7 +264,7 @@ void Back_McDonalds_DrawMG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0)
 		Animatable_SetAnim(&this->cooper_animatable, 0);
 	Animatable_Animate(&this->cooper_animatable, (void*)this, McDonalds_Cooper_SetFrame);
-	McDonalds_Cooper_Draw(this, FIXED_DEC(0 + 160,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	McDonalds_Cooper_Draw(this, FIXED_DEC(453 + 160,1) - fx, FIXED_DEC(88 + 160,1) - fy);
 	
 	RECT back2_src = {  0,  0,127, 79};
 	RECT_FIXED back2_dst = {
@@ -295,12 +295,12 @@ void Back_McDonalds_DrawBG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 384))
 		Animatable_SetAnim(&this->orbyy_animatable, 1);
 	Animatable_Animate(&this->orbyy_animatable, (void*)this, McDonalds_Orbyy_SetFrame);
-	McDonalds_Orbyy_Draw(this, FIXED_DEC(0 + 157,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	McDonalds_Orbyy_Draw(this, FIXED_DEC(179 + 157,1) - fx, FIXED_DEC(68 + 160,1) - fy);
 	
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 4)
 		Animatable_SetAnim(&this->offbi_animatable, 0);
 	Animatable_Animate(&this->offbi_animatable, (void*)this, McDonalds_Offbi_SetFrame);
-	McDonalds_Offbi_Draw(this, FIXED_DEC(0 + 158,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	McDonalds_Offbi_Draw(this, FIXED_DEC(277 + 158,1) - fx, FIXED_DEC(56 + 160,1) - fy);
 	
 	if ((stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0) && ((stage.song_step <= 1426) || (stage.song_step >= 1440)))
 		Animatable_SetAnim(&this->nickt_animatable, 0);
@@ -309,7 +309,7 @@ void Back_McDonalds_DrawBG(StageBack *back)
 	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1435))
 		Animatable_SetAnim(&this->nickt_animatable, 2);
 	Animatable_Animate(&this->nickt_animatable, (void*)this, McDonalds_NickT_SetFrame);
-	McDonalds_NickT_Draw(this, FIXED_DEC(0 + 160,1) - fx, FIXED_DEC(0 + 160,1) - fy);
+	McDonalds_NickT_Draw(this, FIXED_DEC(114 + 160,1) - fx, FIXED_DEC(76 + 160,1) - fy);
 	
 	RECT back0_src = {  0,  0,255,255};
 	RECT_FIXED back0_dst = {
