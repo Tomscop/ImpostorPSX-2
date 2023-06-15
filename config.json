@@ -2,20 +2,25 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "cooper",
-			"hname"   : "Cooper"
+			"imgname" : "orbyy",
+			"hname"   : "Orbyy"
+		},
+		{
+			"fnfanim" : "anim",
+			"imgname" : "shutup",
+			"hname"   : "ShutUp"
 		}
 	],
-	"input":  "iso/stages/mcdonlds/cooper",
+	"input":  "iso/stages/mcdonlds/orbyy",
 	"outdir": "iso/stages/mcdonlds/",
-	"charname" : "Cooper",
+	"charname" : "Orbyy",
 	"optimize" : false,
-	"optimizename" : "cooper",
+	"optimizename" : "orbyy",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		896,
+		320,
 		0,
-		32,
+		64,
 		488
 	],
 

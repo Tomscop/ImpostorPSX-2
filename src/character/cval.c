@@ -139,7 +139,7 @@ void Char_Cval_Tick(Character *character)
 			this->character.focus_y = FIXED_DEC(-147,1);
 			this->character.focus_zoom = FIXED_DEC(814,1024);
 		}
-		if ((stage.song_step > 449) && (this->character.focus_zoom != FIXED_DEC(543,1024)))
+		if ((stage.song_step > 449) && (this->character.focus_zoom != FIXED_DEC(543,1024)) && (stage.paused == false))
 		{
 			zoomoutcvp += 1;
 			if (zoomoutcvp == 2)

@@ -287,7 +287,7 @@ void Char_BF_Tick(Character *character)
 			this->character.focus_zoom = FIXED_DEC(1628,1024);
 		if (stage.song_beat == 556)
 			this->character.focus_zoom = FIXED_DEC(1086,1024);
-		if ((stage.song_beat >= 916) && (this->character.focus_zoom != FIXED_DEC(542,1024)))
+		if ((stage.song_beat >= 916) && (this->character.focus_zoom != FIXED_DEC(542,1024)) && (stage.paused == false))
 		{
 			zoomout += 1;
 			if (zoomout == 2)

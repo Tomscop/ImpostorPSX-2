@@ -247,8 +247,8 @@
 				<file name = "office.arc" type = "data" source = "iso/stages/office/back.arc"/>
 				
 				<file name = "mcdonlds.arc" type = "data" source = "iso/stages/mcdonlds/back.arc"/>
-				<!-- Orbyy -->
-				<!-- Offbi -->
+				<file name = "orbyy.arc" type = "data" source = "iso/stages/mcdonlds/orbyy.arc"/>
+				<file name = "offbi.arc" type = "data" source = "iso/stages/mcdonlds/offbi.arc"/>
 				<!-- NickT -->
 				<file name = "cooper.arc" type = "data" source = "iso/stages/mcdonlds/cooper.arc"/>
 				
