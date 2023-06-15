@@ -108,7 +108,10 @@ void Char_LoggoMA_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_LoggoMA_SetFrame);
-	Character_Draw(character, &this->tex, &char_loggoma_frame[this->frame]);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Character_DrawBlend(character, &this->tex, &char_loggoma_frame[this->frame]);
+	else
+		Character_Draw(character, &this->tex, &char_loggoma_frame[this->frame]);
 }
 
 void Char_LoggoMA_SetAnim(Character *character, u8 anim)

@@ -2,25 +2,25 @@
 	"animations": [
 		{
 			"fnfanim" : "idle",
-			"imgname" : "orbyy",
-			"hname"   : "Orbyy"
+			"imgname" : "nickt",
+			"hname"   : "NickT"
 		},
 		{
 			"fnfanim" : "anim",
-			"imgname" : "shutup",
-			"hname"   : "ShutUp"
+			"imgname" : "forehead",
+			"hname"   : "Forehead"
 		}
 	],
-	"input":  "iso/stages/mcdonlds/orbyy",
+	"input":  "iso/stages/mcdonlds/nick t",
 	"outdir": "iso/stages/mcdonlds/",
-	"charname" : "Orbyy",
+	"charname" : "NickT",
 	"optimize" : false,
-	"optimizename" : "orbyy",
+	"optimizename" : "nickt",
 	"arcname" : "ArcMain",
 	"vrampos" : [
-		320,
+		384,
 		0,
-		64,
+		80,
 		488
 	],
 

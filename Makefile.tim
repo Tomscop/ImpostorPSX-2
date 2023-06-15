@@ -101,6 +101,7 @@ all: \
 	iso/stages/mcdonlds/back.arc \
 	iso/stages/mcdonlds/orbyy.arc \
 	iso/stages/mcdonlds/offbi.arc \
+	iso/stages/mcdonlds/nickt.arc \
 	iso/stages/mcdonlds/cooper.arc \
 	iso/stages/towers/back.arc \
 	iso/stages/warehous/back.arc \
@@ -321,6 +322,7 @@ iso/stages/office/back.arc: iso/stages/office/back0.tim iso/stages/office/back1.
 iso/stages/mcdonlds/back.arc: iso/stages/mcdonlds/back0.tim iso/stages/mcdonlds/back1.tim iso/stages/mcdonlds/back2.tim
 iso/stages/mcdonlds/orbyy.arc: iso/stages/mcdonlds/orbyy0.tim iso/stages/mcdonlds/orbyy1.tim iso/stages/mcdonlds/shutup0.tim iso/stages/mcdonlds/shutup1.tim iso/stages/mcdonlds/shutup2.tim iso/stages/mcdonlds/shutup3.tim 
 iso/stages/mcdonlds/offbi.arc: iso/stages/mcdonlds/offbi0.tim iso/stages/mcdonlds/offbi1.tim iso/stages/mcdonlds/offbi2.tim 
+iso/stages/mcdonlds/nickt.arc: iso/stages/mcdonlds/nickt0.tim iso/stages/mcdonlds/nickt1.tim iso/stages/mcdonlds/forehead0.tim iso/stages/mcdonlds/forehead1.tim iso/stages/mcdonlds/forehead2.tim iso/stages/mcdonlds/forehead3.tim 
 iso/stages/mcdonlds/cooper.arc: iso/stages/mcdonlds/cooper0.tim iso/stages/mcdonlds/cooper1.tim iso/stages/mcdonlds/cooper2.tim iso/stages/mcdonlds/cooper3.tim 
 
 # Towers

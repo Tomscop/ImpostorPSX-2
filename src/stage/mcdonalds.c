@@ -22,7 +22,7 @@ typedef struct
 	//Textures
 	IO_Data arc_orbyy, arc_orbyy_ptr[6];
 	IO_Data arc_offbi, arc_offbi_ptr[3];
-//	IO_Data arc_nickt, arc_nickt_ptr[4];
+	IO_Data arc_nickt, arc_nickt_ptr[6];
 	IO_Data arc_cooper, arc_cooper_ptr[4];
 	Gfx_Tex tex_back0; //back0
 	Gfx_Tex tex_back1; //back1
@@ -39,9 +39,9 @@ typedef struct
 	Animatable offbi_animatable;
 	
 	//Nick T state
-//	Gfx_Tex tex_nickt;
-//	u8 nickt_frame, nickt_tex_id;
-//	Animatable nickt_animatable;
+	Gfx_Tex tex_nickt;
+	u8 nickt_frame, nickt_tex_id;
+	Animatable nickt_animatable;
 	
 	//Cooper state
 	Gfx_Tex tex_cooper;
@@ -98,7 +98,10 @@ void McDonalds_Orbyy_Draw(Back_McDonalds *this, fixed_t x, fixed_t y)
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 	Debug_StageMoveDebug(&dst, 7, stage.camera.x, stage.camera.y);
-	Stage_DrawTex(&this->tex_orbyy, &src, &dst, stage.camera.bzoom);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Stage_BlendTex(&this->tex_orbyy, &src, &dst, stage.camera.bzoom, 1);
+	else
+		Stage_DrawTex(&this->tex_orbyy, &src, &dst, stage.camera.bzoom);
 }
 
 //Offbi animation and rects
@@ -140,7 +143,68 @@ void McDonalds_Offbi_Draw(Back_McDonalds *this, fixed_t x, fixed_t y)
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 	Debug_StageMoveDebug(&dst, 8, stage.camera.x, stage.camera.y);
-	Stage_DrawTex(&this->tex_offbi, &src, &dst, stage.camera.bzoom);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Stage_BlendTex(&this->tex_offbi, &src, &dst, stage.camera.bzoom, 1);
+	else
+		Stage_DrawTex(&this->tex_offbi, &src, &dst, stage.camera.bzoom);
+}
+
+//NickT animation and rects
+static const CharFrame nickt_frame[] = {
+  {0, {  0,  0, 56,143}, {158,158}}, //0 nickt 1
+  {0, { 56,  0, 56,143}, {159,158}}, //1 nickt 2
+  {0, {112,  0, 56,145}, {159,159}}, //2 nickt 3
+  {0, {168,  0, 57,145}, {160,160}}, //3 nickt 4
+  {1, {  0,  0, 57,145}, {160,160}}, //4 nickt 5
+
+  {2, {  0,  0, 55,143}, {157,158}}, //5 forehead 1
+  {2, { 55,  0, 54,144}, {157,159}}, //6 forehead 2
+  {2, {109,  0, 54,144}, {157,159}}, //7 forehead 3
+  {2, {163,  0, 53,145}, {157,160}}, //8 forehead 4
+  {3, {  0,  0, 57,143}, {160,158}}, //9 forehead 5
+  {3, { 57,  0, 57,143}, {160,158}}, //10 forehead 6
+  {3, {114,  0, 56,144}, {159,158}}, //11 forehead 7
+  {3, {170,  0, 56,144}, {159,158}}, //12 forehead 8
+  {4, {  0,  0, 56,144}, {159,158}}, //13 forehead 9
+  {4, { 56,  0, 56,143}, {159,158}}, //14 forehead 10
+  {4, {112,  0, 56,143}, {159,158}}, //15 forehead 11
+  {4, {168,  0, 56,143}, {159,158}}, //16 forehead 12
+  {5, {  0,  0, 56,143}, {159,158}}, //17 forehead 13
+};
+
+static const Animation nickt_anim[] = {
+	{2, (const u8[]){ 0, 1, 2, 3, 4, ASCR_BACK, 1}}, //Idle
+	{1, (const u8[]){ 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 8, 8, ASCR_BACK, 1}}, //Uhhhhh
+	{1, (const u8[]){ 9, 10, 11, 11, 12, 12, 13, 14, 14, 15, 16, 16, 17, 17, 17, 17, 17, 17, 17, ASCR_BACK, 1}}, //Forehead
+};
+
+//NickT functions
+void McDonalds_NickT_SetFrame(void *user, u8 frame)
+{
+	Back_McDonalds *this = (Back_McDonalds*)user;
+	
+	//Check if this is a new frame
+	if (frame != this->nickt_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &nickt_frame[this->nickt_frame = frame];
+		if (cframe->tex != this->nickt_tex_id)
+			Gfx_LoadTex(&this->tex_nickt, this->arc_nickt_ptr[this->nickt_tex_id = cframe->tex], 0);
+	}
+}
+
+void McDonalds_NickT_Draw(Back_McDonalds *this, fixed_t x, fixed_t y)
+{
+	//Draw character
+	const CharFrame *cframe = &nickt_frame[this->nickt_frame];
+    
+    fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
+	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
+	
+	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
+	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+	Debug_StageMoveDebug(&dst, 9, stage.camera.x, stage.camera.y);
+	Stage_DrawTex(&this->tex_nickt, &src, &dst, stage.camera.bzoom);
 }
 
 //Cooper animation and rects
@@ -181,7 +245,10 @@ void McDonalds_Cooper_Draw(Back_McDonalds *this, fixed_t x, fixed_t y)
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = { ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 	Debug_StageMoveDebug(&dst, 10, stage.camera.x, stage.camera.y);
-	Stage_DrawTex(&this->tex_cooper, &src, &dst, stage.camera.bzoom);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Stage_BlendTex(&this->tex_cooper, &src, &dst, stage.camera.bzoom, 1);
+	else
+		Stage_DrawTex(&this->tex_cooper, &src, &dst, stage.camera.bzoom);
 }
 
 void Back_McDonalds_DrawMG(StageBack *back)
@@ -207,7 +274,10 @@ void Back_McDonalds_DrawMG(StageBack *back)
 		FIXED_DEC(79,1)
 	};
 	
-	Stage_DrawTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Stage_BlendTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom, 1);
+	else
+		Stage_DrawTex(&this->tex_back2, &back2_src, &back2_dst, stage.camera.bzoom);
 }
 
 void Back_McDonalds_DrawBG(StageBack *back)
@@ -232,7 +302,14 @@ void Back_McDonalds_DrawBG(StageBack *back)
 	Animatable_Animate(&this->offbi_animatable, (void*)this, McDonalds_Offbi_SetFrame);
 	McDonalds_Offbi_Draw(this, FIXED_DEC(0 + 158,1) - fx, FIXED_DEC(0 + 160,1) - fy);
 	
-	//nick t anim starts at 1427, actual forehead line at 1436, and ends at 1439/1440
+	if ((stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step & 0x7) == 0) && ((stage.song_step <= 1426) || (stage.song_step >= 1440)))
+		Animatable_SetAnim(&this->nickt_animatable, 0);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1427))
+		Animatable_SetAnim(&this->nickt_animatable, 1);
+	if (stage.flag & STAGE_FLAG_JUST_STEP && (stage.song_step == 1435))
+		Animatable_SetAnim(&this->nickt_animatable, 2);
+	Animatable_Animate(&this->nickt_animatable, (void*)this, McDonalds_NickT_SetFrame);
+	McDonalds_NickT_Draw(this, FIXED_DEC(0 + 160,1) - fx, FIXED_DEC(0 + 160,1) - fy);
 	
 	RECT back0_src = {  0,  0,255,255};
 	RECT_FIXED back0_dst = {
@@ -267,7 +344,7 @@ void Back_McDonalds_Free(StageBack *back)
 	Mem_Free(this->arc_offbi);
 	
 	//Free nick t archive
-//	Mem_Free(this->arc_nickt);
+	Mem_Free(this->arc_nickt);
 	
 	//Free cooper archive
 	Mem_Free(this->arc_cooper);
@@ -322,16 +399,18 @@ StageBack *Back_McDonalds_New(void)
 	this->offbi_frame = this->offbi_tex_id = 0xFF; //Force art load
 	
 	//Load nick t textures
-//	this->arc_nickt = IO_Read("\\BG\\NICKT.ARC;1");
-//	this->arc_nickt_ptr[0] = Archive_Find(this->arc_nickt, "nickt0.tim");
-//	this->arc_nickt_ptr[1] = Archive_Find(this->arc_nickt, "nickt1.tim");
-//	this->arc_nickt_ptr[2] = Archive_Find(this->arc_nickt, "nickt2.tim");
-//	this->arc_nickt_ptr[3] = Archive_Find(this->arc_nickt, "nickt3.tim");
+	this->arc_nickt = IO_Read("\\BG\\NICKT.ARC;1");
+	this->arc_nickt_ptr[0] = Archive_Find(this->arc_nickt, "nickt0.tim");
+	this->arc_nickt_ptr[1] = Archive_Find(this->arc_nickt, "nickt1.tim");
+	this->arc_nickt_ptr[2] = Archive_Find(this->arc_nickt, "forehead0.tim");
+	this->arc_nickt_ptr[3] = Archive_Find(this->arc_nickt, "forehead1.tim");
+	this->arc_nickt_ptr[4] = Archive_Find(this->arc_nickt, "forehead2.tim");
+	this->arc_nickt_ptr[5] = Archive_Find(this->arc_nickt, "forehead3.tim");
 	
 	//Initialize nick t state
-//	Animatable_Init(&this->nickt_animatable, nickt_anim);
-//	Animatable_SetAnim(&this->nickt_animatable, 0);
-//	this->nickt_frame = this->nickt_tex_id = 0xFF; //Force art load
+	Animatable_Init(&this->nickt_animatable, nickt_anim);
+	Animatable_SetAnim(&this->nickt_animatable, 0);
+	this->nickt_frame = this->nickt_tex_id = 0xFF; //Force art load
 	
 	//Load cooper textures
 	this->arc_cooper = IO_Read("\\BG\\COOPER.ARC;1");

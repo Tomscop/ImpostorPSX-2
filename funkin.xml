@@ -249,7 +249,7 @@
 				<file name = "mcdonlds.arc" type = "data" source = "iso/stages/mcdonlds/back.arc"/>
 				<file name = "orbyy.arc" type = "data" source = "iso/stages/mcdonlds/orbyy.arc"/>
 				<file name = "offbi.arc" type = "data" source = "iso/stages/mcdonlds/offbi.arc"/>
-				<!-- NickT -->
+				<file name = "nickt.arc" type = "data" source = "iso/stages/mcdonlds/nickt.arc"/>
 				<file name = "cooper.arc" type = "data" source = "iso/stages/mcdonlds/cooper.arc"/>
 				
 				<file name = "towers.arc" type = "data" source = "iso/stages/towers/back.arc"/>

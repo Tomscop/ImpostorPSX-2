@@ -122,7 +122,10 @@ void Char_Clowfoe_Tick(Character *character)
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_Clowfoe_SetFrame);
-	Character_Draw(character, &this->tex, &char_clowfoe_frame[this->frame]);
+	if ((stage.song_step >= 1428) && (stage.song_step <= 1439))
+		Character_DrawBlend(character, &this->tex, &char_clowfoe_frame[this->frame]);
+	else
+		Character_Draw(character, &this->tex, &char_clowfoe_frame[this->frame]);
 }
 
 void Char_Clowfoe_SetAnim(Character *character, u8 anim)
