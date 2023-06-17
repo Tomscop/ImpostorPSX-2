@@ -172,7 +172,6 @@ static u32 Sounds[10];
 #include "stage/meeting.h"
 #include "stage/turbulence.h"
 #include "stage/victory.h"
-#include "stage/lobby.h"
 #include "stage/cafeteria.h"
 #include "stage/cafeteriahd.h"
 #include "stage/christmas.h"
@@ -191,7 +190,6 @@ static u32 Sounds[10];
 #include "stage/warehouse.h"
 #include "stage/o2.h"
 #include "stage/week1.h"
-#include "stage/dummy.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
@@ -1988,6 +1986,7 @@ static void Stage_LoadState(void)
 		}
 		stage.pinkstuff = false;
 		stage.pink = 0;
+		stage.pinkspd = 0;
 		stage.lights = 0;
 		stage.bop1 = 0xF;
 		stage.bop2 = 0;
@@ -2533,6 +2532,8 @@ void Stage_Tick(void)
 			else if ((stage.stage_id == StageId_DoubleKill) && ((stage.song_step <= 15) || (stage.song_step >= 3920)))
 				show = false;
 			else if ((stage.stage_id == StageId_LightsDown) && (stage.song_step >= 1600))
+				show = false;
+			else if ((stage.stage_id == StageId_Ejected) && (stage.song_step <= 255))
 				show = false;
 			else if ((stage.stage_id == StageId_Who) && (stage.song_step >= 1152))
 				show = false;

@@ -7,7 +7,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -25,7 +25,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -43,7 +43,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -61,7 +61,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -79,7 +79,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -97,7 +97,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -115,7 +115,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -133,7 +133,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -151,7 +151,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -169,7 +169,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -187,7 +187,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -205,7 +205,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -223,7 +223,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -241,7 +241,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -259,7 +259,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -278,7 +278,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -296,7 +296,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -314,7 +314,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -332,7 +332,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -350,7 +350,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -368,7 +368,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -386,7 +386,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -404,7 +404,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -422,7 +422,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -440,7 +440,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -459,7 +459,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -477,7 +477,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -495,7 +495,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -513,7 +513,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,
@@ -531,7 +531,7 @@
         {NULL},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Polus_New,
 		
 		//Song info
 		4, 7,

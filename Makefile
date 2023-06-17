@@ -20,7 +20,6 @@ SRCS = src/main.c \
 	src/psx/audio.c \
 	src/psx/pad.c \
 	src/psx/timer.c \
-	src/psx/strplay.c \
 	src/animation.c \
 	src/character.c \
 	src/character/bf.c \
@@ -90,8 +89,6 @@ SRCS = src/main.c \
 	src/stage/towers.c \
 	src/stage/warehouse.c \
 	src/stage/o2.c \
-	src/stage/week1.c \
-	src/stage/dummy.c \
 	src/object.c \
 	src/object/combo.c \
 	src/object/splash.c \

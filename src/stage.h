@@ -263,7 +263,7 @@ typedef struct
 	int pause_state;
 	struct
 	{
-		boolean ghost, downscroll, middlescroll, expsync, practice, debug, palmode, widescreen, sfxmiss, songtimer, botplay, flash, defeat;
+		boolean ghost, downscroll, middlescroll, expsync, practice, debug, palmode, widescreen, sfxmiss, songtimer, botplay, flash, defeat, combo;
 		int savescore[StageId_Max][3];
 	} prefs;
 	s32 mode;

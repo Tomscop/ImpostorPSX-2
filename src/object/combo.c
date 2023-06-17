@@ -38,8 +38,9 @@ boolean Obj_Combo_Tick(Object *obj)
 
 		hit_dst.y += stage.noteshakey;
 		hit_dst.x += stage.noteshakex;
-
-		Stage_DrawTex(&stage.tex_hud0, &hit_src, &hit_dst, stage.bump);
+		
+		if (stage.prefs.combo)
+			Stage_DrawTex(&stage.tex_hud0, &hit_src, &hit_dst, stage.bump);
 		
 		//Apply gravity
 		this->hy += FIXED_MUL(this->hv, timer_dt);
@@ -82,7 +83,8 @@ boolean Obj_Combo_Tick(Object *obj)
 			num_dst.y += stage.noteshakey;
 			num_dst.x += stage.noteshakex;
 			
-			Stage_DrawTex(&stage.tex_hud0, &num_src, &num_dst, stage.bump);
+			if (stage.prefs.combo)
+				Stage_DrawTex(&stage.tex_hud0, &num_src, &num_dst, stage.bump);
 			
 			//Apply gravity
 			this->numy[i] += FIXED_MUL(this->numv[i], timer_dt);
@@ -124,7 +126,8 @@ boolean Obj_Combo_Tick_Weeb(Object *obj)
 		hit_dst.y += stage.noteshakey;
 		hit_dst.x += stage.noteshakex;
 
-		Stage_DrawTex(&stage.tex_hud0, &hit_src, &hit_dst, stage.bump);
+		if (stage.prefs.combo)
+			Stage_DrawTex(&stage.tex_hud0, &hit_src, &hit_dst, stage.bump);
 		
 		//Apply gravity
 		this->hy += FIXED_MUL(this->hv, timer_dt) >> 1;
@@ -167,7 +170,8 @@ boolean Obj_Combo_Tick_Weeb(Object *obj)
 			num_dst.y += stage.noteshakey;
 			num_dst.x += stage.noteshakex;
 
-			Stage_DrawTex(&stage.tex_hud0, &num_src, &num_dst, stage.bump);
+			if (stage.prefs.combo)
+				Stage_DrawTex(&stage.tex_hud0, &num_src, &num_dst, stage.bump);
 			
 			//Apply gravity
 			this->numy[i] += FIXED_MUL(this->numv[i], timer_dt) >> 1;

@@ -1899,6 +1899,7 @@ void Menu_Tick(void)
 				{OptType_Boolean, "MIDDLESCROLL", &stage.prefs.middlescroll, {.spec_boolean = {0}}},
 				{OptType_Boolean, "FLASHING LIGHTS", &stage.prefs.flash, {.spec_boolean = {0}}},
 				{OptType_Boolean, "SHOW SONG TIME", &stage.prefs.songtimer, {.spec_boolean = {0}}},
+				{OptType_Boolean, "SHOW COMBO TEXT", &stage.prefs.combo, {.spec_boolean = {0}}},
 				{OptType_Boolean, "MISS SOUNDS", &stage.prefs.sfxmiss, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DEFEAT MISSES", &stage.prefs.defeat, {.spec_boolean = {0}}},
 				{OptType_Boolean, "PAL REFRESH RATE", &stage.prefs.palmode, {.spec_boolean = {0}}},
@@ -1906,7 +1907,7 @@ void Menu_Tick(void)
 				{OptType_Boolean, "PRACTICE MODE", &stage.prefs.practice, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DEBUG MODE", &stage.prefs.debug, {.spec_boolean = {0}}},
 			};
-			if (menu.select == 8 && pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+			if (menu.select == 9 && pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
 				stage.pal_i = 1;
 
 			if (stage.mode == StageMode_2P)

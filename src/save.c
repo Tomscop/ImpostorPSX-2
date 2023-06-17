@@ -69,6 +69,8 @@ void defaultSettings()
 	stage.prefs.songtimer = 1;
 	stage.prefs.flash = 1;
 	stage.prefs.defeat = 1;
+	stage.prefs.combo = 1;
+	stage.prefs.debug = 0;
 
 	for (int i = 0; i < StageId_Max; i++)
 	{

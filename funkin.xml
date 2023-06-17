@@ -30,7 +30,10 @@
 			<!-- Intro assets -->
 			<dir name = "intro">
 				<file name = "intro.tim" type = "data" source = "iso/intro/intro.tim"/>
-				<file name = "intro.vag" type = "data" source = "iso/sounds/intro/intro.wav.vag"/>
+				<file name = "star.tim" type = "data" source = "iso/intro/star.tim"/>
+				<file name = "0.vag" type = "data" source = "iso/sounds/intro/0.VAG"/>
+				<file name = "1.vag" type = "data" source = "iso/sounds/intro/1.VAG"/>
+				<file name = "2.vag" type = "data" source = "iso/sounds/intro/2.VAG"/>
 			</dir>
 			
 			<!-- Fonts -->

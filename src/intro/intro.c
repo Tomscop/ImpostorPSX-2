@@ -22,7 +22,7 @@
 
 Intro intro;
 
-Gfx_Tex tex_intro;
+Gfx_Tex tex_intro, tex_star;
 
 static void Intro_Animation() 
 {
@@ -38,14 +38,15 @@ static void Intro_Animation()
 			intro.logo1.w = 126;
 			intro.logo1.h = 113;
 			break;
-		case 100:
+		case 80:
+			Audio_PlaySound(intro.sounds[1], 0x3fff);
 			intro.logo1.w = 157;
 			intro.logo1.h = 141;
 			break;
-		case 150:
+		case 130:
 			intro.logo1.tx = 650;
 			break;
-		case 220:
+		case 150:
 			intro.logo2.tx = 2230;
 			intro.logo2.ty = 1150;
 			intro.logo2.x = 1400;
@@ -53,10 +54,13 @@ static void Intro_Animation()
 			intro.logo2.w = 195 * 5;
 			intro.logo2.h = 122 * 5;
 			break;
-		case 270:
+		case 195:
+			Audio_PlaySound(intro.sounds[2], 0x3fff);
+			break;
+		case 200:
 			intro.logo2.shake = 10;
 			break;
-		case 400:
+		case 250:
 			gameloop = GameLoop_Menu;
 			Menu_Load(MenuPage_Opening);
 			break;
@@ -89,6 +93,7 @@ void Intro_Load()
 	Gfx_SetClear(0, 0, 0);
 	
 	Gfx_LoadTex(&tex_intro, IO_Read("\\INTRO\\INTRO.TIM;1"), GFX_LOADTEX_FREE);
+	Gfx_LoadTex(&tex_star, IO_Read("\\INTRO\\STAR.TIM;1"), GFX_LOADTEX_FREE);
 	
 	intro.logo1.y = -1200;
 	
@@ -96,9 +101,17 @@ void Intro_Load()
 	Audio_ClearAlloc();
 	CdlFILE file;
 
-	IO_FindFile(&file, "\\INTRO\\INTRO.VAG;1");
+	IO_FindFile(&file, "\\INTRO\\0.VAG;1");
    	u32 *data = IO_ReadFile(&file);
 	intro.sounds[0] = Audio_LoadVAGData(data, file.size);
+	Mem_Free(data);
+	IO_FindFile(&file, "\\INTRO\\1.VAG;1");
+   	data = IO_ReadFile(&file);
+	intro.sounds[1] = Audio_LoadVAGData(data, file.size);
+	Mem_Free(data);
+	IO_FindFile(&file, "\\INTRO\\2.VAG;1");
+   	data = IO_ReadFile(&file);
+	intro.sounds[2] = Audio_LoadVAGData(data, file.size);
 	Mem_Free(data);
 }
 
@@ -106,10 +119,11 @@ void Intro_Tick()
 {
 	Intro_Animation();
 	RECT logo1_src = {0, 0, 126, 113};
+	RECT star_src = {0, 0,241, 134};
 	
-	if (intro.timer < 400)
+	if (intro.timer < 250)
 	{
-		if (intro.timer > 220)
+		if (intro.timer > 150)
 			Draw_logo2();
 
 		intro.logo1.x = lerp(intro.logo1.x, intro.logo1.tx, FIXED_DEC(1,10));
@@ -125,6 +139,14 @@ void Intro_Tick()
 		};
 	
 		Gfx_DrawTex(&tex_intro, &logo1_src, &logo1_dst);
+		
+		RECT star_dst = {
+			-32,
+			0,
+			432,
+			240
+		};
+		Gfx_DrawTex(&tex_star, &star_src, &star_dst);
 	}
 }
 
