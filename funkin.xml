@@ -114,7 +114,7 @@
 				<file name = "6.5evnt.cht" type = "data" source = "iso/music/chipping/events.json.cht"/>
 				<file name = "6.6n.cht" type = "data" source = "iso/music/torture/torture-hard.json.cht"/>
 				<file name = "6.6evnt.cht" type = "data" source = "iso/music/torture/events.json.cht"/>
-				<file name = "6.8n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-other.json.cht"/>
+				<file name = "6.7n.cht" type = "data" source = "iso/music/monotone-attack/monotone-attack-other.json.cht"/>
 				<file name = "6.9n.cht" type = "data" source = "iso/music/lemon-lime/lemon-lime-hard.json.cht"/>
 				<file name = "6.10n.cht" type = "data" source = "iso/music/chlorophyll/chlorophyll-hard.json.cht"/>
 				<file name = "6.11n.cht" type = "data" source = "iso/music/inflorescence/inflorescence-hard.json.cht"/>

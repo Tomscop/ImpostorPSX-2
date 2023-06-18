@@ -15,7 +15,6 @@
 #include "pad.h"
 #include "archive.h"
 #include "mutil.h"
-#include "network.h"
 
 #include "font.h"
 #include "trans.h"
