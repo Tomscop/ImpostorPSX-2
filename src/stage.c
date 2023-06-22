@@ -1291,7 +1291,7 @@ static void Stage_DrawNotes(Chart* chart)
 						if (chart == &stage.special_chart)
 						{
 							note_src.x = 192;
-							note_src.y = 0;
+							note_src.y = 4 + (clip >> FIXED_SHIFT);
 						}
 						else
 						{
