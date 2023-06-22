@@ -611,7 +611,8 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 	{
 		if (playing)
 		{
-			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || ((this->character == stage.opponent2 ||
+				this->character2 == stage.opponent2) && stage.opponent2 != NULL)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			this->pad_held = this->character->pad_held = pad->held;
 			this->pad_press = pad->press;
@@ -646,7 +647,8 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		//Do perfect note checks
 		if (playing)
 		{
-			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
+			u8 i = ((this->character == stage.opponent) || ((this->character == stage.opponent2 ||
+				this->character2 == stage.opponent2) && stage.opponent2 != NULL)) ? NOTE_FLAG_OPPONENT : 0;
 			
 			u8 hit[4] = {0, 0, 0, 0};
 			for (Note *note = stage.chart.cur_note;; note++)
@@ -1636,6 +1638,7 @@ void Stage_UnloadChart(Chart* chart)
 {
 	if (chart->data != NULL)
 		Mem_Free(chart->data);
+	chart->data = NULL;
 }
 void Stage_GetChart_Values(Chart* chart)
 {
@@ -1679,33 +1682,31 @@ static void Stage_LoadChart(void)
 	Stage_GetChart_Values(&stage.chart);
 
 	sprintf(chart_path, "\\WEEK%d\\%d.%dEVNT.CHT;1", stage.stage_def->week, stage.stage_def->week, stage.stage_def->week_song);
+	Stage_UnloadChart(&stage.event_chart);
 
 	//Check if should use events.json
 	if (IO_Check(chart_path))
 	{
-		Stage_UnloadChart(&stage.event_chart);
 		stage.event_chart.data = IO_Read(chart_path);
 		//Events.json chart
 		Stage_GetChart_Values(&stage.event_chart);
 	}
 	else
 	{
-		stage.event_chart.data = NULL;
 		Stage_GetChart_Values(&stage.event_chart);
 	}
 
 	//Special Chart
+	Stage_UnloadChart(&stage.special_chart);
 	if ((stage.stage_id == StageId_VotingTime) || (stage.stage_id == StageId_MonotoneAttack))
 	{
 		sprintf(chart_path, "\\WEEK6\\6.7N.CHT;1");
-		Stage_UnloadChart(&stage.special_chart);
 		stage.special_chart.data = IO_Read(chart_path);
 		//Events.json chart
 		Stage_GetChart_Values(&stage.special_chart);
 	}
 	else
 	{
-		stage.special_chart.data = NULL;
 		Stage_GetChart_Values(&stage.special_chart);
 	}
 	
@@ -3165,37 +3166,8 @@ void Stage_Tick(void)
 							Stage_CheckAnimations(&stage.player_state[1], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
 						}
 					}
-
-					//Handle special chart notes
-					for (Note *note = stage.special_chart.cur_note;; note++)
-					{
-						if (note->pos > (stage.special_chart.note_scroll >> FIXED_SHIFT))
-							break;
-						
-						//Note hits
-						if (playing && !(note->type & NOTE_FLAG_HIT))
-						{
-							//hits note
-							Stage_StartVocal();
-
-							note->type |= NOTE_FLAG_HIT;
-							//Since the special chart are used by the 2 characters i need add that flag
-							note->type |= NOTE_FLAG_CHAR2SING;
-
-							if (note->type & NOTE_FLAG_OPPONENT)
-							{
-								Stage_CheckAnimations(&stage.player_state[1], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
-							}
-
-							else
-							{
-								Stage_CheckAnimations(&stage.player_state[0], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
-							}
-						}
-					}
 					break;
 					break;
-				}
 				case StageMode_2P:
 				{
 					//Handle player 1 and 2 inputs
@@ -3204,6 +3176,35 @@ void Stage_Tick(void)
 					break;
 				}
 			}
+		}
+
+		//Handle special chart notes
+		for (Note *note = stage.special_chart.cur_note;; note++)
+		{
+			if (note->pos > (stage.special_chart.note_scroll >> FIXED_SHIFT))
+				break;
+						
+			//Note hits
+			if (playing && !(note->type & NOTE_FLAG_HIT))
+			{
+				//hits note
+				Stage_StartVocal();
+
+				note->type |= NOTE_FLAG_HIT;
+				//Since the special chart are used by the 2 characters i need add that flag
+				note->type |= NOTE_FLAG_CHAR2SING;
+
+				if (note->type & NOTE_FLAG_OPPONENT)
+				{
+					Stage_CheckAnimations(&stage.player_state[1], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
+				}
+
+				else
+				{
+					Stage_CheckAnimations(&stage.player_state[0], note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0], note);
+				}
+			}
+		}
 
 			if (!stage.prefs.debug)
 			{
@@ -3622,7 +3623,7 @@ void Stage_Tick(void)
 			stage.player2 = NULL;
 			Character_Free(stage.opponent);
 			stage.opponent = NULL;
-            Character_Free(stage.opponent2);
+      Character_Free(stage.opponent2);
 			stage.opponent2 = NULL;
 			Character_Free(stage.gf);
 			stage.gf = NULL;
