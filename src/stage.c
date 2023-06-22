@@ -3394,6 +3394,8 @@ void Stage_Tick(void)
 			//Draw stage foreground
 			if ((stage.back->draw_fg != NULL) && (stage.stage_id != StageId_IdentityCrisis))
 				stage.back->draw_fg(stage.back);
+			if ((stage.back->draw_md != NULL) && (stage.stage_id == StageId_IdentityCrisis))
+					stage.back->draw_md(stage.back);
 			
 			//Tick foreground objects
 			ObjectList_Tick(&stage.objlist_fg);
@@ -3461,7 +3463,7 @@ void Stage_Tick(void)
 			}
 			
 			//Draw stage middle
-			if ((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale))
+			if ((stage.stage_id != StageId_DoubleKill) && (stage.stage_id != StageId_Turbulence) && (stage.stage_id != StageId_Torture) && (stage.stage_id != StageId_Finale) && (stage.stage_id != StageId_IdentityCrisis))
 			{
 				if (stage.back->draw_md != NULL)
 					stage.back->draw_md(stage.back);
